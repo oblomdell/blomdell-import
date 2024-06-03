@@ -3,7 +3,7 @@
     import logo from '$lib/assets/logo.jpeg'
 </script>
 
-<div class="border-8 border-blue-600">
+<div class="border-8 border-blue-600"><!-- kanske bg-blue-950 och blå logga -->
 
     <header class="pt-2 pb-8 flex flex-col items-center">
 
