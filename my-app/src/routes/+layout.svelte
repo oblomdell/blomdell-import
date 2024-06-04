@@ -3,7 +3,7 @@
     import logo from '$lib/assets/logo.jpeg'
 </script>
 
-<div class="border-8 border-blue-600"><!-- kanske bg-blue-950 och blå logga -->
+<div class="font-roboto-slab border-8 border-blue-950"><!-- kanske bg-blue-950 och blå logga -->
 
     <!-- TEST -->
     <!-- <header class="flex justify-between items-center mb-20">
@@ -11,7 +11,7 @@
         <a href="#"><img class="max-w-full h-24 m-10" src={logo} alt="Blomdell Import logo" /></a>
 
         <nav>
-            <ul class="font-roboto-slab font-bold text-md flex gap-14 mr-10">
+            <ul class="font-bold text-md flex gap-14 mr-10">
                 <li><a href="#" class="focus:underline underline-offset-4">SYSTEMBOLAGET</a></li>
                 <li><a href="#" class="focus:underline underline-offset-4">RESTAURANGKUND</a></li>
                 <li><a href="#" class="focus:underline underline-offset-4">PRIVATKUND</a></li>
@@ -22,15 +22,15 @@
 
     </header> -->
 
-    <header class="pt-2 pb-12 flex flex-col items-center">
+    <header class="pt-5 pb-12 flex flex-col items-center">
 
-        <nav class="font-roboto-slab font-bold text-xs mb-5">
+        <nav class="font-bold text-xs mb-5">
             <ul class="flex gap-14">
-                <li><a href="#" class="focus:underline underline-offset-4">SYSTEMBOLAGET</a></li>
-                <li><a href="#" class="focus:underline underline-offset-4">RESTAURANGKUND</a></li>
-                <li><a href="#" class="focus:underline underline-offset-4">PRIVATKUND</a></li>
-                <li><a href="#" class="focus:underline underline-offset-4">OM OSS</a></li>
-                <li><a href="#" class="focus:underline underline-offset-4">KONTAKT</a></li>
+                <li><a href="#" class="hover:underline focus:underline underline-offset-4">SYSTEMBOLAGET</a></li>
+                <li><a href="#" class="hover:underline focus:underline underline-offset-4">RESTAURANGKUND</a></li>
+                <li><a href="#" class="hover:underline focus:underline underline-offset-4">PRIVATKUND</a></li>
+                <li><a href="#" class="hover:underline focus:underline underline-offset-4">OM OSS</a></li>
+                <li><a href="#" class="hover:underline focus:underline underline-offset-4">KONTAKT</a></li>
             </ul>
         </nav>
 
@@ -40,7 +40,7 @@
 
     <slot />
 
-    <footer class="mt-10 font-roboto-slab">
+    <footer class="mt-10">
         <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center">
             <a href="#"><img class="max-w-full h-12" src={logo} alt="Blomdell Import logo" /></a>
             <span>© 2024 Blomdell C&M AB.</span>
