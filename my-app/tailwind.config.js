@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'inconsolata': ['Inconsolata', 'monospace']
+        'roboto-slab': ['Roboto Slab', 'serif']
       }
     }
   },

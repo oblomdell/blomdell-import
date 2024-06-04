@@ -13,8 +13,14 @@
     ];
 </script>
 
-<main class="flex justify-center gap-5">
-    {#each cards as { imageSrc, title, description }}
-        <Card {imageSrc} {title} {description} />
-    {/each}
+<main class="flex flex-col items-center">
+    <!-- <h1 class="text-4xl font-bold mb-10 font-roboto-slab">Produkter</h1> -->
+
+    <div class="flex justify-center gap-5 mb-10">
+        {#each cards as { imageSrc, title, description }}
+            <Card {imageSrc} {title} {description} />
+        {/each}
+    </div>
+
+    <a href="#" class="border border-black px-8 py-2 text-sm rounded-sm">Alla produkter</a>
 </main>
