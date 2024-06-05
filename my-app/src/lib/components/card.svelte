@@ -2,6 +2,8 @@
     export let imageSrc = '';
     export let brand = '';
     export let title = '';
+    // export let productId = ''; + ersätt # med {productId}
+    // export let orderLink = ''; + ersätt # med {orderLink}
 </script>
 
 <div class="max-w-sm w-60 rounded overflow-hidden shadow-lg">
