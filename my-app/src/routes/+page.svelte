@@ -7,9 +7,9 @@
 
     const cards = [
         { imageSrc: skellyAnejo, brand: 'Azulejos', title: 'Skelly Añejo' },
-        { imageSrc: blueTalavera, brand: 'Azulejos', title: 'Talavera Añejo (Blå)' },
+        { imageSrc: blueTalavera, brand: 'Azulejos', title: 'Talavera Añejo Blå' },
         { imageSrc: skellyBlanco, brand: 'Azulejos', title: 'Skelly Blanco' },
-        { imageSrc: blueTalavera, brand: 'Casteller', title: 'Cava Brut Nature' }
+        { imageSrc: blueTalavera, brand: 'Covides', title: 'Duc de Foix Brut Nature Reserva' }
     ];
 </script>
 
