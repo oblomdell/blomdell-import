@@ -5,7 +5,7 @@
 
 <div class="font-roboto-slab border-8 border-blue-950"><!-- testa blå logga -->
 
-    <header class="pt-5 pb-12 flex flex-col items-center">
+    <header class="pt-5 mb-12 flex flex-col items-center">
 
         <nav class="font-bold text-xs mb-5">
             <ul class="flex gap-14">
@@ -17,7 +17,7 @@
             </ul>
         </nav>
 
-        <a href="#"><img class="max-w-full h-24" src={logo} alt="Blomdell Import logo" /></a>
+        <a href="/" data-sveltekit-preload-data><img class="max-w-full h-24" src={logo} alt="Blomdell Import logo" /></a>
 
     </header>
 

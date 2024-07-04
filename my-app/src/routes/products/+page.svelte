@@ -8,9 +8,9 @@
     <div class="flex flex-col items-center">
 
         <h1 class="text-4xl mb-10">Alla produkter</h1>
-        <div class="grid grid-cols-4 gap-5">
+        <div class="grid grid-cols-4 gap-x-5 gap-y-10">
             {#each products as product}
-                <Card imageSrc={product.imageSrc} brand={product.brand} title={product.title} />
+                <Card imageSrc={product.imageSrc} brand={product.brand} collection={product.collection} title={product.title} order={product.order} />
             {/each}
         </div>
 

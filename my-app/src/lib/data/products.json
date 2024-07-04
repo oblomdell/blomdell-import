@@ -1,61 +1,74 @@
 [
     {
-        "imageSrc": "/products/skelly-anejo.jpg",
-        "brand": "Azulejos",
-        "title": "Skelly Añejo"
+        "imageSrc": "/products/casteller.jpg",
+        "brand": "Covides",
+        "collection": "Casteller",
+        "title": "Brut Nature",
+        "order": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
     },
     {
-        "imageSrc": "/products/talavera-blå.jpeg",
-        "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "imageSrc": "/products/duc-de-foix.png",
+        "brand": "Covides",
+        "collection": "Duc de Foix",
+        "title": "Brut Nature Reserva",
+        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
     },
     {
-        "imageSrc": "/products/skelly-blanco.jpg",
-        "brand": "Azulejos",
-        "title": "Skelly Blanco"
+        "imageSrc": "/products/merlot.jpg",
+        "brand": "Covides",
+        "collection": "Duc de Foix",
+        "title": "Merlot Barrica",
+        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
     },
     {
-        "imageSrc": "/products/talavera-blå.jpeg",
-        "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "imageSrc": "/products/cabernet.jpg",
+        "brand": "Covides",
+        "collection": "Duc de Foix",
+        "title": "Cabernet Sauvignon Barrica",
+        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
     },
     {
-        "imageSrc": "/products/skelly-anejo.jpg",
-        "brand": "Azulejos",
-        "title": "Skelly Añejo"
-    },
-    {
-        "imageSrc": "/products/talavera-blå.jpeg",
-        "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
-    },
-    {
-        "imageSrc": "/products/skelly-blanco.jpg",
+        "imageSrc": "/products/skelly-blanco.png",
         "brand": "Azulejos",
         "title": "Skelly Blanco"
     },
     {
-        "imageSrc": "/products/talavera-blå.jpeg",
+        "imageSrc": "/products/skelly-reposado.png",
         "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "title": "Skelly Reposado"
     },
     {
-        "imageSrc": "/products/skelly-anejo.jpg",
+        "imageSrc": "/products/skelly-anejo.png",
         "brand": "Azulejos",
         "title": "Skelly Añejo"
     },
     {
+        "imageSrc": "/products/skelly-anejo-gold.png",
+        "brand": "Azulejos",
+        "title": "Skelly Añejo Gold Edition"
+    },
+    {
+        "imageSrc": "/products/glas-blancov2.png",
+        "brand": "Azulejos",
+        "title": "Glas Blanco"
+    },
+    {
+        "imageSrc": "/products/blå-glas-reposadov2.png",
+        "brand": "Azulejos",
+        "title": "Blå glas Reposado"
+    },
+    {
         "imageSrc": "/products/talavera-blå.jpeg",
         "brand": "Azulejos",
         "title": "Talavera Añejo (Blå)"
     },
     {
-        "imageSrc": "/products/skelly-blanco.jpg",
+        "imageSrc": "/products/trophy-head-svart-vit.png",
         "brand": "Azulejos",
-        "title": "Skelly Blanco"
+        "title": "Talavera Añejo (Blå)"
     },
     {
-        "imageSrc": "/products/talavera-blå.jpeg",
+        "imageSrc": "/products/trophy-head-svart-blå.png",
         "brand": "Azulejos",
         "title": "Talavera Añejo (Blå)"
     }
