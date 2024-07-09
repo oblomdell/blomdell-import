@@ -1,16 +1,20 @@
 [
     {
+        "id": "casteller",
         "imageSrc": "/products/casteller.jpg",
         "brand": "Covides",
         "collection": "Casteller",
         "title": "Brut Nature",
+        "price": 175,
         "order": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
     },
     {
+        "id": "duc-de-foix",
         "imageSrc": "/products/duc-de-foix.png",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Brut Nature Reserva",
+        "price": 215,
         "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
     },
     {
@@ -18,6 +22,7 @@
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Merlot Barrica",
+        "price": 190,
         "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
     },
     {
@@ -25,51 +30,73 @@
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Barrica",
+        "price": 192,
         "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
     },
     {
         "imageSrc": "/products/skelly-blanco.png",
         "brand": "Azulejos",
-        "title": "Skelly Blanco"
+        "title": "Skelly Blanco",
+        "price": 1237
     },
     {
         "imageSrc": "/products/skelly-reposado.png",
         "brand": "Azulejos",
-        "title": "Skelly Reposado"
+        "title": "Skelly Reposado",
+        "price": 1399
     },
     {
         "imageSrc": "/products/skelly-anejo.png",
         "brand": "Azulejos",
-        "title": "Skelly Añejo"
+        "title": "Skelly Añejo",
+        "price": 1697
     },
     {
         "imageSrc": "/products/skelly-anejo-gold.png",
         "brand": "Azulejos",
-        "title": "Skelly Añejo Gold Edition"
+        "title": "Skelly Añejo Gold",
+        "price": 1772
     },
     {
-        "imageSrc": "/products/glas-blancov2.png",
+        "imageSrc": "/products/glas-blanco.png",
         "brand": "Azulejos",
-        "title": "Glas Blanco"
+        "title": "Glas Blanco",
+        "price": 1237
     },
     {
-        "imageSrc": "/products/blå-glas-reposadov2.png",
+        "imageSrc": "/products/glas-reposado.png",
         "brand": "Azulejos",
-        "title": "Blå glas Reposado"
+        "title": "Glas Reposado",
+        "price": 1399
     },
     {
         "imageSrc": "/products/talavera-blå.jpeg",
         "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "title": "Talavera Blå (Añejo)",
+        "price": 1799
+    },
+    {
+        "imageSrc": "/products/talavera-röd.png",
+        "brand": "Azulejos",
+        "title": "Talavera Röd (Añejo)",
+        "price": 1799
+    },
+    {
+        "imageSrc": "/products/talavera-blomma.png",
+        "brand": "Azulejos",
+        "title": "Talavera Blomma (Añejo)",
+        "price": 1799
     },
     {
         "imageSrc": "/products/trophy-head-svart-vit.png",
         "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "title": "Barebone Svart (Añejo)",
+        "price": 1799
     },
     {
         "imageSrc": "/products/trophy-head-svart-blå.png",
         "brand": "Azulejos",
-        "title": "Talavera Añejo (Blå)"
+        "title": "Barebone Blå (Añejo)",
+        "price": 1799
     }
 ]
