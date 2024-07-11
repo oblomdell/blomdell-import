@@ -1,100 +1,116 @@
 [
     {
-        "id": "casteller",
+        "productId": "casteller",
         "imageSrc": "/products/casteller.jpg",
         "brand": "Covides",
         "collection": "Casteller",
         "title": "Brut Nature",
         "price": 175,
-        "order": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
     },
     {
-        "id": "duc-de-foix",
+        "productId": "duc-de-foix",
         "imageSrc": "/products/duc-de-foix.png",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Brut Nature Reserva",
         "price": 215,
-        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
     },
     {
+        "productId": "merlot",
         "imageSrc": "/products/merlot.jpg",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Merlot Barrica",
         "price": 190,
-        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
     },
     {
+        "productId": "cabernet",
         "imageSrc": "/products/cabernet.jpg",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Barrica",
         "price": 192,
-        "order": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
     },
     {
+        "productId": "skelly-blanco",
         "imageSrc": "/products/skelly-blanco.png",
         "brand": "Azulejos",
         "title": "Skelly Blanco",
-        "price": 1237
+        "price": 1237,
+        "orderLink": "systembolaget"
     },
     {
+        "productId": "skelly-reposado",
         "imageSrc": "/products/skelly-reposado.png",
         "brand": "Azulejos",
         "title": "Skelly Reposado",
         "price": 1399
     },
     {
+        "productId": "skelly-anejo",
         "imageSrc": "/products/skelly-anejo.png",
         "brand": "Azulejos",
         "title": "Skelly Añejo",
-        "price": 1697
+        "price": 1697,
+        "orderLink": "systembolaget"
     },
     {
+        "productId": "skelly-anejo-gold",
         "imageSrc": "/products/skelly-anejo-gold.png",
         "brand": "Azulejos",
         "title": "Skelly Añejo Gold",
         "price": 1772
     },
     {
+        "productId": "glas-blanco",
         "imageSrc": "/products/glas-blanco.png",
         "brand": "Azulejos",
         "title": "Glas Blanco",
         "price": 1237
     },
     {
+        "productId": "glas-reposado",
         "imageSrc": "/products/glas-reposado.png",
         "brand": "Azulejos",
         "title": "Glas Reposado",
         "price": 1399
     },
     {
-        "imageSrc": "/products/talavera-blå.jpeg",
+        "productId": "talavera-bla",
+        "imageSrc": "/products/talavera-bla.jpeg",
         "brand": "Azulejos",
         "title": "Talavera Blå (Añejo)",
-        "price": 1799
+        "price": 1799,
+        "orderLink": "systembolaget"
     },
     {
-        "imageSrc": "/products/talavera-röd.png",
+        "productId": "talavera-rod",
+        "imageSrc": "/products/talavera-rod.png",
         "brand": "Azulejos",
         "title": "Talavera Röd (Añejo)",
         "price": 1799
     },
     {
+        "productId": "talavera-blomma",
         "imageSrc": "/products/talavera-blomma.png",
         "brand": "Azulejos",
         "title": "Talavera Blomma (Añejo)",
         "price": 1799
     },
     {
-        "imageSrc": "/products/trophy-head-svart-vit.png",
+        "productId": "barebone-svart",
+        "imageSrc": "/products/barebone-svart.png",
         "brand": "Azulejos",
         "title": "Barebone Svart (Añejo)",
         "price": 1799
     },
     {
-        "imageSrc": "/products/trophy-head-svart-blå.png",
+        "productId": "barebone-bla",
+        "imageSrc": "/products/barebone-bla.png",
         "brand": "Azulejos",
         "title": "Barebone Blå (Añejo)",
         "price": 1799

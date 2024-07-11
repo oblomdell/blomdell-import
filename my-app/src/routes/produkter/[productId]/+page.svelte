@@ -1,8 +1,15 @@
 <script>
-    export let data
-    console.log(data)
+    export let data;
 </script>
 
-<h1>produkt titel</h1>
-<p>produkt beskrivning</p>
-<p>produkt pris</p>
+{#if data.product}
+    <div>
+        <h1>{data.product.title}</h1>
+        <p>{data.product.brand} - {data.product.collection}</p>
+        <img src={data.product.imageSrc} alt={data.product.title} />
+        <p>Price: {data.product.price.toFixed(2)} SEK</p>
+        <a href={data.product.orderLink}>Order</a>
+    </div>
+{:else}
+    <p>Product not found.</p>
+{/if}

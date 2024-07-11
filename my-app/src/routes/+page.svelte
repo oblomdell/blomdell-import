@@ -5,6 +5,42 @@
     import blueTalavera from '$lib/assets/featured/talavera-blå.jpeg'
     import skellyBlanco from '$lib/assets/featured/skelly-blanco.png'
     import ducDeFoix from '$lib/assets/featured/duc-de-foix.png'
+
+    const featuredProducts = [
+        {
+            imageSrc: skellyAnejo,
+            brand: 'Azulejos',
+            title: 'Skelly Añejo',
+            price: 1697,
+            productId: 'skelly-anejo',
+            orderLink: '#'
+        },
+        {
+            imageSrc: blueTalavera,
+            brand: 'Azulejos',
+            title: 'Talavera Blå (Añejo)',
+            price: 1799,
+            productId: 'talavera-bla',
+            orderLink: '#'
+        },
+        {
+            imageSrc: skellyBlanco,
+            brand: 'Azulejos',
+            title: 'Skelly Blanco',
+            price: 1297,
+            productId: 'skelly-blanco',
+            orderLink: '#'
+        },
+        {
+            imageSrc: ducDeFoix,
+            brand: 'Covides',
+            collection: 'Duc De Foix',
+            title: 'Brut Nature Reserva',
+            price: 215,
+            productId: 'duc-de-foix',
+            orderLink: 'https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/'
+        }
+    ];
 </script>
 
 <main class="max-w-screen-xl mx-auto">
@@ -22,64 +58,31 @@
         <!-- <h1 class="text-4xl font-bold mb-10">Produkter</h1> -->
         <div class="w-full grid grid-cols-4 gap-x-5 mb-10">
             <!-- Featured products -->
-            <div class="max-w-sm rounded overflow-hidden shadow-xl">
-                <a href="#"><img class="max-w-full h-80 w-auto m-auto object-fit" src={skellyAnejo} alt="Skelly Añejo" /></a>
-                <div class="text-center pb-4">
-                    <p class="invisible">Placeholder</p>
-                    <h1 class="text-gray-700 pb-2">Azulejos</h1>
-                    <p class="font-bold">Skelly Añejo</p>
-                    <p class="mb-3">1697 kr</p>
-                    <div class="flex flex-col items-center space-y-2">
-                    <a href="#" class="underline">Läs mer</a>
-                    <a href="#" target="_blank" class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white">Beställ</a>
+            {#each featuredProducts as product}
+                <div class="max-w-sm rounded overflow-hidden shadow-xl">
+                    <a href={`/produkter/${product.productId}`} data-sveltekit-preload-data>
+                        <img class="max-w-full h-80 w-auto m-auto object-fit" src={product.imageSrc} alt={product.title} />
+                    </a>
+                    <div class="text-center pb-4">
+                        {#if product.collection}
+                            <p class="text-gray-700 pb-2">{product.brand}</p>
+                            <p class="font-bold">{product.collection}</p>
+                        {:else}
+                            <p class="invisible">Placeholder</p>
+                            <p class="text-gray-700 pb-2">{product.brand}</p>
+                        {/if}
+                        <h1 class="font-bold">{product.title}</h1>
+                        <p class="mb-3">{product.price} kr</p>
+                        <div class="flex flex-col items-center space-y-2">
+                            <a href={`/produkter/${product.productId}`} data-sveltekit-preload-data class="underline">Läs mer</a>
+                            <a href={product.orderLink} data-sveltekit-preload-data target="_blank" class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white">Beställ</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="max-w-sm rounded overflow-hidden shadow-xl">
-                <a href="#"><img class="max-w-full h-80 w-auto m-auto object-fit" src={blueTalavera} alt="Skelly Añejo" /></a>
-                <div class="text-center pb-4">
-                    <p class="invisible">Placeholder</p>
-                    <h1 class="text-gray-700 pb-2">Azulejos</h1>
-                    <p class="font-bold">Talavera Blå (Añejo)</p>
-                    <p class="mb-3">1799 kr</p>
-                    <div class="flex flex-col items-center space-y-2">
-                    <a href="#" class="underline">Läs mer</a>
-                    <a href="#" target="_blank" class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white">Beställ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-sm rounded overflow-hidden shadow-xl">
-                <a href="#"><img class="max-w-full h-80 w-auto m-auto object-fit" src={skellyBlanco} alt="Skelly Añejo" /></a>
-                <div class="text-center pb-4">
-                    <p class="invisible">Placeholder</p>
-                    <h1 class="text-gray-700 pb-2">Azulejos</h1>
-                    <p class="font-bold">Skelly Blanco</p>
-                    <p class="mb-3">1297 kr</p>
-                    <div class="flex flex-col items-center space-y-2">
-                    <a href="#" class="underline">Läs mer</a>
-                    <a href="#" target="_blank" class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white">Beställ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-sm rounded overflow-hidden shadow-xl">
-                <a href="#"><img class="max-w-full h-80 w-auto m-auto object-fit" src={ducDeFoix} alt='Brut Nature Reserva' /></a>
-                <div class="text-center pb-4">
-                    <h1 class="text-gray-700 pb-2">Covides</h1>
-                    <p class="font-bold">Duc De Foix</p>
-                    <p class="font-bold">Brut Nature Reserva</p>
-                    <p class="mb-3">215 kr</p>
-                    <div class="flex flex-col items-center space-y-2">
-                    <a href="#" class="underline">Läs mer</a>
-                    <a href="https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/" target="_blank" class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white">Beställ</a>
-                    </div>
-                </div>
-            </div>
+            {/each}
         </div>
 
-        <a data-sveltekit-preload-data href="/produkter" class="border border-black px-8 py-2 rounded-sm hover:bg-blue-950 hover:text-white">Alla produkter</a>
+        <a href="/produkter" data-sveltekit-preload-data class="border border-black px-8 py-2 rounded-sm hover:bg-blue-950 hover:text-white">Alla produkter</a>
 
     </section>
 
