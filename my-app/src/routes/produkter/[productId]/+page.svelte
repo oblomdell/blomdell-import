@@ -11,5 +11,5 @@
         <a href={data.product.orderLink}>Order</a>
     </div>
 {:else}
-    <p>Product not found.</p>
+    <p class="text-center">Product not found. Click <a href="/produkter" data-sveltekit-preload-data class="underline">here</a> to return.</p>
 {/if}

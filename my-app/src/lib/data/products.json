@@ -1,6 +1,6 @@
 [
     {
-        "productId": "casteller",
+        "productId": "casteller-brut",
         "imageSrc": "/products/casteller.jpg",
         "brand": "Covides",
         "collection": "Casteller",
@@ -9,7 +9,7 @@
         "orderLink": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
     },
     {
-        "productId": "duc-de-foix",
+        "productId": "duc-de-foix-brut",
         "imageSrc": "/products/duc-de-foix.png",
         "brand": "Covides",
         "collection": "Duc de Foix",
@@ -18,7 +18,7 @@
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
     },
     {
-        "productId": "merlot",
+        "productId": "duc-de-foix-merlot",
         "imageSrc": "/products/merlot.jpg",
         "brand": "Covides",
         "collection": "Duc de Foix",
@@ -27,13 +27,22 @@
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
     },
     {
-        "productId": "cabernet",
+        "productId": "duc-de-foix-cabernet",
         "imageSrc": "/products/cabernet.jpg",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Barrica",
         "price": 192,
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
+    },
+    {
+        "productId": "duc-de-foix-rose",
+        "imageSrc": "/products/cabernet.jpg",
+        "brand": "Covides",
+        "collection": "Duc de Foix",
+        "title": "Cabernet Sauvignon Rosé",
+        "price": 192,
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5958601/"
     },
     {
         "productId": "skelly-blanco",

@@ -37,7 +37,7 @@
             collection: 'Duc De Foix',
             title: 'Brut Nature Reserva',
             price: 215,
-            productId: 'duc-de-foix',
+            productId: 'duc-de-foix-brut',
             orderLink: 'https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/'
         }
     ];
