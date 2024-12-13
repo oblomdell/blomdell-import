@@ -1,9 +1,5 @@
-<script>
-    import coverphoto from "$lib/assets/coverphotos/privatimport.jpg";
-</script>
-
 <main class="max-w-screen-xl mx-auto flex">
-    <section class="flex-col">
+    <section class="flex-col w-1/2">
         <h1 class="text-2xl mb-5 text-center">Privatimport</h1>
         <p>
             Vår tequila går enbart att beställa hem till din lokala butik via <a
@@ -22,7 +18,7 @@
         <p>För att beställa via privatimport behöver du:</p>
         <ul class="list-decimal pl-4 py-4">
             <li>
-                <a href="#" target="_blank" class="underline text-blue-950"
+                <a href="https://www.systembolaget.se/konto/skapa/" target="_blank" class="underline text-blue-950"
                     >Skapa ett konto</a
                 > på systembolaget.
             </li>
@@ -65,9 +61,11 @@
         </p>
     </section>
 
-    <img
-        class="max-w-full h-80 w-auto m-auto object-cover"
-        src={coverphoto}
-        alt="Three Skelly Azulejos bottles"
-    />
+    <section class="w-1/2 flex items-center">
+        <img
+            class="max-w-full h-80 w-auto mx-auto object-cover"
+            src=/coverphotos/privatimport.jpg
+            alt="Three Skelly Azulejos bottles"
+        />
+    </section>
 </main>

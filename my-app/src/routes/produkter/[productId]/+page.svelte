@@ -32,10 +32,10 @@
     </main>
 {:else}
     <p class="text-center">
-        Product not found. Click <a
+        Produkten hittades inte. Klicka <a
             href="/produkter"
             data-sveltekit-preload-data
-            class="underline">here</a
-        > to return.
+            class="underline">här</a
+        > för att gå tillbaka.
     </p>
 {/if}
