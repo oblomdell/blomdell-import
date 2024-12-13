@@ -12,11 +12,11 @@
     <a href={`/produkter/${productId}`} data-sveltekit-preload-data><img class="max-w-full h-80 w-auto m-auto object-fit" src={imageSrc} alt={brand} /></a>
     <div class="text-center pb-4">
         <p class="text-gray-700 pb-2">{brand}</p>
-        <!-- {#if collection} -->
+        {#if collection}
         <p class="font-bold">{collection}</p>
-        <!-- {:else}
+        {:else}
             <p class="invisible">Placeholder</p>
-        {/if} -->
+        {/if}
         <h1 class="font-bold">{title}</h1>
         <p class="mb-3">{price} kr</p>
         <div class="flex flex-col items-center space-y-2">

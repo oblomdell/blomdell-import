@@ -10,10 +10,10 @@
         <nav class="font-bold text-sm mb-5">
             <ul class="flex gap-14">
                 <li><a href="/produkter" data-sveltekit-preload-data class="hover:underline target:underline underline-offset-4">PRODUKTER</a></li>
-                <li><a href="#" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">PRIVATKUND</a></li>
+                <li><a href="/privatimport" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">PRIVATIMPORT</a></li>
                 <li><a href="#" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">RESTAURANGKUND</a></li>
-                <li><a href="#" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">OM OSS</a></li>
-                <li><a href="#" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">KONTAKT</a></li>
+                <li><a href="/om-oss" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">OM OSS</a></li>
+                <li><a href="/kontakt" data-sveltekit-preload-data  class="hover:underline focus:underline underline-offset-4">KONTAKT</a></li>
             </ul>
         </nav>
 

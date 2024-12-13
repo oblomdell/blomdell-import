@@ -50,14 +50,15 @@
         "brand": "Azulejos",
         "title": "Skelly Blanco",
         "price": 1237,
-        "orderLink": "systembolaget"
+        "orderLink": "privatimport"
     },
     {
         "productId": "skelly-reposado",
         "imageSrc": "/products/skelly-reposado.png",
         "brand": "Azulejos",
         "title": "Skelly Reposado",
-        "price": 1399
+        "price": 1399,
+        "orderLink": "privatimport"
     },
     {
         "productId": "skelly-anejo",
@@ -65,28 +66,31 @@
         "brand": "Azulejos",
         "title": "Skelly Añejo",
         "price": 1697,
-        "orderLink": "systembolaget"
+        "orderLink": "privatimport"
     },
     {
         "productId": "skelly-anejo-gold",
         "imageSrc": "/products/skelly-anejo-gold.png",
         "brand": "Azulejos",
         "title": "Skelly Añejo Gold",
-        "price": 1772
+        "price": 1772,
+        "orderLink": "privatimport"
     },
     {
         "productId": "glas-blanco",
         "imageSrc": "/products/glas-blanco.png",
         "brand": "Azulejos",
         "title": "Glas Blanco",
-        "price": 1237
+        "price": 1237,
+        "orderLink": "privatimport"
     },
     {
         "productId": "glas-reposado",
         "imageSrc": "/products/glas-reposado.png",
         "brand": "Azulejos",
         "title": "Glas Reposado",
-        "price": 1399
+        "price": 1399,
+        "orderLink": "privatimport"
     },
     {
         "productId": "talavera-bla",
@@ -94,34 +98,38 @@
         "brand": "Azulejos",
         "title": "Talavera Blå (Añejo)",
         "price": 1799,
-        "orderLink": "systembolaget"
+        "orderLink": "privatimport"
     },
     {
         "productId": "talavera-rod",
         "imageSrc": "/products/talavera-rod.png",
         "brand": "Azulejos",
         "title": "Talavera Röd (Añejo)",
-        "price": 1799
+        "price": 1799,
+        "orderLink": "privatimport"
     },
     {
         "productId": "talavera-blomma",
         "imageSrc": "/products/talavera-blomma.png",
         "brand": "Azulejos",
         "title": "Talavera Blomma (Añejo)",
-        "price": 1799
+        "price": 1799,
+        "orderLink": "privatimport"
     },
     {
         "productId": "barebone-svart",
         "imageSrc": "/products/barebone-svart.png",
         "brand": "Azulejos",
         "title": "Barebone Svart (Añejo)",
-        "price": 1799
+        "price": 1799,
+        "orderLink": "privatimport"
     },
     {
         "productId": "barebone-bla",
         "imageSrc": "/products/barebone-bla.png",
         "brand": "Azulejos",
         "title": "Barebone Blå (Añejo)",
-        "price": 1799
+        "price": 1799,
+        "orderLink": "privatimport"
     }
 ]
