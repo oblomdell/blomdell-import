@@ -3,39 +3,48 @@
 </script>
 
 {#if data.product}
-    <main class="max-w-screen-xl mx-auto flex items-center">
-        <section class="text-center w-1/2">
-            <h1 class="text-xl">
-                {data.product.brand} - {data.product.collection}
-            </h1>
-            <p class="text-xl pb-4">{data.product.title}</p>
-            <p>Spanien, 2022</p>
-            <p class="pb-6">{data.product.price.toFixed(2)} SEK</p>
-            <a
-                href={data.product.orderLink}
-                target="_blank"
-                data-sveltekit-preload-data
-                class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white"
-                >Beställ här</a
-            >
+    <main class="max-w-screen-xl mx-auto px-6 md:px-12 py-12">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2">
+                <img
+                    class="max-w-full w-full md:max-w-sm lg:max-w-md object-cover mx-auto"
+                    src={data.product.imageSrc}
+                    alt={data.product.title}
+                />
+            </div>
 
-            <p class="pt-6">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita omnis totam pariatur, soluta molestiae odit voluptates quidem obcaecati, optio commodi esse, minima ab aut aperiam. Maxime sequi ullam quam porro dolores saepe vitae dolor voluptas dolorem natus asperiores assumenda rem perspiciatis pariatur unde quis consectetur, tempora aut ipsam aperiam ipsa?</p>
-        </section>
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1 class="text-2xl md:text-4xl font-bold mb-4">
+                    {data.product.title}
+                </h1>
+                <p class="text-gray-600 text-lg  pb-4">{data.product.brand}</p>
 
-        <section class="w-1/2">
-            <img
-                class="max-w-full w-1/2 object-cover mx-auto"
-                src={data.product.imageSrc}
-                alt={data.product.title}
-            />
-        </section>
+                {#if data.product.collection}
+                    <p class="text-gray-700 font-semibold">{data.product.collection}</p>
+                {/if}
+
+                <p class="text-lg font-semibold mt-3">{data.product.price.toFixed(2)} SEK</p>
+                <a
+                    href={data.product.orderLink}
+                    target="_blank"
+                    data-sveltekit-preload-data
+                    class="mt-5 inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
+                    >Beställ här</a
+                >
+
+                <p class="mt-6 text-gray-700 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus ullamcorper felis. 
+                    Integer non augue in lacus bibendum vehikel. Curabitur commodo, justo id ultrices imperdiet, urna est facilisis.
+                </p>
+            </div>
+        </div>
     </main>
 {:else}
-    <p class="text-center">
+    <p class="text-center text-lg mt-10">
         Produkten hittades inte. Klicka <a
             href="/produkter"
-            data-sveltekit-preload-data
-            class="underline">här</a
-        > för att gå tillbaka.
+            data-sveltekit-preload-data="hover"
+            class="underline text-blue-950">här</a
+        > för att se alla produkter.
     </p>
 {/if}

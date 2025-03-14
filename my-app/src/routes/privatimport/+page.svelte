@@ -1,24 +1,24 @@
-<main class="max-w-screen-xl mx-auto flex">
-    <section class="flex-col w-1/2">
+<main class="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 p-6">
+    <section class="flex-col md:w-1/2 flex flex-col">
         <h1 class="text-2xl mb-5 text-center">Privatimport</h1>
         <p>
             Vår tequila går enbart att beställa hem till din lokala butik via <a
                 href="https://www.systembolaget.se/bestalla-och-handla/privatimport/"
                 target="_blank"
-                class="underline text-blue-950">privatimport</a
+                class="underline text-blue-600">privatimport</a
             >.
         </p>
         <p class="mb-2">
             Våra viner kan man beställa direkt via systembolaget <a
                 href="https://www.systembolaget.se/sortiment/?q=blomdell"
                 target="_blank"
-                class="underline text-blue-950">här</a
+                class="underline text-blue-600">här</a
             >.
         </p>
         <p>För att beställa via privatimport behöver du:</p>
         <ul class="list-decimal pl-4 py-4">
             <li>
-                <a href="https://www.systembolaget.se/konto/skapa/" target="_blank" class="underline text-blue-950"
+                <a href="https://www.systembolaget.se/konto/skapa/" target="_blank" class="underline text-blue-600"
                     >Skapa ett konto</a
                 > på systembolaget.
             </li>
@@ -26,7 +26,7 @@
                 När du är inloggad registrerar du en förfrågan <a
                     href="https://www.systembolaget.se/bestalla-och-handla/privatimport/forfragan/"
                     target="_blank"
-                    class="underline text-blue-950">via detta formulär</a
+                    class="underline text-blue-600">via detta formulär</a
                 >.
             </li>
             <li>
@@ -38,7 +38,7 @@
                         Lägg till dryck: <strong
                             >använd namn som står på vår <a
                                 href="/produkter"
-                                class="underline text-blue-950">produktsida</a
+                                class="underline text-blue-600">produktsida</a
                             > (t.ex. "Skelly Anejo" eller "Talavera Blå")</strong
                         >
                     </li>
@@ -56,12 +56,12 @@
         <p class="">
             Har du frågor kring beställningen? <a
                 href="/kontakt"
-                class="underline text-blue-950">Kontakta oss</a
+                class="underline text-blue-600">Kontakta oss</a
             >.
         </p>
     </section>
 
-    <section class="w-1/2 flex items-center">
+    <section class="w-full lg:w-1/2 flex justify-center items-center">
         <img
             class="max-w-full h-80 w-auto mx-auto object-cover"
             src=/coverphotos/privatimport.jpg
