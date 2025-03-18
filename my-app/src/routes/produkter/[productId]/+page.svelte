@@ -25,17 +25,17 @@
 
                 <p class="text-lg font-semibold mt-3">{data.product.price.toFixed(2)} SEK</p>
                 <a
-                    href={data.product.orderLink}
+                    href={data.product.orderLink.startsWith('http') ? data.product.orderLink : `/${data.product.orderLink}`}
                     target="_blank"
                     data-sveltekit-preload-data
                     class="mt-5 inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
                     >Beställ här</a
                 >
 
-                <p class="mt-6 text-gray-700 leading-relaxed">
+                <!-- <p class="mt-6 text-gray-700 leading-relaxed">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus ullamcorper felis. 
                     Integer non augue in lacus bibendum vehikel. Curabitur commodo, justo id ultrices imperdiet, urna est facilisis.
-                </p>
+                </p> -->
             </div>
         </div>
     </main>

@@ -35,7 +35,7 @@
                         >PRIVATIMPORT</a
                     >
                 </li>
-                <li>
+                <!-- <li>
                     <a
                         href="#"
                         data-sveltekit-preload-data="hover"
@@ -44,7 +44,7 @@
                             : ''} hover:underline focus:underline underline-offset-4"
                         >RESTAURANGKUND</a
                     >
-                </li>
+                </li> -->
                 <!-- <li><a href="/om-oss" data-sveltekit-preload-data="hover"  class="hover:underline focus:underline underline-offset-4">OM OSS</a></li> -->
                 <li>
                     <a
@@ -100,7 +100,7 @@
                             >PRIVATIMPORT</a
                         >
                     </li>
-                    <li>
+                    <!-- <li>
                         <a
                             href="#"
                             data-sveltekit-preload-data="hover"
@@ -110,7 +110,7 @@
                                 : ''} hover:underline focus:underline underline-offset-4"
                             >RESTAURANGKUND</a
                         >
-                    </li>
+                    </li> -->
                     <li>
                         <a
                             href="/kontakt"

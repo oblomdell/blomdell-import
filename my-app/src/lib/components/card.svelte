@@ -6,6 +6,7 @@
     export let price = 0;
     export let productId = "";
     export let orderLink = "";
+    export let outOfStock;
 </script>
 
 <div class="max-w-sm rounded overflow-hidden shadow-xl border">
@@ -17,6 +18,11 @@
         /></a
     >
     <div class="text-center pb-4">
+        {#if outOfStock}
+            <p>Tillfälligt slut</p>
+        {:else}
+            <p>Finns i lager</p>
+        {/if}
         <p class="text-gray-700 pb-2">{brand}</p>
         {#if collection}
             <p class="font-bold">{collection}</p>
@@ -32,7 +38,7 @@
                 class="underline">Läs mer</a
             >
             <a
-                href={orderLink}
+                href={orderLink.startsWith('http') ? orderLink : `/${orderLink}`}
                 target="_blank"
                 data-sveltekit-preload-data
                 class="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm"

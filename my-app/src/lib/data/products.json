@@ -6,7 +6,8 @@
         "collection": "Casteller",
         "title": "Brut Nature",
         "price": 178,
-        "orderLink": "https://www.systembolaget.se/produkt/vin/casteller-7844601/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/casteller-7844601/",
+        "outOfStock": false
     },
     {
         "productId": "duc-de-foix-brut",
@@ -15,7 +16,8 @@
         "collection": "Duc de Foix",
         "title": "Brut Nature Reserva",
         "price": 218,
-        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
+        "outOfStock": false
     },
     {
         "productId": "duc-de-foix-merlot",
@@ -24,7 +26,8 @@
         "collection": "Duc de Foix",
         "title": "Merlot Barrica",
         "price": 190,
-        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/",
+        "outOfStock": false
     },
     {
         "productId": "duc-de-foix-cabernet",
@@ -33,7 +36,8 @@
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Barrica",
         "price": 192,
-        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069701/",
+        "outOfStock": false
     },
     {
         "productId": "duc-de-foix-rose",
@@ -42,55 +46,8 @@
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Rosé",
         "price": 192,
-        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5958601/"
-    },
-    {
-        "productId": "skelly-blanco",
-        "imageSrc": "/products/skelly-blanco.png",
-        "brand": "Azulejos",
-        "title": "Skelly Blanco",
-        "price": 1237,
-        "orderLink": "privatimport"
-    },
-    {
-        "productId": "skelly-reposado",
-        "imageSrc": "/products/skelly-reposado.png",
-        "brand": "Azulejos",
-        "title": "Skelly Reposado",
-        "price": 1399,
-        "orderLink": "privatimport"
-    },
-    {
-        "productId": "skelly-anejo",
-        "imageSrc": "/products/skelly-anejo.png",
-        "brand": "Azulejos",
-        "title": "Skelly Añejo",
-        "price": 1697,
-        "orderLink": "privatimport"
-    },
-    {
-        "productId": "skelly-anejo-gold",
-        "imageSrc": "/products/skelly-anejo-gold.png",
-        "brand": "Azulejos",
-        "title": "Skelly Añejo Gold",
-        "price": 1772,
-        "orderLink": "privatimport"
-    },
-    {
-        "productId": "glas-blanco",
-        "imageSrc": "/products/glas-blanco.png",
-        "brand": "Azulejos",
-        "title": "Glas Blanco",
-        "price": 1237,
-        "orderLink": "privatimport"
-    },
-    {
-        "productId": "glas-reposado",
-        "imageSrc": "/products/glas-reposado.png",
-        "brand": "Azulejos",
-        "title": "Glas Reposado",
-        "price": 1399,
-        "orderLink": "privatimport"
+        "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5958601/",
+        "outOfStock": false
     },
     {
         "productId": "talavera-bla",
@@ -98,7 +55,8 @@
         "brand": "Azulejos",
         "title": "Talavera Blå (Añejo)",
         "price": 1799,
-        "orderLink": "privatimport"
+        "orderLink": "privatimport",
+        "outOfStock": false
     },
     {
         "productId": "talavera-rod",
@@ -106,7 +64,8 @@
         "brand": "Azulejos",
         "title": "Talavera Röd (Añejo)",
         "price": 1799,
-        "orderLink": "privatimport"
+        "orderLink": "privatimport",
+        "outOfStock": false
     },
     {
         "productId": "talavera-blomma",
@@ -114,7 +73,62 @@
         "brand": "Azulejos",
         "title": "Talavera Blomma (Añejo)",
         "price": 1799,
-        "orderLink": "privatimport"
+        "orderLink": "privatimport",
+        "outOfStock": false
+    },
+    {
+        "productId": "skelly-blanco",
+        "imageSrc": "/products/skelly-blanco.png",
+        "brand": "Azulejos",
+        "title": "Skelly Blanco",
+        "price": 1237,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "skelly-reposado",
+        "imageSrc": "/products/skelly-reposado.png",
+        "brand": "Azulejos",
+        "title": "Skelly Reposado",
+        "price": 1399,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "skelly-anejo",
+        "imageSrc": "/products/skelly-anejo.png",
+        "brand": "Azulejos",
+        "title": "Skelly Añejo",
+        "price": 1697,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "skelly-anejo-gold",
+        "imageSrc": "/products/skelly-anejo-gold.png",
+        "brand": "Azulejos",
+        "title": "Skelly Añejo Gold",
+        "price": 1772,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "glas-blanco",
+        "imageSrc": "/products/glas-blanco.png",
+        "brand": "Azulejos",
+        "title": "Glas Blanco",
+        "price": 1237,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "glas-reposado",
+        "imageSrc": "/products/glas-reposado.png",
+        "brand": "Azulejos",
+        "title": "Glas Reposado",
+        "price": 1399,
+        "orderLink": "privatimport",
+        "outOfStock": true
     },
     {
         "productId": "barebone-svart",
@@ -122,7 +136,8 @@
         "brand": "Azulejos",
         "title": "Barebone Svart (Añejo)",
         "price": 1799,
-        "orderLink": "privatimport"
+        "orderLink": "privatimport",
+        "outOfStock": true
     },
     {
         "productId": "barebone-bla",
@@ -130,6 +145,7 @@
         "brand": "Azulejos",
         "title": "Barebone Blå (Añejo)",
         "price": 1799,
-        "orderLink": "privatimport"
+        "orderLink": "privatimport",
+        "outOfStock": true
     }
 ]

@@ -13,7 +13,8 @@
             title: 'Skelly Añejo',
             price: 1697,
             productId: 'skelly-anejo',
-            orderLink: '/privatimport'
+            orderLink: '/privatimport',
+            outOfOrder: 'Tillfälligt slut'
         },
         {
             imageSrc: blueTalavera,
@@ -21,7 +22,8 @@
             title: 'Talavera Blå (Añejo)',
             price: 1799,
             productId: 'talavera-bla',
-            orderLink: '/privatimport'
+            orderLink: '/privatimport',
+            outOfOrder: 'Tillfälligt slut'
         },
         {
             imageSrc: skellyBlanco,
@@ -29,7 +31,8 @@
             title: 'Skelly Blanco',
             price: 1297,
             productId: 'skelly-blanco',
-            orderLink: '/privatimport'
+            orderLink: '/privatimport',
+            outOfOrder: 'Tillfälligt slut'
         },
         {
             imageSrc: ducDeFoix,
@@ -38,7 +41,8 @@
             title: 'Brut Nature Reserva',
             price: 215,
             productId: 'duc-de-foix-brut',
-            orderLink: 'https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/'
+            orderLink: 'https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/',
+            outOfOrder: ''
         }
     ];
 </script>
@@ -49,7 +53,7 @@
         <img class="max-w-full w-full lg:w-1/2 object-cover" src={Agave} alt="Agave field in Mexico" />
         <div class="pt-5 md:p-10">
             <h1 class="text-2xl md:text-3xl mb-4">Välkommen</h1>
-            <p class="text-sm md:text-base leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui magnam totam modi excepturi praesentium amet similique tempore! Natus magnam vero fugiat illo rem animi quae nihil consectetur ab. Sapiente magni facilis veritatis, ea expedita eos veniam ex! Recusandae, nam officia? Pariatur fuga voluptate, laborum nulla aliquid eaque dignissimos exercitationem dolor accusamus eos eveniet quae possimus ipsam culpa voluptas sequi laboriosam quam neque aut molestiae perferendis voluptates vitae architecto quia. Nemo.</p>
+            <p class="text-sm md:text-base leading-relaxed">Los Azulejos är en av fem ledande tillverkare i Jalisco och som enda återförsäljare i EU har vi nöjet att presentera denna exklusiva dryck. Pedro Quintanilla är grundaren av denna unika dubbeldestillerade Tequila som tillverkas i delstaten Jalisco, Mexico. Tequilan framställs av 100% blå Weber agave som efter 7-10 år noga väljs ut och skördas för att bli denna förstklassiga dryck med sin unika identitet. Alla flaskorna tillverkas i Puebla. Glasflaskorna är handblåsta och keramikflaskorna (Talavera) är handgjorda, handmålade och signerade av konstnären vilket innebär att det inte finns två flaskor som ser exakt likadana ut.</p>
         </div>
     </section>
 
@@ -64,6 +68,14 @@
                         <img class="max-w-full h-80 w-auto m-auto object-cover" src={product.imageSrc} alt={product.title} />
                     </a>
                     <div class="text-center pb-4">
+
+                        <!-- Tillfällig outOfOrder funktion, ta även bort i const featuredProducts längre upp -->
+                        {#if product.outOfOrder}
+                            <p>{product.outOfOrder}</p>
+                        {:else}
+                            <p>Finns i lager</p>
+                        {/if}
+
                         {#if product.collection}
                             <p class="text-gray-700 pb-2">{product.brand}</p>
                             <p class="font-bold">{product.collection}</p>

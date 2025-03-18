@@ -9,6 +9,8 @@
 
         <h1 class="text-2xl mb-10">Alla produkter</h1>
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
+
+            <!-- outOfStock kanske ändras/ta bort? -->
             {#each products as product}
                 <Card
                     imageSrc={product.imageSrc}
@@ -18,6 +20,7 @@
                     price={product.price}
                     orderLink={product.orderLink}
                     productId={product.productId}
+                    outOfStock={product.outOfStock}
                 />
             {/each}
         </div>
