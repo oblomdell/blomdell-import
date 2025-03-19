@@ -1,16 +1,19 @@
 <script>
-    export let imageSrc = "";
-    export let brand = "";
-    export let collection = "";
-    export let title = "";
-    export let price = 0;
-    export let productId = "";
-    export let orderLink = "";
-    export let outOfStock;
+    /** @type {{imageSrc?: string, brand?: string, collection?: string, title?: string, price?: number, productId?: string, orderLink?: string, outOfStock: any}} */
+    let {
+        imageSrc = "",
+        brand = "",
+        collection = "",
+        title = "",
+        price = 0,
+        productId = "",
+        orderLink = "",
+        outOfStock,
+    } = $props();
 </script>
 
 <div class="max-w-sm rounded overflow-hidden shadow-xl border">
-    <a href={`/produkter/${productId}`} data-sveltekit-preload-data
+    <a href={`/produkter/${productId}`} data-sveltekit-preload-data aria-label="Läs mer om ${title}"
         ><img
             class="max-w-full h-80 w-auto m-auto object-fit"
             src={imageSrc}
@@ -38,7 +41,9 @@
                 class="underline">Läs mer</a
             >
             <a
-                href={orderLink.startsWith('http') ? orderLink : `/${orderLink}`}
+                href={orderLink.startsWith("http")
+                    ? orderLink
+                    : `/${orderLink}`}
                 target="_blank"
                 data-sveltekit-preload-data
                 class="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm"

@@ -1,9 +1,11 @@
 <script>
     import "../app.css";
-    import logo from "$lib/assets/logo.jpeg";
+    import logo from "$lib/assets/logo.jpeg?enhanced";
     import { page } from "$app/stores";
+    /** @type {{children?: import('svelte').Snippet}} */
+    let { children } = $props();
 
-    let menuOpen = false;
+    let menuOpen = $state(false);
 
     function toggleMenu() {
         menuOpen = !menuOpen;
@@ -60,11 +62,17 @@
         </nav>
 
         <!-- Mobile navigation -->
-        <div class="md:hidden flex items-center justify-between w-full px-5">
-            <a href="/" class="flex justify-center"
-                ><img class="h-16" src={logo} alt="Blomdell Import logo" /></a
+        <div class="md:hidden flex justify-between w-full px-5">
+            <a
+                href="/"
+                aria-label="Gå till startsidan"
+                ><enhanced:img
+                    class="h-16 w-auto object-contain block"
+                    src={logo}
+                    alt="Blomdell Import logo"
+                /></a
             >
-            <button on:click={toggleMenu} class="text-2xl">
+            <button onclick={toggleMenu} class="text-2xl">
                 {#if menuOpen}
                     ✕
                 {:else}
@@ -82,7 +90,7 @@
                         <a
                             href="/produkter"
                             data-sveltekit-preload-data="hover"
-                            on:click={toggleMenu}
+                            onclick={toggleMenu}
                             class="{$page.url.pathname === '/produkter'
                                 ? 'text-blue-950 underline'
                                 : ''} hover:underline focus:underline underline-offset-4"
@@ -93,7 +101,7 @@
                         <a
                             href="/privatimport"
                             data-sveltekit-preload-data="hover"
-                            on:click={toggleMenu}
+                            onclick={toggleMenu}
                             class="{$page.url.pathname === '/privatimport'
                                 ? 'text-blue-950 underline'
                                 : ''} hover:underline focus:underline underline-offset-4"
@@ -115,7 +123,7 @@
                         <a
                             href="/kontakt"
                             data-sveltekit-preload-data="hover"
-                            on:click={toggleMenu}
+                            onclick={toggleMenu}
                             class="{$page.url.pathname === '/kontakt'
                                 ? 'text-blue-950 underline'
                                 : ''} hover:underline focus:underline underline-offset-4"
@@ -128,9 +136,13 @@
 
         <!-- Desktop logo -->
         <!-- testa blå logga -->
-        <a href="/" data-sveltekit-preload-data="hover" class="hidden md:block"
-            ><img
-                class="max-w-full h-24"
+        <a
+            href="/"
+            data-sveltekit-preload-data="hover"
+            class="hidden md:block"
+            aria-label="Gå till startsidan"
+            ><enhanced:img
+                class="max-w-full h-24 object-contain"
                 src={logo}
                 alt="Blomdell Import logo"
             /></a
@@ -138,16 +150,19 @@
     </header>
 
     <!-- Main content -->
-    <slot />
+    {@render children?.()}
 
     <!-- Footer -->
     <footer class="mt-10">
         <div
             class="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center"
         >
-            <a href="/" data-sveltekit-preload-data="hover"
-                ><img
-                    class="max-w-full h-12"
+            <a
+                href="/"
+                data-sveltekit-preload-data="hover"
+                aria-label="Gå till startsidan"
+                ><enhanced:img
+                    class="max-w-full h-12 object-contain"
                     src={logo}
                     alt="Blomdell Import logo"
                 /></a

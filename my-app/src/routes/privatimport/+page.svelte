@@ -62,9 +62,9 @@
     </section>
 
     <section class="w-full lg:w-1/2 flex justify-center items-center">
-        <img
+        <enhanced:img
             class="max-w-full h-80 w-auto mx-auto object-cover"
-            src=/coverphotos/privatimport.jpg
+            src="/static/coverphotos/privatimport.jpg?enhanced"
             alt="Three Skelly Azulejos bottles"
         />
     </section>
