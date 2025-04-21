@@ -18,7 +18,7 @@
         data-sveltekit-preload-data
         aria-label="Läs mer om ${title}"
     >
-        <enhanced:img
+        <img
             class="max-w-full h-80 w-auto m-auto object-fit"
             src={imageSrc}
             alt={brand}
