@@ -1,7 +1,7 @@
 <script>
     import Agave from "$lib/assets/featured/agave-mexico.jpg?enhanced";
 
-    import skellyAnejo from "$lib/assets/featured/skelly-anejo.png?enhanced";
+    import skellyAnejo from "$lib/assets/featured/skelly-anejo.jpg?enhanced";
     import blueTalavera from "$lib/assets/featured/talavera-blå.jpeg?enhanced";
     import skellyBlanco from "$lib/assets/featured/skelly-blanco.png?enhanced";
     import ducDeFoix from "$lib/assets/featured/duc-de-foix.png?enhanced";
@@ -14,7 +14,7 @@
             price: 1799,
             productId: "skelly-anejo",
             orderLink: "/privatimport",
-            outOfOrder: "Tillfälligt slut",
+            outOfStock: true,
         },
         {
             imageSrc: blueTalavera,
@@ -23,7 +23,7 @@
             price: 1799,
             productId: "talavera-bla",
             orderLink: "/privatimport",
-            outOfOrder: "Tillfälligt slut",
+            outOfStock: false,
         },
         {
             imageSrc: skellyBlanco,
@@ -32,7 +32,7 @@
             price: 1339,
             productId: "skelly-blanco",
             orderLink: "/privatimport",
-            outOfOrder: "Tillfälligt slut",
+            outOfStock: true,
         },
         {
             imageSrc: ducDeFoix,
@@ -41,9 +41,8 @@
             title: "Brut Nature Reserva",
             price: 218,
             productId: "duc-de-foix-brut",
-            orderLink:
-                "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
-            outOfOrder: "",
+            orderLink: "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
+            outOfStock: false,
         },
     ];
 </script>
@@ -96,13 +95,6 @@
                         />
                     </a>
                     <div class="text-center pb-4">
-                        <!-- Tillfällig outOfOrder funktion, ta även bort i const featuredProducts längre upp -->
-                        {#if product.outOfOrder}
-                            <p>{product.outOfOrder}</p>
-                        {:else}
-                            <p>Finns i lager</p>
-                        {/if}
-
                         {#if product.collection}
                             <p class="text-gray-700 pb-2">{product.brand}</p>
                             <p class="font-bold">{product.collection}</p>
@@ -112,6 +104,16 @@
                         {/if}
                         <h1 class="font-bold text-lg">{product.title}</h1>
                         <p class="mb-3">{product.price} kr</p>
+
+                        <!-- Out of stock -->
+                        <p
+                            class={product.outOfStock
+                                ? "text-red-800 font-bold"
+                                : "invisible"}
+                        >
+                            Tillfälligt slut
+                        </p>
+
                         <div class="flex flex-col items-center space-y-2">
                             <a
                                 href={`/produkter/${product.productId}`}
@@ -122,11 +124,16 @@
                                 href={product.orderLink}
                                 data-sveltekit-preload-data="hover"
                                 target="_blank"
-                                class="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm"
-                                >Beställ</a
+                                class="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm {product.outOfStock
+                                    ? 'cursor-not-allowed opacity-50 pointer-events-none'
+                                    : ''}"
+                                aria-disabled={product.outOfStock}
+                                disabled={product.outOfStock}
                             >
-                            <!-- Vita knappar: -->
-                            <!-- class="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white" -->
+                                {product.outOfStock
+                                    ? "Ej tillgänglig"
+                                    : "Beställ"}
+                            </a>
                         </div>
                     </div>
                 </div>

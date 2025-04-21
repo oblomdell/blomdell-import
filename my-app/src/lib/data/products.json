@@ -67,15 +67,6 @@
         "outOfStock": false
     },
     {
-        "productId": "skelly-anejo-gold",
-        "imageSrc": "/products/skelly-anejo-gold.png",
-        "brand": "Azulejos",
-        "title": "Skelly Añejo Gold",
-        "price": 1799,
-        "orderLink": "privatimport",
-        "outOfStock": false
-    },
-    {
         "productId": "skelly-blanco",
         "imageSrc": "/products/skelly-blanco.png",
         "brand": "Azulejos",
@@ -98,6 +89,15 @@
         "imageSrc": "/products/skelly-anejo.jpg",
         "brand": "Azulejos",
         "title": "Skelly Añejo",
+        "price": 1799,
+        "orderLink": "privatimport",
+        "outOfStock": true
+    },
+    {
+        "productId": "skelly-anejo-gold",
+        "imageSrc": "/products/skelly-anejo-gold.png",
+        "brand": "Azulejos",
+        "title": "Skelly Añejo Gold",
         "price": 1799,
         "orderLink": "privatimport",
         "outOfStock": true
