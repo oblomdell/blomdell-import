@@ -23,7 +23,7 @@
             price: 1799,
             productId: "talavera-bla",
             orderLink: "/privatimport",
-            outOfStock: false,
+            outOfStock: true,
         },
         {
             imageSrc: skellyBlanco,

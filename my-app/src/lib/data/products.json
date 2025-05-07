@@ -40,15 +40,6 @@
         "outOfStock": false
     },
     {
-        "productId": "talavera-bla",
-        "imageSrc": "/products/talavera-bla.jpeg",
-        "brand": "Azulejos",
-        "title": "Talavera Blå (Añejo)",
-        "price": 1799,
-        "orderLink": "privatimport",
-        "outOfStock": false
-    },
-    {
         "productId": "talavera-rod",
         "imageSrc": "/products/talavera-rod.png",
         "brand": "Azulejos",
@@ -65,6 +56,15 @@
         "price": 1799,
         "orderLink": "privatimport",
         "outOfStock": false
+    },
+    {
+        "productId": "talavera-bla",
+        "imageSrc": "/products/talavera-bla.jpeg",
+        "brand": "Azulejos",
+        "title": "Talavera Blå (Añejo)",
+        "price": 1799,
+        "orderLink": "privatimport",
+        "outOfStock": true
     },
     {
         "productId": "skelly-blanco",
