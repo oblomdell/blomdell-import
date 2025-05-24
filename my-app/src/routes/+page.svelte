@@ -14,7 +14,7 @@
             price: 1799,
             productId: "skelly-anejo",
             orderLink: "/privatimport",
-            outOfStock: true,
+            outOfStock: false,
         },
         {
             imageSrc: blueTalavera,
@@ -23,7 +23,7 @@
             price: 1799,
             productId: "talavera-bla",
             orderLink: "/privatimport",
-            outOfStock: true,
+            outOfStock: false,
         },
         {
             imageSrc: skellyBlanco,
@@ -32,7 +32,7 @@
             price: 1339,
             productId: "skelly-blanco",
             orderLink: "/privatimport",
-            outOfStock: true,
+            outOfStock: false,
         },
         {
             imageSrc: ducDeFoix,
@@ -43,7 +43,7 @@
             productId: "duc-de-foix-brut",
             orderLink: "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
             outOfStock: false,
-        },
+        }
     ];
 </script>
 

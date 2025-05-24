@@ -64,7 +64,7 @@
         "title": "Talavera Blå (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "skelly-blanco",
@@ -73,7 +73,7 @@
         "title": "Skelly Blanco",
         "price": 1339,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "skelly-reposado",
@@ -82,7 +82,7 @@
         "title": "Skelly Reposado",
         "price": 1579,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "skelly-anejo",
@@ -91,7 +91,7 @@
         "title": "Skelly Añejo",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "skelly-anejo-gold",
@@ -100,7 +100,7 @@
         "title": "Skelly Añejo Gold",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "glas-blanco",
@@ -109,7 +109,7 @@
         "title": "Glas Blanco",
         "price": 1298,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "glas-reposado",
@@ -118,7 +118,7 @@
         "title": "Glas Reposado",
         "price": 1471,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "barebone-svart",
@@ -127,7 +127,7 @@
         "title": "Barebone Svart (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     },
     {
         "productId": "barebone-bla",
@@ -136,6 +136,6 @@
         "title": "Barebone Blå (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": true
+        "outOfStock": false
     }
 ]
