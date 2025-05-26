@@ -40,38 +40,11 @@
         "outOfStock": false
     },
     {
-        "productId": "talavera-rod",
-        "imageSrc": "/products/talavera-rod.avif",
-        "brand": "Azulejos",
-        "title": "Talavera Röd (Añejo)",
-        "price": 1799,
-        "orderLink": "privatimport",
-        "outOfStock": false
-    },
-    {
-        "productId": "talavera-blomma",
-        "imageSrc": "/products/talavera-blomma.avif",
-        "brand": "Azulejos",
-        "title": "Talavera Blomma (Añejo)",
-        "price": 1799,
-        "orderLink": "privatimport",
-        "outOfStock": false
-    },
-    {
-        "productId": "talavera-bla",
-        "imageSrc": "/products/talavera-bla.avif",
-        "brand": "Azulejos",
-        "title": "Talavera Blå (Añejo)",
-        "price": 1799,
-        "orderLink": "privatimport",
-        "outOfStock": false
-    },
-    {
         "productId": "skelly-blanco",
         "imageSrc": "/products/skelly-blanco.avif",
         "brand": "Azulejos",
         "title": "Skelly Blanco",
-        "price": 1339,
+        "price": 1399,
         "orderLink": "privatimport",
         "outOfStock": false
     },
@@ -98,6 +71,33 @@
         "imageSrc": "/products/skelly-anejo-gold.avif",
         "brand": "Azulejos",
         "title": "Skelly Añejo Gold",
+        "price": 1799,
+        "orderLink": "privatimport",
+        "outOfStock": false
+    },
+    {
+        "productId": "talavera-rod",
+        "imageSrc": "/products/talavera-rod.avif",
+        "brand": "Azulejos",
+        "title": "Talavera Röd (Añejo)",
+        "price": 1799,
+        "orderLink": "privatimport",
+        "outOfStock": false
+    },
+    {
+        "productId": "talavera-blomma",
+        "imageSrc": "/products/talavera-blomma.avif",
+        "brand": "Azulejos",
+        "title": "Talavera Blomma (Añejo)",
+        "price": 1799,
+        "orderLink": "privatimport",
+        "outOfStock": false
+    },
+    {
+        "productId": "talavera-bla",
+        "imageSrc": "/products/talavera-bla.avif",
+        "brand": "Azulejos",
+        "title": "Talavera Blå (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
         "outOfStock": false

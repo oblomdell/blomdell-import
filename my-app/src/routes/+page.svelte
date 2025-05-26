@@ -29,7 +29,7 @@
             imageSrc: skellyBlanco,
             brand: "Azulejos",
             title: "Skelly Blanco",
-            price: 1339,
+            price: 1399,
             productId: "skelly-blanco",
             orderLink: "/privatimport",
             outOfStock: false,
