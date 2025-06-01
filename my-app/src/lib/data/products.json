@@ -31,7 +31,7 @@
     },
     {
         "productId": "duc-de-foix-rose",
-        "imageSrc": "/products/cabernet.avif",
+        "imageSrc": "/products/rosé.avif",
         "brand": "Covides",
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Rosé",
@@ -121,19 +121,19 @@
         "outOfStock": false
     },
     {
-        "productId": "barebone-svart",
-        "imageSrc": "/products/barebone-svart.avif",
+        "productId": "barebone-lila",
+        "imageSrc": "/products/barebone-lila-low-res.png",
         "brand": "Azulejos",
-        "title": "Barebone Svart (Añejo)",
+        "title": "Barebone (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
         "outOfStock": false
     },
     {
-        "productId": "barebone-bla",
-        "imageSrc": "/products/barebone-bla.avif",
+        "productId": "barebone-gron",
+        "imageSrc": "/products/barebone-gron-low-res.png",
         "brand": "Azulejos",
-        "title": "Barebone Blå (Añejo)",
+        "title": "Barebone (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
         "outOfStock": false
