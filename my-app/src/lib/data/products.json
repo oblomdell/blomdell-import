@@ -100,7 +100,7 @@
         "title": "Talavera Blå (Añejo)",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": false
+        "outOfStock": true
     },
     {
         "productId": "glas-blanco",
