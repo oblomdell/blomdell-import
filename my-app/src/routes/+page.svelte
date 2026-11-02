@@ -14,7 +14,7 @@
             price: 1799,
             productId: "skelly-anejo",
             orderLink: "/privatimport",
-            outOfStock: false,
+            outOfStock: true,
         },
         {
             imageSrc: blueTalavera,

@@ -64,7 +64,7 @@
         "title": "Skelly Añejo",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": false
+        "outOfStock": true
     },
     {
         "productId": "skelly-anejo-gold",
@@ -73,7 +73,7 @@
         "title": "Skelly Añejo Gold",
         "price": 1799,
         "orderLink": "privatimport",
-        "outOfStock": false
+        "outOfStock": true
     },
     {
         "productId": "talavera-rod",
