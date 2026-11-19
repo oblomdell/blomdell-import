@@ -36,5 +36,4 @@ Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
 ## Driftsättning på Vercel
 
 1. Importera repot på [vercel.com/new](https://vercel.com/new).
-2. Sätt **Root Directory** till `my-app`.
-3. Framework Preset blir automatiskt **Next.js** — klicka **Deploy**.
+2. Framework Preset blir automatiskt **Next.js** — klicka **Deploy**.
