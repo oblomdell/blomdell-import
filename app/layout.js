@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
                     {/* Footer */}
                     <footer className="mt-10">
                         <div className="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center">
-                            <Link href="/">
+                            <Link href="/" aria-label="Gå till startsidan">
                                 <Image
                                     className="max-w-full h-12 w-auto"
                                     src={logo}

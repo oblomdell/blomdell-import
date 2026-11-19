@@ -9,7 +9,7 @@ import logo from "@/assets/logo.jpeg";
 const navItems = [
     { href: "/produkter", label: "PRODUKTER" },
     { href: "/privatimport", label: "PRIVATIMPORT" },
-    { href: "#", label: "RESTAURANGKUND" },
+    // { href: "/restaurangkund", label: "RESTAURANGKUND" },
     // { href: "/om-oss", label: "OM OSS" },
     { href: "/kontakt", label: "KONTAKT" },
 ];
@@ -31,7 +31,8 @@ function NavLinks({ pathname, onClick }) {
 }
 
 export default function Header() {
-    const pathname = usePathname();
+    // Ta bort ev. avslutande snedstreck så att "/produkter/" matchar "/produkter".
+    const pathname = usePathname().replace(/(.)\/$/, "$1");
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => setMenuOpen((open) => !open);
@@ -47,7 +48,7 @@ export default function Header() {
 
             {/* Mobile navigation */}
             <div className="md:hidden flex items-center justify-between w-full px-5">
-                <Link href="/" className="flex justify-center">
+                <Link href="/" className="flex justify-center" aria-label="Gå till startsidan">
                     <Image
                         className="h-16 w-auto"
                         src={logo}
@@ -75,7 +76,7 @@ export default function Header() {
 
             {/* Desktop logo */}
             {/* testa blå logga */}
-            <Link href="/" className="hidden md:block">
+            <Link href="/" className="hidden md:block" aria-label="Gå till startsidan">
                 <Image
                     className="max-w-full h-24 w-auto"
                     src={logo}

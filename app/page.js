@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 
 import Agave from "@/assets/featured/agave-mexico.jpg";
-import skellyAnejo from "@/assets/featured/skelly-anejo.png";
+import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
 import blueTalavera from "@/assets/featured/talavera-bla.jpeg";
 import skellyBlanco from "@/assets/featured/skelly-blanco.png";
 import ducDeFoix from "@/assets/featured/duc-de-foix.png";
@@ -12,9 +13,10 @@ const featuredProducts = [
         imageSrc: skellyAnejo,
         brand: "Azulejos",
         title: "Skelly Añejo",
-        price: 1697,
+        price: 1799,
         productId: "skelly-anejo",
         orderLink: "/privatimport",
+        outOfStock: true,
     },
     {
         imageSrc: blueTalavera,
@@ -23,23 +25,26 @@ const featuredProducts = [
         price: 1799,
         productId: "talavera-bla",
         orderLink: "/privatimport",
+        outOfStock: true,
     },
     {
         imageSrc: skellyBlanco,
         brand: "Azulejos",
         title: "Skelly Blanco",
-        price: 1297,
+        price: 1399,
         productId: "skelly-blanco",
         orderLink: "/privatimport",
+        outOfStock: false,
     },
     {
         imageSrc: ducDeFoix,
         brand: "Covides",
         collection: "Duc De Foix",
         title: "Brut Nature Reserva",
-        price: 215,
+        price: 218,
         productId: "duc-de-foix-brut",
         orderLink: "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
+        outOfStock: false,
     },
 ];
 
@@ -47,17 +52,29 @@ export default function Home() {
     return (
         <main className="max-w-screen-xl mx-auto">
             <section className="flex flex-col lg:flex-row items-center mb-24 px-4">
-                <Image
-                    className="max-w-full w-full h-auto lg:w-1/2 object-cover"
-                    src={Agave}
-                    alt="Agave field in Mexico"
-                    sizes="(min-width: 1024px) 640px, 100vw"
-                    priority
-                />
-                <div className="pt-5 md:p-10">
+                <div className="w-full lg:w-1/2">
+                    <Image
+                        className="flex w-full h-auto object-cover"
+                        src={Agave}
+                        alt="Agave field in Mexico"
+                        sizes="(min-width: 1024px) 640px, 100vw"
+                        priority
+                    />
+                </div>
+                <div className="pt-5 md:p-10 lg:w-1/2">
                     <h1 className="text-2xl md:text-3xl mb-4">Välkommen</h1>
                     <p className="text-sm md:text-base leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui magnam totam modi excepturi praesentium amet similique tempore! Natus magnam vero fugiat illo rem animi quae nihil consectetur ab. Sapiente magni facilis veritatis, ea expedita eos veniam ex! Recusandae, nam officia? Pariatur fuga voluptate, laborum nulla aliquid eaque dignissimos exercitationem dolor accusamus eos eveniet quae possimus ipsam culpa voluptas sequi laboriosam quam neque aut molestiae perferendis voluptates vitae architecto quia. Nemo.
+                        Los Azulejos är en av fem ledande tillverkare i Jalisco och som
+                        enda återförsäljare i EU har vi nöjet att presentera denna
+                        exklusiva dryck. Pedro Quintanilla är grundaren av denna unika
+                        dubbeldestillerade Tequila som tillverkas i delstaten Jalisco,
+                        Mexico. Tequilan framställs av 100% blå Weber agave som efter
+                        7-10 år noga väljs ut och skördas för att bli denna
+                        förstklassiga dryck med sin unika identitet. Alla flaskorna
+                        tillverkas i Puebla. Glasflaskorna är handblåsta och
+                        keramikflaskorna (Talavera) är handgjorda, handmålade och
+                        signerade av konstnären vilket innebär att det inte finns två
+                        flaskor som ser exakt likadana ut.
                     </p>
                 </div>
             </section>
@@ -71,7 +88,10 @@ export default function Home() {
                             key={product.productId}
                             className="max-w-sm rounded overflow-hidden border shadow-xl"
                         >
-                            <Link href={`/produkter/${product.productId}`}>
+                            <Link
+                                href={`/produkter/${product.productId}`}
+                                aria-label={`Gå till produktsidan för ${product.title}`}
+                            >
                                 <Image
                                     className="max-w-full h-80 w-auto m-auto object-cover"
                                     src={product.imageSrc}
@@ -93,6 +113,9 @@ export default function Home() {
                                 )}
                                 <h1 className="font-bold text-lg">{product.title}</h1>
                                 <p className="mb-3">{product.price} kr</p>
+
+                                <OutOfStockLabel outOfStock={product.outOfStock} />
+
                                 <div className="flex flex-col items-center space-y-2">
                                     <Link
                                         href={`/produkter/${product.productId}`}
@@ -100,15 +123,10 @@ export default function Home() {
                                     >
                                         Läs mer
                                     </Link>
-                                    <a
-                                        href={product.orderLink}
-                                        target="_blank"
-                                        className="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm"
-                                    >
-                                        Beställ
-                                    </a>
-                                    {/* Vita knappar: */}
-                                    {/* className="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white" */}
+                                    <OrderButton
+                                        orderLink={product.orderLink}
+                                        outOfStock={product.outOfStock}
+                                    />
                                 </div>
                             </div>
                         </div>

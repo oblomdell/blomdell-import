@@ -21,7 +21,8 @@ npm run dev
 | `app/produkter/[productId]/page.js` | Produktsida (genereras statiskt vid build)        |
 | `app/privatimport/page.js`          | Instruktioner för privatimport                    |
 | `app/kontakt/page.js`               | Kontakt                                           |
-| `components/`                       | `Header` (navigering/mobilmeny) och `Card`        |
+| `components/`                       | `Header` (meny), `Card`, `OrderButton`            |
+| `app/icon.png`, `app/apple-icon.png` | Flikikon (favicon) och ikon för hemskärm        |
 | `data/products.json`                | Produktdata — lägg till nya produkter här         |
 | `assets/`                           | Bilder som importeras i koden (logga, utvalda)    |
 | `public/`                           | Statiska filer, t.ex. `/products/*.png`           |
@@ -29,7 +30,9 @@ npm run dev
 ## Ny produkt
 
 1. Lägg bilden i `public/products/`.
-2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `title`, `price`, `orderLink` (och ev. `collection`).
+2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `title`, `price`, `orderLink`, `outOfStock` (och ev. `collection`).
+
+Sätt `"outOfStock": true` för att visa "Tillfälligt slut" och inaktivera beställknappen.
 
 Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
 

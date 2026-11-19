@@ -69,10 +69,10 @@ export default async function ProductPage({ params }) {
                         Beställ här
                     </a>
 
-                    <p className="mt-6 text-gray-700 leading-relaxed">
+                    {/* <p className="mt-6 text-gray-700 leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus ullamcorper felis.
                         Integer non augue in lacus bibendum vehikel. Curabitur commodo, justo id ultrices imperdiet, urna est facilisis.
-                    </p>
+                    </p> */}
                 </div>
             </div>
         </main>

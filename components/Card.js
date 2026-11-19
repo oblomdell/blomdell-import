@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 
 export default function Card({
     imageSrc = "",
@@ -9,10 +10,11 @@ export default function Card({
     price = 0,
     productId = "",
     orderLink = "",
+    outOfStock = false,
 }) {
     return (
         <div className="max-w-sm rounded overflow-hidden shadow-xl border">
-            <Link href={`/produkter/${productId}`}>
+            <Link href={`/produkter/${productId}`} aria-label={`Läs mer om ${title}`}>
                 <Image
                     className="max-w-full h-80 w-auto m-auto object-fit"
                     src={imageSrc}
@@ -24,26 +26,23 @@ export default function Card({
             </Link>
             <div className="text-center pb-4">
                 <p className="text-gray-700 pb-2">{brand}</p>
+
                 {collection ? (
                     <p className="font-bold">{collection}</p>
                 ) : (
                     <p className="invisible">Placeholder</p>
                 )}
+
                 <h1 className="font-bold">{title}</h1>
                 <p className="mb-3">{price} kr</p>
+
+                <OutOfStockLabel outOfStock={outOfStock} />
+
                 <div className="flex flex-col items-center space-y-2">
                     <Link href={`/produkter/${productId}`} className="underline">
                         Läs mer
                     </Link>
-                    <a
-                        href={orderLink}
-                        target="_blank"
-                        className="inline-block border border-black px-8 py-2 text-white bg-blue-950 hover:bg-blue-800 transition rounded-sm"
-                    >
-                        Beställ
-                    </a>
-                    {/* Vita knappar: */}
-                    {/* className="border border-black px-8 py-2 text-sm rounded-sm hover:bg-blue-950 hover:text-white" */}
+                    <OrderButton orderLink={orderLink} outOfStock={outOfStock} />
                 </div>
             </div>
         </div>
