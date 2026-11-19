@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+
+# Next.js
+/.next
+/out
+next-env.d.ts
+
+# Vercel
+.vercel
+
+.env
+.env.*
+!.env.example
