@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+module.exports = {
+  content: ['./app/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
-        'roboto-slab': ['Roboto Slab', 'serif']
+        'roboto-slab': ['var(--font-roboto-slab)', 'Roboto Slab', 'serif']
       }
     }
   },

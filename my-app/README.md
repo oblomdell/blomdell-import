@@ -1,38 +1,40 @@
-# create-svelte
+# Blomdell Import
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Webbplats för Blomdell Import, byggd med [Next.js](https://nextjs.org) (App Router) och Tailwind CSS.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Kom igång
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Öppna sedan [http://localhost:3000](http://localhost:3000).
 
-To create a production version of your app:
+## Struktur
 
-```bash
-npm run build
-```
+| Sökväg                              | Innehåll                                          |
+| ----------------------------------- | ------------------------------------------------- |
+| `app/layout.js`                     | Gemensam layout (ram, header, footer, typsnitt)   |
+| `app/page.js`                       | Startsidan                                        |
+| `app/produkter/page.js`             | Alla produkter                                    |
+| `app/produkter/[productId]/page.js` | Produktsida (genereras statiskt vid build)        |
+| `app/privatimport/page.js`          | Instruktioner för privatimport                    |
+| `app/kontakt/page.js`               | Kontakt                                           |
+| `components/`                       | `Header` (navigering/mobilmeny) och `Card`        |
+| `data/products.json`                | Produktdata — lägg till nya produkter här         |
+| `assets/`                           | Bilder som importeras i koden (logga, utvalda)    |
+| `public/`                           | Statiska filer, t.ex. `/products/*.png`           |
 
-You can preview the production build with `npm run preview`.
+## Ny produkt
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+1. Lägg bilden i `public/products/`.
+2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `title`, `price`, `orderLink` (och ev. `collection`).
+
+Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
+
+## Driftsättning på Vercel
+
+1. Importera repot på [vercel.com/new](https://vercel.com/new).
+2. Sätt **Root Directory** till `my-app`.
+3. Framework Preset blir automatiskt **Next.js** — klicka **Deploy**.
