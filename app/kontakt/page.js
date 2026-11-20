@@ -1,5 +1,13 @@
+import { openGraph } from "@/lib/site";
 export const metadata = {
-    title: "Kontakt | Blomdell Import",
+    title: "Kontakt",
+    description: "Kontakta Blomdell Import – telefon och e-post.",
+    alternates: { canonical: "/kontakt/" },
+    openGraph: openGraph({
+        path: "/kontakt/",
+        title: "Kontakt | Blomdell Import",
+        description: "Kontakta Blomdell Import – telefon och e-post.",
+    }),
 };
 
 export default function Kontakt() {

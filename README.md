@@ -24,6 +24,8 @@ npm run dev
 | `components/`                       | `Header` (meny), `Card`, `OrderButton`            |
 | `app/icon.png`, `app/apple-icon.png` | Flikikon (favicon) och ikon för hemskärm        |
 | `data/products.json`                | Produktdata — lägg till nya produkter här         |
+| `lib/site.js`                       | Officiell adress (www.blomdellimport.se), namn och beskrivning för SEO |
+| `app/robots.js`, `app/sitemap.js`   | robots.txt och sitemap.xml (genereras automatiskt) |
 | `assets/`                           | Bilder som importeras i koden (logga, utvalda)    |
 | `public/`                           | Statiska filer, t.ex. `/products/*.png`           |
 
