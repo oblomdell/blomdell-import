@@ -1,8 +1,17 @@
+import { openGraph } from "@/lib/site";
 import products from "@/data/products.json";
 import Card from "@/components/Card";
 
 export const metadata = {
-    title: "Produkter | Blomdell Import",
+    title: "Produkter",
+    description:
+        "Hela sortimentet: Los Azulejos tequila (Skelly, Talavera, Glas, Barebone) och viner från Covides.",
+    alternates: { canonical: "/produkter/" },
+    openGraph: openGraph({
+        path: "/produkter/",
+        title: "Produkter | Blomdell Import",
+        description: "Hela sortimentet: Los Azulejos tequila (Skelly, Talavera, Glas, Barebone) och viner från Covides.",
+    }),
 };
 
 export default function Produkter() {

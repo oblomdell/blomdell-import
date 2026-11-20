@@ -1,8 +1,17 @@
+import { openGraph } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-    title: "Privatimport | Blomdell Import",
+    title: "Privatimport",
+    description:
+        "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.",
+    alternates: { canonical: "/privatimport/" },
+    openGraph: openGraph({
+        path: "/privatimport/",
+        title: "Privatimport | Blomdell Import",
+        description: "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.",
+    }),
 };
 
 const linkClass = "underline text-blue-600";

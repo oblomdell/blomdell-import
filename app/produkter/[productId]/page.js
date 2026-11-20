@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import products from "@/data/products.json";
+import { openGraph } from "@/lib/site";
 
 // Bygg alla produktsidor statiskt vid build (motsvarar SvelteKits load-funktion).
 export function generateStaticParams() {
@@ -14,10 +15,21 @@ function findProduct(productId) {
 export async function generateMetadata({ params }) {
     const { productId } = await params;
     const product = findProduct(productId);
+    if (!product) {
+        return { title: "Produkten hittades inte", robots: { index: false } };
+    }
+
+    const name = product.collection
+        ? `${product.collection} ${product.title}`
+        : product.title;
+    const url = `/produkter/${product.productId}/`;
+    const description = `${name} från ${product.brand}. ${product.price} kr.`;
+
     return {
-        title: product
-            ? `${product.title} | Blomdell Import`
-            : "Produkten hittades inte | Blomdell Import",
+        title: name,
+        description,
+        alternates: { canonical: url },
+        openGraph: openGraph({ path: url, title: `${name} | Blomdell Import`, description }),
     };
 }
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import logo from "@/assets/logo.jpeg";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, IS_PRODUCTION, openGraph } from "@/lib/site";
 import "./globals.css";
 
 const robotoSlab = Roboto_Slab({
@@ -12,8 +13,17 @@ const robotoSlab = Roboto_Slab({
 });
 
 export const metadata = {
-    title: "Blomdell Import",
-    description: "Tequila och vin från Blomdell C&M AB.",
+    metadataBase: new URL(SITE_URL),
+    title: {
+        default: `${SITE_NAME} – Premiumtequila och vin`,
+        template: `%s | ${SITE_NAME}`,
+    },
+    description: SITE_DESCRIPTION,
+    applicationName: SITE_NAME,
+    alternates: { canonical: "/" },
+    openGraph: openGraph({ path: "/" }),
+    // Förhandsvisningar (dev/design-grenarna) ska inte hamna i Google.
+    robots: IS_PRODUCTION ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export default function RootLayout({ children }) {
