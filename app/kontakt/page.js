@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { openGraph } from "@/lib/site";
 import SocialLinks from "@/components/SocialLinks";
+import contactImage from "@/assets/kontakt-skelly-hav.jpg";
 
 const description = "Kontakta Blomdell Import – telefon och e-post.";
 
@@ -59,10 +60,9 @@ export default function Kontakt() {
         <main className="max-w-screen-xl mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                 <Image
-                    src="/coverphotos/cover3.jpeg"
-                    alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
-                    width={1200}
-                    height={800}
+                    src={contactImage}
+                    alt="Skelly-flaska från Los Azulejos på en klippa vid havet"
+                    placeholder="blur"
                     sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw"
                     className="w-full h-64 sm:h-80 lg:h-[30rem] object-cover"
                     priority

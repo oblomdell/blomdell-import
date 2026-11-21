@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { getProduct, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, SOCIAL_LINKS } from "@/lib/site";
 
-import Agave from "@/assets/featured/agave-mexico.jpg";
+import heroImage from "@/assets/hero-skelly-talavera.jpg";
 import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
 import blueTalavera from "@/assets/featured/talavera-bla.jpeg";
 import skellyBlanco from "@/assets/featured/skelly-blanco.webp";
@@ -49,8 +49,8 @@ export default function Home() {
                 <div className="w-full lg:w-1/2">
                     <Image
                         className="flex w-full h-auto object-cover"
-                        src={Agave}
-                        alt="Agavefält i Jalisco, Mexiko"
+                        src={heroImage}
+                        alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
                         sizes="(min-width: 1024px) 640px, 100vw"
                         placeholder="blur"
                         priority
