@@ -29,11 +29,11 @@ function ExternalLink({ href, children }) {
 // Privatimport har 24 px sidmarginal (px-6), som på main.
 export default function Privatimport() {
     return (
-        <main className="max-w-screen-xl mx-auto px-6">
+        <main className="max-w-screen-xl mx-auto px-6 py-12">
             <ImageTextSection
                 image={privatimportImage}
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
-                textClassName="pt-5 md:w-1/2 lg:pt-0 lg:pr-10"
+                textClassName="md:w-1/2 lg:pr-10"
                 imageRight
                 priority
             >
