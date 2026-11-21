@@ -34,7 +34,9 @@ npm run dev
 1. Lägg bilden i `public/products/`.
 2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `title`, `price`, `orderLink`, `outOfStock` (och ev. `collection`).
 
-Sätt `"outOfStock": true` för att visa "Tillfälligt slut" och inaktivera beställknappen.
+Sätt `"outOfStock": true` för att visa "Tillfälligt slut" och inaktivera beställknappen – på produktkortet, produktsidan och startsidan samtidigt.
+
+Startsidans utvalda produkter väljs i `featured`-listan i `app/page.js` (productId + bild). Namn, pris och lagerstatus hämtas från `products.json`.
 
 Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
 

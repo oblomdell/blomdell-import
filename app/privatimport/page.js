@@ -26,6 +26,7 @@ export default function Privatimport() {
                     <a
                         href="https://www.systembolaget.se/bestalla-och-handla/privatimport/"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className={linkClass}
                     >
                         privatimport
@@ -37,6 +38,7 @@ export default function Privatimport() {
                     <a
                         href="https://www.systembolaget.se/sortiment/?q=blomdell"
                         target="_blank"
+                        rel="noopener noreferrer"
                         className={linkClass}
                     >
                         här
@@ -49,6 +51,7 @@ export default function Privatimport() {
                         <a
                             href="https://www.systembolaget.se/konto/skapa/"
                             target="_blank"
+                        rel="noopener noreferrer"
                             className={linkClass}
                         >
                             Skapa ett konto
@@ -60,6 +63,7 @@ export default function Privatimport() {
                         <a
                             href="https://www.systembolaget.se/bestalla-och-handla/privatimport/forfragan/"
                             target="_blank"
+                        rel="noopener noreferrer"
                             className={linkClass}
                         >
                             via detta formulär
@@ -77,7 +81,7 @@ export default function Privatimport() {
                                 Lägg till dryck:{" "}
                                 <strong>
                                     använd namn som står på vår{" "}
-                                    <Link href="/produkter" className={linkClass}>
+                                    <Link href="/produkter/" className={linkClass}>
                                         produktsida
                                     </Link>{" "}
                                     (t.ex. &quot;Skelly Anejo&quot; eller &quot;Talavera Blå&quot;)
@@ -101,7 +105,7 @@ export default function Privatimport() {
                 </ul>
                 <p>
                     Har du frågor kring beställningen?{" "}
-                    <Link href="/kontakt" className={linkClass}>
+                    <Link href="/kontakt/" className={linkClass}>
                         Kontakta oss
                     </Link>
                     .
