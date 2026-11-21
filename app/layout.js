@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
+import AgeGate from "@/components/AgeGate";
+import { ageGateScript } from "@/lib/ageGate";
 import logo from "@/assets/logo.jpeg";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, IS_PRODUCTION, openGraph } from "@/lib/site";
 import "./globals.css";
@@ -31,7 +33,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="sv" className={robotoSlab.variable}>
+        // suppressHydrationWarning: data-age-ok sätts av skriptet nedan innan React tar över.
+        <html lang="sv" className={robotoSlab.variable} suppressHydrationWarning>
+            <head>
+                <script dangerouslySetInnerHTML={{ __html: ageGateScript }} />
+                {/* Utan JavaScript går det inte att svara – visa då sajten direkt. */}
+                <noscript>
+                    <style>{`#aldersfraga{display:none}body{overflow:auto!important}`}</style>
+                </noscript>
+            </head>
             <body>
                 <a
                     href="#innehall"
@@ -63,6 +73,12 @@ export default function RootLayout({ children }) {
                         </div>
                     </footer>
                 </div>
+                {/* Blå linje som alltid syns längst ner på skärmen och fullbordar ramen */}
+                <div
+                    aria-hidden="true"
+                    className="fixed inset-x-0 bottom-0 z-40 h-2 bg-blue-950 pointer-events-none"
+                />
+                <AgeGate />
                 <Analytics />
                 <SpeedInsights />
             </body>

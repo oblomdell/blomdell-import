@@ -25,30 +25,13 @@ export default function Produkter() {
     return (
         <main className="max-w-screen-xl mx-auto px-4">
             <div className="flex flex-col items-center">
-                <h1 className="text-2xl mb-6">Alla produkter</h1>
-
-                {/* Snabbhopp till kategorierna */}
-                <nav aria-label="Kategorier" className="mb-10">
-                    <ul className="flex gap-3">
-                        {groups.map(({ category, products }) => (
-                            <li key={category}>
-                                <a
-                                    href={`#${slug(category)}`}
-                                    className="inline-block border border-blue-950 px-5 py-1.5 rounded-full text-sm hover:bg-blue-950 hover:text-white transition"
-                                >
-                                    {category} ({products.length})
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+                <h1 className="text-2xl mb-10">Alla produkter</h1>
 
                 {groups.map(({ category, products }) => (
                     <section
                         key={category}
-                        id={slug(category)}
                         aria-labelledby={`${slug(category)}-rubrik`}
-                        className="w-full scroll-mt-6 mb-14"
+                        className="w-full mb-14"
                     >
                         <h2
                             id={`${slug(category)}-rubrik`}
