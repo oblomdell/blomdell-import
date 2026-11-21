@@ -32,7 +32,7 @@ export default function Kontakt() {
                 <ContactCard className="mb-8" />
 
                 <h2 className="text-xl mb-3 text-center">Följ oss</h2>
-                <SocialLinks showLabels className="justify-center" />
+                <SocialLinks showLabels className="flex-col sm:flex-row justify-center" />
             </ImageTextSection>
         </main>
     );

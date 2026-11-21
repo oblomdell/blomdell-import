@@ -80,7 +80,7 @@ export default function Home() {
                     {featuredProducts.map((product) => (
                         <div
                             key={product.productId}
-                            className="max-w-sm rounded overflow-hidden border shadow-xl"
+                            className="w-full max-w-sm mx-auto rounded overflow-hidden border shadow-xl"
                         >
                             <Link
                                 href={`/produkter/${product.productId}/`}

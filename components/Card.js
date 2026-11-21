@@ -10,7 +10,7 @@ export default function Card({ product, headingLevel = "h2" }) {
     const href = `/produkter/${productId}/`;
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-xl border">
+        <div className="w-full max-w-sm mx-auto rounded overflow-hidden shadow-xl border">
             <Link href={href} aria-label={`Läs mer om ${productName(product)}`}>
                 <Image
                     className="max-w-full h-80 w-auto m-auto object-fit"
