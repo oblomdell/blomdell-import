@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
 import ImageTextSection from "@/components/ImageTextSection";
 import { openGraph } from "@/lib/site";
-import { linkClass, primaryButtonClass, widePageClass } from "@/lib/styles";
+import { linkClass, primaryButtonClass, imageTextPageClass } from "@/lib/styles";
 import restaurantImage from "@/assets/restaurang-talavera.jpg";
 
 const description =
@@ -36,7 +36,7 @@ const mailto = `mailto:info@blomdell.com?subject=${encodeURIComponent(mailSubjec
 
 export default function Restaurangkund() {
     return (
-        <main className={widePageClass}>
+        <main className={imageTextPageClass}>
             <ImageTextSection
                 image={restaurantImage}
                 alt="Handmålade Talavera-flaskor från Los Azulejos på ett träbord"

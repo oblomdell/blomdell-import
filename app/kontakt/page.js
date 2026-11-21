@@ -2,7 +2,7 @@ import PageHeading from "@/components/PageHeading";
 import ImageTextSection from "@/components/ImageTextSection";
 import SocialLinks from "@/components/SocialLinks";
 import { openGraph } from "@/lib/site";
-import { widePageClass } from "@/lib/styles";
+import { imageTextPageClass } from "@/lib/styles";
 import contactImage from "@/assets/kontakt-skelly-hav.jpg";
 
 const description = "Kontakta Blomdell Import – telefon och e-post.";
@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function Kontakt() {
     return (
-        <main className={widePageClass}>
+        <main className={imageTextPageClass}>
             <ImageTextSection
                 image={contactImage}
                 alt="Skelly-flaska från Los Azulejos på en klippa vid havet"
