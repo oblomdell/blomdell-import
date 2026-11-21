@@ -1,6 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
+import PageHeading from "@/components/PageHeading";
+import ImageTextSection from "@/components/ImageTextSection";
+import ContactCard from "@/components/ContactCard";
 import { openGraph } from "@/lib/site";
+import { linkClass, pageClass, primaryButtonClass } from "@/lib/styles";
+import restaurantImage from "@/assets/restaurang-talavera.jpg";
 
 const description =
     "För restauranger, barer och hotell: servera Los Azulejos tequila och viner från Covides. Kontakta Blomdell Import för sortiment och priser.";
@@ -31,67 +35,49 @@ Produkter vi är intresserade av:
 Med vänliga hälsningar`;
 const mailto = `mailto:info@blomdell.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
-const linkClass = "underline text-blue-600 hover:text-blue-700";
-
 export default function Restaurangkund() {
     return (
-        <main className="max-w-screen-xl mx-auto px-6 md:px-12 py-6">
-            <Image
-                src="/coverphotos/cover1.jpg"
+        <main className={pageClass}>
+            <ImageTextSection
+                image={restaurantImage}
                 alt="Handmålade Talavera-flaskor från Los Azulejos på ett träbord"
-                width={1920}
-                height={1080}
-                sizes="(min-width: 1024px) 896px, 100vw"
-                className="w-full max-w-4xl mx-auto h-56 sm:h-72 lg:h-96 object-cover mb-10"
                 priority
-            />
-            <div className="max-w-2xl mx-auto">
-                <h1 className="text-2xl mb-5 text-center">Restaurangkund</h1>
+            >
+                <PageHeading align="responsive">Restaurangkund</PageHeading>
 
-                <p className="mb-4 leading-relaxed">
-                    Driver du restaurang, bar eller hotell och vill erbjuda dina gäster något
-                    utöver det vanliga? Som enda återförsäljare i EU av{" "}
-                    <strong>Los Azulejos</strong> kan vi erbjuda en premiumtequila med
-                    handgjorda, handmålade flaskor som blir ett blickfång i baren – och
-                    viner från <strong>Covides</strong>.
-                </p>
-                <p className="mb-8 leading-relaxed">
-                    Kontakta oss så berättar vi mer om sortiment, priser och hur
-                    beställning och leverans går till.
-                </p>
+                <div className="leading-relaxed space-y-3 mb-8">
+                    <p>
+                        Driver du restaurang, bar eller hotell och vill erbjuda dina gäster något
+                        utöver det vanliga? Som enda återförsäljare i EU av{" "}
+                        <strong>Los Azulejos</strong> kan vi erbjuda en premiumtequila med
+                        handgjorda, handmålade flaskor som blir ett blickfång i baren – och
+                        viner från <strong>Covides</strong>.
+                    </p>
+                    <p>
+                        Kontakta oss så berättar vi mer om sortiment, priser och hur
+                        beställning och leverans går till.
+                    </p>
+                </div>
 
                 <h2 className="text-xl mb-3">Det här får du hjälp med</h2>
-                <ul className="list-disc pl-6 mb-10 space-y-1">
+                <ul className="list-disc pl-6 space-y-1 leading-relaxed">
                     <li>Information om sortimentet och vad som passar din verksamhet</li>
                     <li>Priser för restauranger och barer</li>
                     <li>Beställning och leverans</li>
                 </ul>
+            </ImageTextSection>
 
-                <section
-                    aria-labelledby="kontakt-rubrik"
-                    className="border rounded-md shadow-xl p-6 md:p-8 text-center"
-                >
-                    <h2 id="kontakt-rubrik" className="text-xl mb-4">
-                        Kontakta oss
-                    </h2>
-                    <p>Marie Blomdell</p>
-                    <p>
-                        <a href="tel:+46705375315" className="hover:text-blue-700">
-                            +46 70 537 53 15
+            <section aria-labelledby="kontakt-rubrik" className="max-w-xl mx-auto mt-16">
+                <h2 id="kontakt-rubrik" className="text-xl mb-4 text-center">
+                    Kontakta oss
+                </h2>
+                <ContactCard>
+                    <div className="text-center">
+                        <a href={mailto} className={primaryButtonClass}>
+                            Skicka förfrågan
                         </a>
-                    </p>
-                    <p className="mb-6">
-                        <a href="mailto:info@blomdell.com" className={linkClass}>
-                            info@blomdell.com
-                        </a>
-                    </p>
-                    <a
-                        href={mailto}
-                        className="inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
-                    >
-                        Skicka förfrågan
-                    </a>
-                </section>
+                    </div>
+                </ContactCard>
 
                 <p className="mt-10 text-center">
                     Se hela sortimentet på vår{" "}
@@ -100,7 +86,7 @@ export default function Restaurangkund() {
                     </Link>
                     .
                 </p>
-            </div>
+            </section>
         </main>
     );
 }

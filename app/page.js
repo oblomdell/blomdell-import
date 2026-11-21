@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import PageHeading from "@/components/PageHeading";
+import ImageTextSection from "@/components/ImageTextSection";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
 import { getProduct, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, SOCIAL_LINKS } from "@/lib/site";
+import { pageClass, primaryButtonClass } from "@/lib/styles";
 
 import heroImage from "@/assets/hero-skelly-talavera.jpg";
 import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
@@ -43,22 +46,16 @@ const organizationJsonLd = {
 
 export default function Home() {
     return (
-        <main className="max-w-screen-xl mx-auto">
+        <main className={pageClass}>
             <JsonLd data={organizationJsonLd} />
-            <section className="flex flex-col lg:flex-row items-center mb-24 px-4">
-                <div className="w-full lg:w-1/2">
-                    <Image
-                        className="flex w-full h-auto object-cover"
-                        src={heroImage}
-                        alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
-                        sizes="(min-width: 1024px) 640px, 100vw"
-                        placeholder="blur"
-                        priority
-                    />
-                </div>
-                <div className="pt-5 md:p-10 lg:w-1/2">
-                    <h1 className="text-2xl md:text-3xl mb-4">Välkommen</h1>
-                    <p className="text-sm md:text-base leading-relaxed">
+            <div className="mb-24">
+                <ImageTextSection
+                    image={heroImage}
+                    alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
+                    priority
+                >
+                    <PageHeading align="responsive">Välkommen</PageHeading>
+                    <p className="leading-relaxed">
                         Los Azulejos är en av fem ledande tillverkare i Jalisco och som
                         enda återförsäljare i EU har vi nöjet att presentera denna
                         exklusiva dryck. Pedro Quintanilla är grundaren av denna unika
@@ -71,10 +68,10 @@ export default function Home() {
                         signerade av konstnären vilket innebär att det inte finns två
                         flaskor som ser exakt likadana ut.
                     </p>
-                </div>
-            </section>
+                </ImageTextSection>
+            </div>
 
-            <section className="flex flex-col items-center px-4">
+            <section className="flex flex-col items-center">
                 {/* <h1 className="text-4xl font-bold mb-10">Produkter</h1> */}
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
                     {/* Featured products */}
@@ -129,10 +126,7 @@ export default function Home() {
                     ))}
                 </div>
 
-                <Link
-                    href="/produkter/"
-                    className="inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
-                >
+                <Link href="/produkter/" className={primaryButtonClass}>
                     Alla produkter
                 </Link>
             </section>
