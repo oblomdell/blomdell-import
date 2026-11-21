@@ -25,11 +25,10 @@ export default function Kontakt() {
             <ImageTextSection
                 image={contactImage}
                 alt="Skelly-flaska från Los Azulejos på en klippa vid havet"
-                imageRight
                 priority
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
-                <ContactCard className="mb-8" />
+                <ContactCard className="mb-8 lg:mx-0" />
 
                 <h2 className="text-xl mb-3 text-center lg:text-left">Följ oss</h2>
                 <SocialLinks showLabels className="justify-center lg:justify-start" />

@@ -39,10 +39,16 @@ const MailIcon = () => (
     </svg>
 );
 
-/** Kort med kontaktuppgifter. children visas längst ner i kortet (t.ex. en knapp). */
+/**
+ * Kort med kontaktuppgifter. Kortet är lika brett som innehållet (ingen tom yta
+ * till höger) och centreras på mobil. children visas längst ner, i linje med
+ * texten bredvid ikonerna (t.ex. en knapp).
+ */
 export default function ContactCard({ children, className = "" }) {
     return (
-        <address className={`not-italic border rounded-md shadow-xl p-6 text-left ${className}`}>
+        <address
+            className={`not-italic w-fit max-w-full mx-auto border rounded-md shadow-xl p-6 pr-10 text-left ${className}`}
+        >
             <ul className="space-y-4">
                 <li className="flex items-center gap-4">
                     <IconCircle>
@@ -67,7 +73,7 @@ export default function ContactCard({ children, className = "" }) {
                     </a>
                 </li>
             </ul>
-            {children && <div className="mt-6">{children}</div>}
+            {children && <div className="mt-6 pl-14">{children}</div>}
         </address>
     );
 }

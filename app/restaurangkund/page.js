@@ -72,11 +72,9 @@ export default function Restaurangkund() {
                     Kontakta oss
                 </h2>
                 <ContactCard>
-                    <div className="text-center">
-                        <a href={mailto} className={primaryButtonClass}>
-                            Skicka förfrågan
-                        </a>
-                    </div>
+                    <a href={mailto} className={primaryButtonClass}>
+                        Skicka förfrågan
+                    </a>
                 </ContactCard>
 
                 <p className="mt-10 text-center">
