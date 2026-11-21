@@ -3,7 +3,8 @@ import Link from "next/link";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import { formatPrice, productName } from "@/lib/products";
 
-export default function Card({ product }) {
+export default function Card({ product, headingLevel = "h2" }) {
+    const Heading = headingLevel;
     const { imageSrc, brand, collection, title, price, productId, orderLink, outOfStock } =
         product;
     const href = `/produkter/${productId}/`;
@@ -31,7 +32,7 @@ export default function Card({ product }) {
                     </p>
                 )}
 
-                <h2 className="font-bold">{title}</h2>
+                <Heading className="font-bold">{title}</Heading>
                 <p className="mb-3">{formatPrice(price)}</p>
 
                 <OutOfStockLabel outOfStock={outOfStock} />

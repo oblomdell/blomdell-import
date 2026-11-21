@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import SocialLinks from "@/components/SocialLinks";
 import logo from "@/assets/logo.jpeg";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, IS_PRODUCTION, openGraph } from "@/lib/site";
 import "./globals.css";
@@ -32,11 +33,19 @@ export default function RootLayout({ children }) {
     return (
         <html lang="sv" className={robotoSlab.variable}>
             <body>
+                <a
+                    href="#innehall"
+                    className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-blue-950 focus:text-white focus:px-4 focus:py-2 focus:rounded-md"
+                >
+                    Hoppa till innehållet
+                </a>
                 <div className="font-roboto-slab border-8 border-blue-950 min-h-screen">
                     <Header />
 
                     {/* Main content */}
-                    {children}
+                    <div id="innehall" tabIndex={-1} className="outline-none">
+                        {children}
+                    </div>
 
                     {/* Footer */}
                     <footer className="mt-10">
@@ -48,6 +57,7 @@ export default function RootLayout({ children }) {
                                     alt="Blomdell Import logo"
                                 />
                             </Link>
+                            <SocialLinks className="my-3" />
                             <span>© {new Date().getFullYear()} Blomdell C&M AB.</span>
                             <span>All rights reserved.</span>
                         </div>

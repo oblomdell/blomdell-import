@@ -2,14 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
+import InstagramFeed from "@/components/InstagramFeed";
 import { getProduct, formatPrice } from "@/lib/products";
-import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { SITE_URL, SITE_NAME, SOCIAL_LINKS } from "@/lib/site";
 
 import Agave from "@/assets/featured/agave-mexico.jpg";
 import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
 import blueTalavera from "@/assets/featured/talavera-bla.jpeg";
 import skellyBlanco from "@/assets/featured/skelly-blanco.png";
 import ducDeFoix from "@/assets/featured/duc-de-foix.png";
+
+// Startsidan byggs om i bakgrunden högst en gång i timmen (för Instagram-flödet).
+export const revalidate = 3600;
 
 // Utvalda produkter på startsidan. Namn, pris och lagerstatus hämtas från
 // data/products.json – här väljs bara vilka produkter som visas och vilken bild.
@@ -38,6 +42,7 @@ const organizationJsonLd = {
     logo: `${SITE_URL}/icon.png`,
     email: "info@blomdell.com",
     telephone: "+46705375315",
+    sameAs: Object.values(SOCIAL_LINKS),
 };
 
 export default function Home() {
@@ -135,6 +140,8 @@ export default function Home() {
                     Alla produkter
                 </Link>
             </section>
+
+            <InstagramFeed />
         </main>
     );
 }

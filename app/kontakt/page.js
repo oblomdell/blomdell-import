@@ -1,4 +1,5 @@
 import { openGraph } from "@/lib/site";
+import SocialLinks from "@/components/SocialLinks";
 export const metadata = {
     title: "Kontakt",
     description: "Kontakta Blomdell Import – telefon och e-post.",
@@ -25,6 +26,9 @@ export default function Kontakt() {
                 >
                     info@blomdell.com
                 </a>
+
+                <h2 className="text-xl mt-10 mb-4">Följ oss</h2>
+                <SocialLinks showLabels className="flex-col sm:flex-row items-center md:items-start" />
             </div>
         </main>
     );

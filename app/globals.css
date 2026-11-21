@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tydlig fokusmarkering för tangentbordsanvändare */
+:focus-visible {
+    outline: 2px solid theme("colors.blue.700");
+    outline-offset: 3px;
+}
