@@ -34,7 +34,7 @@ export default function Privatimport() {
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
                 textClassName="md:w-1/2"
                 imageRight
-                priority
+                preload
             >
                 <PageHeading>Privatimport</PageHeading>
 

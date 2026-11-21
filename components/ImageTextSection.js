@@ -15,7 +15,7 @@ export default function ImageTextSection({
     alt,
     imageRight = false,
     textClassName = "",
-    priority = false,
+    preload = false,
     children,
 }) {
     return (
@@ -29,7 +29,7 @@ export default function ImageTextSection({
                     placeholder="blur"
                     sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw"
                     className="flex w-full h-auto object-cover"
-                    priority={priority}
+                    preload={preload}
                 />
             </div>
             <div className={`w-full lg:w-1/2 ${textClassName}`}>{children}</div>

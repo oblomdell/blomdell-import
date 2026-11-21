@@ -52,7 +52,7 @@ export default function Home() {
                 <ImageTextSection
                     image={heroImage}
                     alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
-                    priority
+                    preload
                 >
                     <PageHeading align="left" className="md:text-3xl !mb-4">
                         Välkommen

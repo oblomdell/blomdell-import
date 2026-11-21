@@ -25,7 +25,7 @@ export default function Kontakt() {
                 image={contactImage}
                 alt="Skelly-flaska från Los Azulejos på en klippa vid havet"
                 imageRight
-                priority
+                preload
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
                 <p className="mb-6 text-center md:text-left">

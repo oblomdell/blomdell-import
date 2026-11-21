@@ -23,7 +23,10 @@ export async function generateMetadata({ params }) {
 
     const name = productName(product);
     const url = `/produkter/${product.productId}/`;
-    const description = `${name} från ${product.brand}. ${formatPrice(product.price)}.`;
+    const kind = product.category ? `${product.category.toLowerCase()} ` : "";
+    const description = `${name} – ${kind}från ${product.brand}. ${formatPrice(product.price)}. ${
+        product.outOfStock ? "Tillfälligt slut." : "Beställ via Systembolaget."
+    }`;
 
     return {
         title: name,
@@ -78,7 +81,7 @@ export default async function ProductPage({ params }) {
                         width={896}
                         height={896}
                         sizes="(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw"
-                        priority
+                        preload
                     />
                 </div>
 

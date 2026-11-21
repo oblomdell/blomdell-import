@@ -33,7 +33,7 @@ export default function AgeGate() {
                         className="h-16 w-auto mx-auto mb-8 [@media(max-height:480px)]:h-12 [@media(max-height:480px)]:mb-4"
                         src={logo}
                         alt="Blomdell Import"
-                        priority
+                        loading="eager"
                     />
 
                     {declined ? (

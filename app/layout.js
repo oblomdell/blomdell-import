@@ -31,6 +31,11 @@ export const metadata = {
     robots: IS_PRODUCTION ? { index: true, follow: true } : { index: false, follow: false },
 };
 
+// Färg på webbläsarens adressfält på mobil – samma mörkblå som ramen.
+export const viewport = {
+    themeColor: "#172554",
+};
+
 export default function RootLayout({ children }) {
     return (
         // suppressHydrationWarning: data-age-ok sätts av skriptet nedan innan React tar över.

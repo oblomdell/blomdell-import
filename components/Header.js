@@ -37,9 +37,14 @@ function NavLinks({ pathname, onClick }) {
     });
 }
 
-function Logo({ className, priority = false }) {
+function Logo({ className, eager = false }) {
     return (
-        <Image className={className} src={logo} alt="Blomdell Import logo" priority={priority} />
+        <Image
+            className={className}
+            src={logo}
+            alt="Blomdell Import logo"
+            loading={eager ? "eager" : "lazy"}
+        />
     );
 }
 
@@ -72,7 +77,7 @@ export default function Header() {
             {/* Mobile navigation */}
             <div className="md:hidden flex items-center justify-between w-full px-5">
                 <Link href="/" className="flex justify-center" aria-label="Gå till startsidan">
-                    <Logo className="h-16 w-auto" priority />
+                    <Logo className="h-16 w-auto" eager />
                 </Link>
                 <button
                     type="button"
@@ -120,7 +125,7 @@ export default function Header() {
             {/* Desktop logo */}
             {/* testa blå logga */}
             <Link href="/" className="hidden md:block" aria-label="Gå till startsidan">
-                <Logo className="max-w-full h-24 w-auto" priority />
+                <Logo className="max-w-full h-24 w-auto" eager />
             </Link>
         </header>
     );

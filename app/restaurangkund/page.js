@@ -40,7 +40,7 @@ export default function Restaurangkund() {
             <ImageTextSection
                 image={restaurantImage}
                 alt="Handmålade Talavera-flaskor från Los Azulejos på ett träbord"
-                priority
+                preload
             >
                 <PageHeading align="responsive">Restaurangkund</PageHeading>
 
