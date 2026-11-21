@@ -28,6 +28,10 @@ export default function Kontakt() {
                 priority
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
+                <p className="mb-6 text-center md:text-left">
+                    Har du frågor om våra produkter, om hur privatimport fungerar eller vill du
+                    servera Los Azulejos på din restaurang? Hör gärna av dig, så hjälper vi dig.
+                </p>
                 {/* Kontaktuppgifter som på main: utan ram och ikoner */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <p>Marie Blomdell</p>
