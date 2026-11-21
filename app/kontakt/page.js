@@ -28,7 +28,7 @@ export default function Kontakt() {
                 priority
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
-                <ContactCard className="mb-8 lg:mx-0" />
+                <ContactCard className="mb-8" />
 
                 <h2 className="text-xl mb-3 text-center lg:text-left">Följ oss</h2>
                 <SocialLinks showLabels className="justify-center lg:justify-start" />

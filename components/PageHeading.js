@@ -5,5 +5,5 @@
  */
 export default function PageHeading({ children, align = "center", className = "" }) {
     const alignment = align === "responsive" ? "text-center lg:text-left" : "text-center";
-    return <h1 className={`text-2xl md:text-3xl mb-6 ${alignment} ${className}`}>{children}</h1>;
+    return <h1 className={`text-2xl mb-5 ${alignment} ${className}`}>{children}</h1>;
 }

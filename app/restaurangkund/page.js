@@ -68,10 +68,7 @@ export default function Restaurangkund() {
             </ImageTextSection>
 
             <section aria-labelledby="kontakt-rubrik" className="max-w-xl mx-auto mt-16">
-                <h2 id="kontakt-rubrik" className="text-xl mb-4 text-center">
-                    Kontakta oss
-                </h2>
-                <ContactCard>
+                <ContactCard title="Kontakta oss" titleId="kontakt-rubrik">
                     <a href={mailto} className={primaryButtonClass}>
                         Skicka förfrågan
                     </a>

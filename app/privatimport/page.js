@@ -36,7 +36,7 @@ export default function Privatimport() {
             >
                 <PageHeading align="responsive">Privatimport</PageHeading>
 
-                <div className="leading-relaxed space-y-3">
+                <div>
                     <p>
                         Vår tequila går enbart att beställa hem till din lokala butik via{" "}
                         <ExternalLink href="https://www.systembolaget.se/bestalla-och-handla/privatimport/">
@@ -44,7 +44,7 @@ export default function Privatimport() {
                         </ExternalLink>
                         .
                     </p>
-                    <p>
+                    <p className="mb-2">
                         Våra viner kan man beställa direkt via Systembolaget{" "}
                         <ExternalLink href="https://www.systembolaget.se/sortiment/?q=blomdell">
                             här
@@ -54,7 +54,7 @@ export default function Privatimport() {
                     <p>För att beställa via privatimport behöver du:</p>
                 </div>
 
-                <ol className="list-decimal pl-6 my-4 space-y-2 leading-relaxed">
+                <ol className="list-decimal pl-4 py-4">
                     <li>
                         <ExternalLink href="https://www.systembolaget.se/konto/skapa/">
                             Skapa ett konto
@@ -70,7 +70,7 @@ export default function Privatimport() {
                     </li>
                     <li>
                         Fyll i formuläret:
-                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                        <ul className="list-disc pl-8">
                             <li>Börja med att välja din butik.</li>
                             <li>
                                 Säljare: <strong>Blomdell C&amp;M AB</strong>
@@ -99,7 +99,7 @@ export default function Privatimport() {
                     <li>Skicka förfrågan.</li>
                 </ol>
 
-                <p className="leading-relaxed">
+                <p>
                     Har du frågor kring beställningen?{" "}
                     <Link href="/kontakt/" className={linkClass}>
                         Kontakta oss
