@@ -32,11 +32,11 @@ export default function Privatimport() {
             <ImageTextSection
                 image={privatimportImage}
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
-                imageClassName="max-w-full h-80 w-auto mx-auto object-cover"
+                textClassName="pt-5 lg:pt-0 lg:pr-10"
                 imageRight
                 priority
             >
-                <PageHeading align="responsive">Privatimport</PageHeading>
+                <PageHeading>Privatimport</PageHeading>
 
                 <div>
                     <p>

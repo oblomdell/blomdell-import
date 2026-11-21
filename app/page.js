@@ -54,7 +54,9 @@ export default function Home() {
                     alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
                     priority
                 >
-                    <PageHeading align="responsive">Välkommen</PageHeading>
+                    <PageHeading align="responsive" className="md:text-3xl !mb-4">
+                        Välkommen
+                    </PageHeading>
                     <p className="text-sm md:text-base leading-relaxed">
                         Los Azulejos är en av fem ledande tillverkare i Jalisco och som
                         enda återförsäljare i EU har vi nöjet att presentera denna

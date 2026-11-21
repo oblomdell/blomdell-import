@@ -2,31 +2,36 @@ import Image from "next/image";
 
 /**
  * Bild och text bredvid varandra (på mobil: bilden överst).
- * Bilden visas i sitt eget format (bildfilerna är beskurna till 16:9) med samma
- * klasser som startsidans bild hade på main: "flex w-full h-auto object-cover".
- * imageRight lägger bilden till höger på dator. imageClassName ersätter bildens klasser.
+ * Samma struktur och klasser som startsidan hade på main: bild och text tar halva
+ * bredden var, och textspalten har luft runt sig (md:p-10). Bildfilerna är
+ * beskurna till 16:9 och visas med "flex w-full h-auto object-cover".
+ *
+ * imageRight lägger bilden till höger på dator.
+ * textClassName ersätter textspaltens luft/marginaler.
  */
 export default function ImageTextSection({
     image,
     alt,
     imageRight = false,
-    imageClassName = "flex w-full h-auto object-cover",
+    textClassName = "pt-5 md:p-10",
     priority = false,
     children,
 }) {
     return (
-        <section className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div className={imageRight ? "lg:order-last" : ""}>
+        <section
+            className={`flex flex-col items-center ${imageRight ? "lg:flex-row-reverse" : "lg:flex-row"}`}
+        >
+            <div className="w-full lg:w-1/2">
                 <Image
                     src={image}
                     alt={alt}
                     placeholder="blur"
-                    sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw"
-                    className={imageClassName}
+                    sizes="(min-width: 1280px) 640px, (min-width: 1024px) 50vw, 100vw"
+                    className="flex w-full h-auto object-cover"
                     priority={priority}
                 />
             </div>
-            <div>{children}</div>
+            <div className={`w-full lg:w-1/2 ${textClassName}`}>{children}</div>
         </section>
     );
 }
