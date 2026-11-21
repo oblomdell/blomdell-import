@@ -48,7 +48,7 @@ export default function Kontakt() {
                 <h2 className="text-xl mt-10 mb-4 text-center md:text-left">Följ oss</h2>
                 <SocialLinks
                     showLabels
-                    className="flex-col sm:flex-row justify-center md:justify-start"
+                    className="flex-col items-start w-fit mx-auto sm:flex-row sm:items-center md:mx-0"
                 />
             </ImageTextSection>
         </main>

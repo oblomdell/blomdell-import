@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
                                     alt="Blomdell Import logo"
                                 />
                             </Link>
-                            <SocialLinks className="my-3" />
+                            <SocialLinks className="my-3 items-center" />
                             <span>© {new Date().getFullYear()} Blomdell C&M AB.</span>
                             <span>All rights reserved.</span>
                         </div>
