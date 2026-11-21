@@ -29,9 +29,12 @@ export default function Kontakt() {
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
                 {/* Kontaktuppgifter som på main: utan ram och ikoner */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left mb-8">
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <p>Marie Blomdell</p>
-                    <a href="tel:+46705375315" className="hover:text-blue-700">
+                    <a
+                        href="tel:+46705375315"
+                        className="underline text-blue-600 hover:text-blue-700"
+                    >
                         +46 70 537 53 15
                     </a>
                     <a
@@ -42,8 +45,11 @@ export default function Kontakt() {
                     </a>
                 </div>
 
-                <h2 className="text-xl mb-3 text-center">Följ oss</h2>
-                <SocialLinks showLabels className="flex-col sm:flex-row justify-center" />
+                <h2 className="text-xl mt-10 mb-4 text-center lg:text-left">Följ oss</h2>
+                <SocialLinks
+                    showLabels
+                    className="flex-col sm:flex-row justify-center lg:justify-start"
+                />
             </ImageTextSection>
         </main>
     );
