@@ -32,6 +32,8 @@ export default function Privatimport() {
             <ImageTextSection
                 image={privatimportImage}
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
+                imageClassName="max-w-full h-80 w-auto mx-auto object-cover"
+                imageRight
                 priority
             >
                 <PageHeading align="responsive">Privatimport</PageHeading>

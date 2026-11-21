@@ -52,7 +52,6 @@ export default function Home() {
                 <ImageTextSection
                     image={heroImage}
                     alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
-                    imageClassName="h-auto aspect-video"
                     priority
                 >
                     <PageHeading align="responsive">Välkommen</PageHeading>
