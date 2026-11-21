@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function NotFound() {
     return (
-        <main className={`${pageClass} pt-8 flex flex-col items-center text-center`}>
+        <main className={`${pageClass} pt-6 flex flex-col items-center text-center`}>
             <PageHeading>Sidan hittades inte</PageHeading>
             <p className="mb-8">
                 Sidan eller produkten du letar efter finns inte, eller har flyttats.
