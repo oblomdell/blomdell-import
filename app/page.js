@@ -75,7 +75,7 @@ export default function Home() {
 
             <section className="flex flex-col items-center">
                 {/* <h1 className="text-4xl font-bold mb-10">Produkter</h1> */}
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
                     {/* Featured products */}
                     {featuredProducts.map((product) => (
                         <div

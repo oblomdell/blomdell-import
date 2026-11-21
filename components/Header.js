@@ -93,7 +93,7 @@ export default function Header() {
                     role="dialog"
                     aria-modal="true"
                     aria-label="Meny"
-                    className="md:hidden fixed inset-0 z-50 bg-white border-8 border-blue-950 flex flex-col"
+                    className="md:hidden fixed inset-0 z-50 bg-white border-8 border-blue-950 flex flex-col overflow-y-auto"
                 >
                     <div className="flex items-center justify-between w-full px-5 pt-5">
                         <Link href="/" onClick={closeMenu} aria-label="Gå till startsidan">

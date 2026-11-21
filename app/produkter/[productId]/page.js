@@ -65,7 +65,7 @@ export default async function ProductPage({ params }) {
             <JsonLd data={productJsonLd} />
             <Link
                 href="/produkter/"
-                className="inline-block mb-8 text-sm hover:underline underline-offset-4"
+                className="inline-block py-2 mb-6 text-sm hover:underline underline-offset-4"
             >
                 ← Alla produkter
             </Link>
