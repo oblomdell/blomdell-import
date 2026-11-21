@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
+import JsonLd from "@/components/JsonLd";
+import { getProduct, formatPrice } from "@/lib/products";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 import Agave from "@/assets/featured/agave-mexico.jpg";
 import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
@@ -8,56 +11,47 @@ import blueTalavera from "@/assets/featured/talavera-bla.jpeg";
 import skellyBlanco from "@/assets/featured/skelly-blanco.png";
 import ducDeFoix from "@/assets/featured/duc-de-foix.png";
 
-const featuredProducts = [
-    {
-        imageSrc: skellyAnejo,
-        brand: "Azulejos",
-        title: "Skelly Añejo",
-        price: 1799,
-        productId: "skelly-anejo",
-        orderLink: "/privatimport",
-        outOfStock: true,
-    },
-    {
-        imageSrc: blueTalavera,
-        brand: "Azulejos",
-        title: "Talavera Blå (Añejo)",
-        price: 1799,
-        productId: "talavera-bla",
-        orderLink: "/privatimport",
-        outOfStock: true,
-    },
-    {
-        imageSrc: skellyBlanco,
-        brand: "Azulejos",
-        title: "Skelly Blanco",
-        price: 1399,
-        productId: "skelly-blanco",
-        orderLink: "/privatimport",
-        outOfStock: false,
-    },
-    {
-        imageSrc: ducDeFoix,
-        brand: "Covides",
-        collection: "Duc De Foix",
-        title: "Brut Nature Reserva",
-        price: 218,
-        productId: "duc-de-foix-brut",
-        orderLink: "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
-        outOfStock: false,
-    },
+// Utvalda produkter på startsidan. Namn, pris och lagerstatus hämtas från
+// data/products.json – här väljs bara vilka produkter som visas och vilken bild.
+const featured = [
+    { productId: "skelly-anejo", image: skellyAnejo },
+    { productId: "talavera-bla", image: blueTalavera },
+    { productId: "skelly-blanco", image: skellyBlanco },
+    { productId: "duc-de-foix-brut", image: ducDeFoix },
 ];
+
+const featuredProducts = featured
+    .map(({ productId, image }) => {
+        const product = getProduct(productId);
+        if (!product) {
+            throw new Error(`Utvald produkt "${productId}" finns inte i data/products.json`);
+        }
+        return { ...product, image };
+    });
+
+const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    legalName: "Blomdell C&M AB",
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.png`,
+    email: "info@blomdell.com",
+    telephone: "+46705375315",
+};
 
 export default function Home() {
     return (
         <main className="max-w-screen-xl mx-auto">
+            <JsonLd data={organizationJsonLd} />
             <section className="flex flex-col lg:flex-row items-center mb-24 px-4">
                 <div className="w-full lg:w-1/2">
                     <Image
                         className="flex w-full h-auto object-cover"
                         src={Agave}
-                        alt="Agave field in Mexico"
+                        alt="Agavefält i Jalisco, Mexiko"
                         sizes="(min-width: 1024px) 640px, 100vw"
+                        placeholder="blur"
                         priority
                     />
                 </div>
@@ -89,14 +83,15 @@ export default function Home() {
                             className="max-w-sm rounded overflow-hidden border shadow-xl"
                         >
                             <Link
-                                href={`/produkter/${product.productId}`}
+                                href={`/produkter/${product.productId}/`}
                                 aria-label={`Gå till produktsidan för ${product.title}`}
                             >
                                 <Image
                                     className="max-w-full h-80 w-auto m-auto object-cover"
-                                    src={product.imageSrc}
+                                    src={product.image}
                                     alt={product.title}
                                     sizes="(min-width: 640px) 384px, 100vw"
+                                    placeholder="blur"
                                 />
                             </Link>
                             <div className="text-center pb-4">
@@ -107,18 +102,18 @@ export default function Home() {
                                     </>
                                 ) : (
                                     <>
-                                        <p className="invisible">Placeholder</p>
+                                        <p className="invisible" aria-hidden="true">Placeholder</p>
                                         <p className="text-gray-700 pb-2">{product.brand}</p>
                                     </>
                                 )}
-                                <h1 className="font-bold text-lg">{product.title}</h1>
-                                <p className="mb-3">{product.price} kr</p>
+                                <h2 className="font-bold text-lg">{product.title}</h2>
+                                <p className="mb-3">{formatPrice(product.price)}</p>
 
                                 <OutOfStockLabel outOfStock={product.outOfStock} />
 
                                 <div className="flex flex-col items-center space-y-2">
                                     <Link
-                                        href={`/produkter/${product.productId}`}
+                                        href={`/produkter/${product.productId}/`}
                                         className="underline"
                                     >
                                         Läs mer
@@ -134,7 +129,7 @@ export default function Home() {
                 </div>
 
                 <Link
-                    href="/produkter"
+                    href="/produkter/"
                     className="inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
                 >
                     Alla produkter

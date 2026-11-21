@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
                                     alt="Blomdell Import logo"
                                 />
                             </Link>
-                            <span>© 2024 Blomdell C&M AB.</span>
+                            <span>© {new Date().getFullYear()} Blomdell C&M AB.</span>
                             <span>All rights reserved.</span>
                         </div>
                     </footer>

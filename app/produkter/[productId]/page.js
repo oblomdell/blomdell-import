@@ -1,62 +1,70 @@
 import Image from "next/image";
-import Link from "next/link";
-import products from "@/data/products.json";
-import { openGraph } from "@/lib/site";
+import { notFound } from "next/navigation";
+import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
+import JsonLd from "@/components/JsonLd";
+import { getProducts, getProduct, productName, formatPrice } from "@/lib/products";
+import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
 
-// Bygg alla produktsidor statiskt vid build (motsvarar SvelteKits load-funktion).
+// Bygg alla produktsidor statiskt vid build.
 export function generateStaticParams() {
-    return products.map((product) => ({ productId: product.productId }));
+    return getProducts().map((product) => ({ productId: product.productId }));
 }
 
-function findProduct(productId) {
-    return products.find((p) => p.productId === productId);
-}
+// Okända produkt-id:n ger en riktig 404 i stället för en tom sida.
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }) {
     const { productId } = await params;
-    const product = findProduct(productId);
-    if (!product) {
-        return { title: "Produkten hittades inte", robots: { index: false } };
-    }
+    const product = getProduct(productId);
+    if (!product) return {};
 
-    const name = product.collection
-        ? `${product.collection} ${product.title}`
-        : product.title;
+    const name = productName(product);
     const url = `/produkter/${product.productId}/`;
-    const description = `${name} från ${product.brand}. ${product.price} kr.`;
+    const description = `${name} från ${product.brand}. ${formatPrice(product.price)}.`;
 
     return {
         title: name,
         description,
         alternates: { canonical: url },
-        openGraph: openGraph({ path: url, title: `${name} | Blomdell Import`, description }),
+        openGraph: openGraph({ path: url, title: `${name} | ${SITE_NAME}`, description }),
     };
 }
 
 export default async function ProductPage({ params }) {
     const { productId } = await params;
-    const product = findProduct(productId);
+    const product = getProduct(productId);
+    if (!product) notFound();
 
-    if (!product) {
-        return (
-            <p className="text-center text-lg mt-10">
-                Produkten hittades inte. Klicka{" "}
-                <Link href="/produkter" className="underline text-blue-950">
-                    här
-                </Link>{" "}
-                för att se alla produkter.
-            </p>
-        );
-    }
+    const name = productName(product);
+
+    // Strukturerad data så att Google kan visa pris och tillgänglighet i sökresultat.
+    const productJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name,
+        brand: { "@type": "Brand", name: product.brand },
+        image: `${SITE_URL}${product.imageSrc}`,
+        url: `${SITE_URL}/produkter/${product.productId}/`,
+        offers: {
+            "@type": "Offer",
+            price: product.price,
+            priceCurrency: "SEK",
+            availability: product.outOfStock
+                ? "https://schema.org/OutOfStock"
+                : "https://schema.org/InStock",
+            seller: { "@type": "Organization", name: "Blomdell C&M AB" },
+        },
+    };
 
     return (
         <main className="max-w-screen-xl mx-auto px-6 md:px-12 py-12">
+            <JsonLd data={productJsonLd} />
             <div className="flex flex-col md:flex-row items-center gap-10">
                 <div className="w-full md:w-1/2">
                     <Image
                         className="max-w-full w-full h-auto md:max-w-sm lg:max-w-md object-cover mx-auto"
                         src={product.imageSrc}
-                        alt={product.title}
+                        alt={name}
                         width={896}
                         height={896}
                         sizes="(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw"
@@ -72,14 +80,19 @@ export default async function ProductPage({ params }) {
                         <p className="text-gray-700 font-semibold">{product.collection}</p>
                     )}
 
-                    <p className="text-lg font-semibold mt-3">{product.price.toFixed(2)} SEK</p>
-                    <a
-                        href={product.orderLink}
-                        target="_blank"
-                        className="mt-5 inline-block border border-black px-8 py-3 text-white bg-blue-950 hover:bg-blue-800 transition rounded-md"
-                    >
-                        Beställ här
-                    </a>
+                    <p className="text-lg font-semibold mt-3">{formatPrice(product.price)}</p>
+
+                    {product.outOfStock && (
+                        <OutOfStockLabel outOfStock className="mt-3" />
+                    )}
+
+                    <OrderButton
+                        orderLink={product.orderLink}
+                        outOfStock={product.outOfStock}
+                        size="lg"
+                        label="Beställ här"
+                        className="mt-5"
+                    />
 
                     {/* <p className="mt-6 text-gray-700 leading-relaxed">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus ullamcorper felis.
