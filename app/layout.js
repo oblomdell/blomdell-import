@@ -1,4 +1,5 @@
 import { Roboto_Slab } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
                         </div>
                     </footer>
                 </div>
+                <Analytics />
             </body>
         </html>
     );
