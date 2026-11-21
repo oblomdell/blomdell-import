@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { openGraph } from "@/lib/site";
 
@@ -35,6 +36,15 @@ const linkClass = "underline text-blue-600 hover:text-blue-700";
 export default function Restaurangkund() {
     return (
         <main className="max-w-screen-xl mx-auto px-6 md:px-12 py-6">
+            <Image
+                src="/coverphotos/cover1.jpg"
+                alt="Handmålade Talavera-flaskor från Los Azulejos på ett träbord"
+                width={1920}
+                height={1080}
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="w-full max-w-4xl mx-auto h-56 sm:h-72 lg:h-96 object-cover mb-10"
+                priority
+            />
             <div className="max-w-2xl mx-auto">
                 <h1 className="text-2xl mb-5 text-center">Restaurangkund</h1>
 
