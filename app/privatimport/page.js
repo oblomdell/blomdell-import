@@ -78,11 +78,14 @@ export default function Privatimport() {
                                 Säljare: <strong>Blomdell C&amp;M AB</strong>
                             </li>
                             <li>
-                                Lägg till dryck: <strong>använd namnet på vår </strong>
-                                <Link href="/produkter/" className={linkClass}>
-                                    produktsida
-                                </Link>{" "}
-                                <strong>(t.ex. &quot;Skelly Añejo&quot; eller &quot;Talavera Blå&quot;)</strong>
+                                Lägg till dryck:{" "}
+                                <strong>
+                                    använd namnet på vår{" "}
+                                    <Link href="/produkter/" className={linkClass}>
+                                        produktsida
+                                    </Link>{" "}
+                                    (t.ex. &quot;Skelly Añejo&quot; eller &quot;Talavera Blå&quot;)
+                                </strong>
                             </li>
                             <li>
                                 Typ av dryck: <strong>Spritdryck</strong>
