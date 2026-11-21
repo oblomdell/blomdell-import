@@ -27,9 +27,9 @@ export default function Kontakt() {
                 imageRight
                 priority
             >
-                {/* På dator centreras textblocket i sin spalt, så att det kommer närmare bilden. */}
-                <div className="lg:w-fit lg:mx-auto">
-                    <PageHeading align="responsive">Kontakt</PageHeading>
+                <PageHeading align="responsive">Kontakt</PageHeading>
+                {/* På stora skärmar står kontaktuppgifterna och "Följ oss" bredvid varandra. */}
+                <div className="flex flex-col lg:flex-row lg:gap-16">
                     {/* Kontaktuppgifter som på main: utan ram och ikoner */}
                     <div className="flex flex-col items-center md:items-start text-center md:text-left">
                         <p>Marie Blomdell</p>
@@ -47,11 +47,15 @@ export default function Kontakt() {
                         </a>
                     </div>
 
-                    <h2 className="text-xl mt-10 mb-4 text-center md:text-left">Följ oss</h2>
-                    <SocialLinks
-                        showLabels
-                        className="flex-col sm:flex-row justify-center md:justify-start"
-                    />
+                    <div>
+                        <h2 className="text-xl mt-10 lg:mt-0 mb-4 text-center md:text-left">
+                            Följ oss
+                        </h2>
+                        <SocialLinks
+                            showLabels
+                            className="flex-col sm:flex-row justify-center md:justify-start"
+                        />
+                    </div>
                 </div>
             </ImageTextSection>
         </main>
