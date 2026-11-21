@@ -1,9 +1,8 @@
 import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
 import ImageTextSection from "@/components/ImageTextSection";
-import ContactCard from "@/components/ContactCard";
 import { openGraph } from "@/lib/site";
-import { linkClass, pageClass, primaryButtonClass } from "@/lib/styles";
+import { linkClass, primaryButtonClass, widePageClass } from "@/lib/styles";
 import restaurantImage from "@/assets/restaurang-talavera.jpg";
 
 const description =
@@ -37,7 +36,7 @@ const mailto = `mailto:info@blomdell.com?subject=${encodeURIComponent(mailSubjec
 
 export default function Restaurangkund() {
     return (
-        <main className={pageClass}>
+        <main className={widePageClass}>
             <ImageTextSection
                 image={restaurantImage}
                 alt="Handmålade Talavera-flaskor från Los Azulejos på ett träbord"
@@ -67,14 +66,30 @@ export default function Restaurangkund() {
                 </ul>
             </ImageTextSection>
 
-            <section aria-labelledby="kontakt-rubrik" className="max-w-xl mx-auto mt-16">
-                <ContactCard title="Kontakta oss" titleId="kontakt-rubrik">
-                    <a href={mailto} className={primaryButtonClass}>
-                        Skicka förfrågan
+            {/* Kontaktuppgifter som på kontaktsidan: utan ram och ikoner */}
+            <section aria-labelledby="kontakt-rubrik" className="max-w-xl mx-auto mt-16 text-center">
+                <h2 id="kontakt-rubrik" className="text-xl mb-4">
+                    Kontakta oss
+                </h2>
+                <p>Marie Blomdell</p>
+                <p>
+                    <a href="tel:+46705375315" className="underline text-blue-600 hover:text-blue-700">
+                        +46 70 537 53 15
                     </a>
-                </ContactCard>
+                </p>
+                <p className="mb-6">
+                    <a
+                        href="mailto:info@blomdell.com"
+                        className="underline text-blue-600 hover:text-blue-700"
+                    >
+                        info@blomdell.com
+                    </a>
+                </p>
+                <a href={mailto} className={primaryButtonClass}>
+                    Skicka förfrågan
+                </a>
 
-                <p className="mt-10 text-center">
+                <p className="mt-10">
                     Se hela sortimentet på vår{" "}
                     <Link href="/produkter/" className={linkClass}>
                         produktsida

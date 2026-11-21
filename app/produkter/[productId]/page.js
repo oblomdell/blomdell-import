@@ -6,7 +6,7 @@ import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
-import { pageClass } from "@/lib/styles";
+import { widePageClass } from "@/lib/styles";
 
 // Bygg alla produktsidor statiskt vid build.
 export function generateStaticParams() {
@@ -61,7 +61,7 @@ export default async function ProductPage({ params }) {
     };
 
     return (
-        <main className={pageClass}>
+        <main className={widePageClass}>
             <JsonLd data={productJsonLd} />
             <Link
                 href="/produkter/"
@@ -83,7 +83,7 @@ export default async function ProductPage({ params }) {
                 </div>
 
                 <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h1 className="text-2xl md:text-3xl font-bold mb-4">{product.title}</h1>
+                    <h1 className="text-2xl md:text-4xl font-bold mb-4">{product.title}</h1>
                     <p className="text-gray-600 text-lg  pb-4">{product.brand}</p>
 
                     {product.collection && (

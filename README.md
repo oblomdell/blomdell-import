@@ -22,7 +22,7 @@ npm run dev
 | `app/privatimport/page.js`          | Instruktioner för privatimport                    |
 | `app/restaurangkund/page.js`        | Information och kontakt för restauranger/barer    |
 | `app/kontakt/page.js`               | Kontakt                                           |
-| `components/`                       | `Header` (meny), `Card`, `OrderButton`, `PageHeading`, `ImageTextSection`, `ContactCard` |
+| `components/`                       | `Header` (meny), `Card`, `OrderButton`, `PageHeading`, `ImageTextSection` |
 | `lib/styles.js`                     | Gemensamma stilar: länkar, knappar och sidmarginaler |
 | `app/icon.png`, `app/apple-icon.png` | Flikikon (favicon) och ikon för hemskärm        |
 | `data/products.json`                | Produktdata — lägg till nya produkter här         |

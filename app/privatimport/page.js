@@ -33,7 +33,7 @@ export default function Privatimport() {
             <ImageTextSection
                 image={privatimportImage}
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
-                textClassName="pt-5 lg:pt-0 lg:pr-10"
+                textClassName="pt-5 md:w-1/2 lg:pt-0 lg:pr-10"
                 imageRight
                 priority
             >
