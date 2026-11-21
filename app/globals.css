@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tydlig fokusmarkering för tangentbordsanvändare */
+:focus-visible {
+    outline: 2px solid theme("colors.blue.700");
+    outline-offset: 3px;
+}
+
+/* Åldersfrågan: dölj när besökaren redan har svarat Ja, och lås skrollning medan den visas. */
+html[data-age-ok] #aldersfraga {
+    display: none;
+}
+html:not([data-age-ok]) body {
+    overflow: hidden;
+}

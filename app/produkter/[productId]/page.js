@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import Card from "@/components/Card";
 import { notFound } from "next/navigation";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
-import { getProducts, getProduct, productName, formatPrice } from "@/lib/products";
+import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
 
 // Bygg alla produktsidor statiskt vid build.
@@ -36,6 +38,7 @@ export default async function ProductPage({ params }) {
     if (!product) notFound();
 
     const name = productName(product);
+    const related = getRelatedProducts(product);
 
     // Strukturerad data så att Google kan visa pris och tillgänglighet i sökresultat.
     const productJsonLd = {
@@ -59,6 +62,12 @@ export default async function ProductPage({ params }) {
     return (
         <main className="max-w-screen-xl mx-auto px-6 md:px-12 py-12">
             <JsonLd data={productJsonLd} />
+            <Link
+                href="/produkter/"
+                className="inline-block mb-8 text-sm hover:underline underline-offset-4"
+            >
+                ← Alla produkter
+            </Link>
             <div className="flex flex-col md:flex-row items-center gap-10">
                 <div className="w-full md:w-1/2">
                     <Image
@@ -100,6 +109,19 @@ export default async function ProductPage({ params }) {
                     </p> */}
                 </div>
             </div>
+
+            {related.length > 0 && (
+                <section className="mt-20" aria-labelledby="fler-rubrik">
+                    <h2 id="fler-rubrik" className="text-xl mb-6 pb-2 border-b border-gray-300">
+                        Fler från {product.brand}
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
+                        {related.map((p) => (
+                            <Card key={p.productId} product={p} headingLevel="h3" />
+                        ))}
+                    </div>
+                </section>
+            )}
         </main>
     );
 }

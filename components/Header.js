@@ -9,7 +9,7 @@ import logo from "@/assets/logo.jpeg";
 const navItems = [
     { href: "/produkter/", label: "PRODUKTER" },
     { href: "/privatimport/", label: "PRIVATIMPORT" },
-    // { href: "/restaurangkund/", label: "RESTAURANGKUND" },
+    { href: "/restaurangkund/", label: "RESTAURANGKUND" },
     // { href: "/om-oss/", label: "OM OSS" },
     { href: "/kontakt/", label: "KONTAKT" },
 ];

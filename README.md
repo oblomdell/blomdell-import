@@ -20,11 +20,12 @@ npm run dev
 | `app/produkter/page.js`             | Alla produkter                                    |
 | `app/produkter/[productId]/page.js` | Produktsida (genereras statiskt vid build)        |
 | `app/privatimport/page.js`          | Instruktioner för privatimport                    |
+| `app/restaurangkund/page.js`        | Information och kontakt för restauranger/barer    |
 | `app/kontakt/page.js`               | Kontakt                                           |
 | `components/`                       | `Header` (meny), `Card`, `OrderButton`            |
 | `app/icon.png`, `app/apple-icon.png` | Flikikon (favicon) och ikon för hemskärm        |
 | `data/products.json`                | Produktdata — lägg till nya produkter här         |
-| `lib/site.js`                       | Officiell adress (www.blomdellimport.se), namn och beskrivning för SEO |
+| `lib/site.js`                       | Officiell adress (www.blomdellimport.se), namn, beskrivning och sociala länkar |
 | `app/robots.js`, `app/sitemap.js`   | robots.txt och sitemap.xml (genereras automatiskt) |
 | `assets/`                           | Bilder som importeras i koden (logga, utvalda)    |
 | `public/`                           | Statiska filer, t.ex. `/products/*.png`           |
@@ -44,3 +45,9 @@ Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
 
 1. Importera repot på [vercel.com/new](https://vercel.com/new).
 2. Framework Preset blir automatiskt **Next.js** — klicka **Deploy**.
+
+
+## Åldersfråga
+
+Första besöket visas en fråga om besökaren har fyllt 25 år (`components/AgeGate.js`).
+Svaret "Ja" sparas i webbläsaren, så frågan visas inte igen på samma enhet.
