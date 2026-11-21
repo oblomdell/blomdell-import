@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { openGraph } from "@/lib/site";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -55,12 +54,6 @@ const MailIcon = () => (
     </svg>
 );
 
-const shortcuts = [
-    { href: "/privatimport/", title: "Beställa tequila", text: "Så beställer du via Systembolaget" },
-    { href: "/restaurangkund/", title: "Restaurang eller bar", text: "Sortiment och priser för restauranger och barer" },
-    { href: "/produkter/", title: "Se sortimentet", text: "Tequila från Los Azulejos och viner från Covides" },
-];
-
 export default function Kontakt() {
     return (
         <main className="max-w-screen-xl mx-auto px-4 md:px-6">
@@ -71,16 +64,12 @@ export default function Kontakt() {
                     width={1200}
                     height={800}
                     sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw"
-                    className="w-full h-64 sm:h-80 lg:h-[30rem] object-cover rounded-md shadow-xl"
+                    className="w-full h-64 sm:h-80 lg:h-[30rem] object-cover"
                     priority
                 />
 
                 <div className="text-center lg:text-left">
-                    <h1 className="text-2xl md:text-3xl mb-3">Kontakt</h1>
-                    <p className="text-gray-700 mb-8">
-                        Har du frågor om våra produkter eller om hur du beställer? Hör gärna av dig
-                        – vi svarar så snart vi kan.
-                    </p>
+                    <h1 className="text-2xl md:text-3xl mb-6">Kontakt</h1>
 
                     <address className="not-italic border rounded-md shadow-xl p-6 mb-8 text-left">
                         <ul className="space-y-4">
@@ -126,33 +115,6 @@ export default function Kontakt() {
                     />
                 </div>
             </div>
-
-            <section aria-labelledby="genvagar-rubrik" className="mt-16">
-                <h2 id="genvagar-rubrik" className="text-xl mb-6 pb-2 border-b border-gray-300">
-                    Kanske hittar du svaret här
-                </h2>
-                <ul className="grid sm:grid-cols-3 gap-5">
-                    {shortcuts.map(({ href, title, text }) => (
-                        <li key={href}>
-                            <Link
-                                href={href}
-                                className="group block h-full border rounded-md p-5 hover:border-blue-950 hover:shadow-xl transition"
-                            >
-                                <span className="flex items-center justify-between font-bold text-blue-950">
-                                    {title}
-                                    <span
-                                        aria-hidden="true"
-                                        className="transition group-hover:translate-x-1"
-                                    >
-                                        →
-                                    </span>
-                                </span>
-                                <span className="block mt-1 text-sm text-gray-700">{text}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
         </main>
     );
 }
