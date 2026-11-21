@@ -3,22 +3,24 @@ import Link from "next/link";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import { formatPrice, productName } from "@/lib/products";
 
-export default function Card({ product, headingLevel = "h2" }) {
+export default function Card({ product, headingLevel = "h2", eager = false }) {
     const Heading = headingLevel;
     const { imageSrc, brand, collection, title, price, productId, orderLink, outOfStock } =
         product;
     const href = `/produkter/${productId}/`;
 
     return (
-        <div className="max-w-sm rounded overflow-hidden shadow-xl border">
+        <div className="w-full max-w-sm mx-auto rounded overflow-hidden shadow-xl border">
             <Link href={href} aria-label={`Läs mer om ${productName(product)}`}>
                 <Image
-                    className="max-w-full h-80 w-auto m-auto object-fit"
+                    // Fast bildyta (h-80, full bredd) så att kortet inte hoppar när bilden laddats.
+                    className="w-full h-80 object-contain"
                     src={imageSrc}
                     alt={productName(product)}
                     width={640}
                     height={640}
                     sizes="(min-width: 640px) 384px, 100vw"
+                    loading={eager ? "eager" : "lazy"}
                 />
             </Link>
             <div className="text-center pb-4">

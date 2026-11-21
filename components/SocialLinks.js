@@ -27,10 +27,17 @@ const links = [
     { href: SOCIAL_LINKS.facebook, label: "Facebook", Icon: FacebookIcon },
 ];
 
-/** Ikonlänkar till Instagram och Facebook. Med showLabels visas även texten. */
-export default function SocialLinks({ className = "", showLabels = false, iconClassName }) {
+/**
+ * Ikonlänkar till Instagram och Facebook. Med showLabels visas även texten.
+ * className styr layouten (standard: en rad, vertikalt centrerad).
+ */
+export default function SocialLinks({
+    className = "items-center",
+    showLabels = false,
+    iconClassName,
+}) {
     return (
-        <ul className={`flex items-center gap-5 ${className}`}>
+        <ul className={`flex gap-5 ${className}`}>
             {links.map(({ href, label, Icon }) => (
                 <li key={label}>
                     <a

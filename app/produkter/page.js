@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
-import { getProductsByCategory } from "@/lib/products";
+import { getProducts } from "@/lib/products";
+import PageHeading from "@/components/PageHeading";
 import { openGraph } from "@/lib/site";
 
 const description =
@@ -16,36 +17,17 @@ export const metadata = {
     }),
 };
 
-const slug = (text) =>
-    text.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\s+/g, "-");
-
 export default function Produkter() {
-    const groups = getProductsByCategory();
-
     return (
-        <main className="max-w-screen-xl mx-auto px-4">
+        <main className="max-w-screen-xl mx-auto px-4 pb-6">
             <div className="flex flex-col items-center">
-                <h1 className="text-2xl mb-10">Alla produkter</h1>
-
-                {groups.map(({ category, products }) => (
-                    <section
-                        key={category}
-                        aria-labelledby={`${slug(category)}-rubrik`}
-                        className="w-full mb-14"
-                    >
-                        <h2
-                            id={`${slug(category)}-rubrik`}
-                            className="text-xl mb-6 pb-2 border-b border-gray-300"
-                        >
-                            {category}
-                        </h2>
-                        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10">
-                            {products.map((product) => (
-                                <Card key={product.productId} product={product} headingLevel="h3" />
-                            ))}
-                        </div>
-                    </section>
-                ))}
+                <PageHeading className="!mb-10">Alla produkter</PageHeading>
+                <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
+                    {/* De fyra första (första raden på dator) laddas direkt, resten när man skrollar. */}
+                    {getProducts().map((product, index) => (
+                        <Card key={product.productId} product={product} eager={index < 4} />
+                    ))}
+                </div>
             </div>
         </main>
     );

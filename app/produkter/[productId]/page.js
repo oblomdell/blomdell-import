@@ -6,6 +6,7 @@ import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
+import { widePageClass } from "@/lib/styles";
 
 // Bygg alla produktsidor statiskt vid build.
 export function generateStaticParams() {
@@ -22,7 +23,10 @@ export async function generateMetadata({ params }) {
 
     const name = productName(product);
     const url = `/produkter/${product.productId}/`;
-    const description = `${name} från ${product.brand}. ${formatPrice(product.price)}.`;
+    const kind = product.category ? `${product.category.toLowerCase()} ` : "";
+    const description = `${name} – ${kind}från ${product.brand}. ${formatPrice(product.price)}. ${
+        product.outOfStock ? "Tillfälligt slut." : "Beställ via Systembolaget."
+    }`;
 
     return {
         title: name,
@@ -60,11 +64,11 @@ export default async function ProductPage({ params }) {
     };
 
     return (
-        <main className="max-w-screen-xl mx-auto px-6 md:px-12 py-12">
+        <main className={widePageClass}>
             <JsonLd data={productJsonLd} />
             <Link
                 href="/produkter/"
-                className="inline-block mb-8 text-sm hover:underline underline-offset-4"
+                className="inline-block py-2 mb-6 text-sm hover:underline underline-offset-4"
             >
                 ← Alla produkter
             </Link>
@@ -77,7 +81,7 @@ export default async function ProductPage({ params }) {
                         width={896}
                         height={896}
                         sizes="(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw"
-                        priority
+                        preload
                     />
                 </div>
 

@@ -1,90 +1,90 @@
-import { openGraph } from "@/lib/site";
-import Image from "next/image";
 import Link from "next/link";
+import PageHeading from "@/components/PageHeading";
+import ImageTextSection from "@/components/ImageTextSection";
+import { openGraph } from "@/lib/site";
+import { imageTextPageClass, linkClass } from "@/lib/styles";
+import privatimportImage from "@/assets/privatimport-skelly-hylla.jpg";
+
+const description = "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.";
 
 export const metadata = {
     title: "Privatimport",
-    description:
-        "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.",
+    description,
     alternates: { canonical: "/privatimport/" },
     openGraph: openGraph({
         path: "/privatimport/",
         title: "Privatimport | Blomdell Import",
-        description: "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.",
+        description,
     }),
 };
 
-const linkClass = "underline text-blue-600";
+function ExternalLink({ href, children }) {
+    return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            {children}
+        </a>
+    );
+}
 
 export default function Privatimport() {
     return (
-        <main className="max-w-screen-xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 p-6">
-            <section className="flex-col md:w-1/2 flex flex-col">
-                <h1 className="text-2xl mb-5 text-center">Privatimport</h1>
-                <p>
-                    Vår tequila går enbart att beställa hem till din lokala butik via{" "}
-                    <a
-                        href="https://www.systembolaget.se/bestalla-och-handla/privatimport/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                    >
-                        privatimport
-                    </a>
-                    .
-                </p>
-                <p className="mb-2">
-                    Våra viner kan man beställa direkt via systembolaget{" "}
-                    <a
-                        href="https://www.systembolaget.se/sortiment/?q=blomdell"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                    >
-                        här
-                    </a>
-                    .
-                </p>
-                <p>För att beställa via privatimport behöver du:</p>
-                <ul className="list-decimal pl-4 py-4">
+        <main className={imageTextPageClass}>
+            <ImageTextSection
+                image={privatimportImage}
+                alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
+                textClassName="md:w-1/2"
+                imageRight
+                preload
+            >
+                <PageHeading>Privatimport</PageHeading>
+
+                <div>
+                    <p>
+                        Vår tequila går enbart att beställa hem till din lokala butik via{" "}
+                        <ExternalLink href="https://www.systembolaget.se/bestalla-och-handla/privatimport/">
+                            privatimport
+                        </ExternalLink>
+                        .
+                    </p>
+                    <p className="mb-2">
+                        Våra viner kan man beställa direkt via Systembolaget{" "}
+                        <ExternalLink href="https://www.systembolaget.se/sortiment/?q=blomdell">
+                            här
+                        </ExternalLink>
+                        .
+                    </p>
+                    <p>För att beställa via privatimport behöver du:</p>
+                </div>
+
+                <ol className="list-decimal pl-4 py-4">
                     <li>
-                        <a
-                            href="https://www.systembolaget.se/konto/skapa/"
-                            target="_blank"
-                        rel="noopener noreferrer"
-                            className={linkClass}
-                        >
+                        <ExternalLink href="https://www.systembolaget.se/konto/skapa/">
                             Skapa ett konto
-                        </a>{" "}
-                        på systembolaget.
+                        </ExternalLink>{" "}
+                        på Systembolaget.
                     </li>
                     <li>
                         När du är inloggad registrerar du en förfrågan{" "}
-                        <a
-                            href="https://www.systembolaget.se/bestalla-och-handla/privatimport/forfragan/"
-                            target="_blank"
-                        rel="noopener noreferrer"
-                            className={linkClass}
-                        >
+                        <ExternalLink href="https://www.systembolaget.se/bestalla-och-handla/privatimport/forfragan/">
                             via detta formulär
-                        </a>
+                        </ExternalLink>
                         .
                     </li>
                     <li>
                         Fyll i formuläret:
-                        <ul className="pl-8">
-                            <li>Börja med att välj din butik.</li>
+                        <ul className="list-disc pl-8">
+                            <li>Börja med att välja din butik.</li>
                             <li>
                                 Säljare: <strong>Blomdell C&amp;M AB</strong>
                             </li>
                             <li>
                                 Lägg till dryck:{" "}
                                 <strong>
-                                    använd namn som står på vår{" "}
+                                    använd namnet på vår{" "}
                                     <Link href="/produkter/" className={linkClass}>
                                         produktsida
                                     </Link>{" "}
-                                    (t.ex. &quot;Skelly Anejo&quot; eller &quot;Talavera Blå&quot;)
+                                    (t.ex. &quot;Skelly Añejo&quot; eller &quot;Talavera Blå&quot;)
                                 </strong>
                             </li>
                             <li>
@@ -97,12 +97,13 @@ export default function Privatimport() {
                                 Volym ml/st: <strong>750</strong>
                             </li>
                             <li>
-                                Antal: <strong>Så många flaskor du vill beställa</strong>
+                                Antal: <strong>så många flaskor du vill beställa</strong>
                             </li>
                         </ul>
                     </li>
                     <li>Skicka förfrågan.</li>
-                </ul>
+                </ol>
+
                 <p>
                     Har du frågor kring beställningen?{" "}
                     <Link href="/kontakt/" className={linkClass}>
@@ -110,18 +111,7 @@ export default function Privatimport() {
                     </Link>
                     .
                 </p>
-            </section>
-
-            <section className="w-full lg:w-1/2 flex justify-center items-center">
-                <Image
-                    className="max-w-full h-80 w-auto mx-auto object-cover"
-                    src="/coverphotos/privatimport.jpg"
-                    alt="Three Skelly Azulejos bottles"
-                    width={640}
-                    height={640}
-                    sizes="(min-width: 1024px) 640px, 100vw"
-                />
-            </section>
+            </ImageTextSection>
         </main>
     );
 }
