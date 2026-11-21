@@ -1,6 +1,5 @@
 import PageHeading from "@/components/PageHeading";
 import ImageTextSection from "@/components/ImageTextSection";
-import ContactCard from "@/components/ContactCard";
 import SocialLinks from "@/components/SocialLinks";
 import { openGraph } from "@/lib/site";
 import { pageClass } from "@/lib/styles";
@@ -29,7 +28,19 @@ export default function Kontakt() {
                 priority
             >
                 <PageHeading align="responsive">Kontakt</PageHeading>
-                <ContactCard className="mb-8" />
+                {/* Kontaktuppgifter som på main: utan ram och ikoner */}
+                <div className="flex flex-col items-center lg:items-start text-center lg:text-left mb-8">
+                    <p>Marie Blomdell</p>
+                    <a href="tel:+46705375315" className="hover:text-blue-700">
+                        +46 70 537 53 15
+                    </a>
+                    <a
+                        href="mailto:info@blomdell.com"
+                        className="underline text-blue-600 hover:text-blue-700"
+                    >
+                        info@blomdell.com
+                    </a>
+                </div>
 
                 <h2 className="text-xl mb-3 text-center">Följ oss</h2>
                 <SocialLinks showLabels className="flex-col sm:flex-row justify-center" />
