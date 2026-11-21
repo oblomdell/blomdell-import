@@ -36,7 +36,7 @@ export default function Privatimport() {
                 imageRight
                 preload
             >
-                <PageHeading>Privatimport</PageHeading>
+                <PageHeading align="responsive">Privatimport</PageHeading>
 
                 <div>
                     <p>
