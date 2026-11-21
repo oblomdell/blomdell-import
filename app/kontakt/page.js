@@ -31,8 +31,8 @@ export default function Kontakt() {
                 <PageHeading align="responsive">Kontakt</PageHeading>
                 <ContactCard className="mb-8" />
 
-                <h2 className="text-xl mb-3 text-center lg:text-left">Följ oss</h2>
-                <SocialLinks showLabels className="justify-center lg:justify-start" />
+                <h2 className="text-xl mb-3 text-center">Följ oss</h2>
+                <SocialLinks showLabels className="justify-center" />
             </ImageTextSection>
         </main>
     );

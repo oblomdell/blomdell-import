@@ -54,7 +54,7 @@ export default function Home() {
                     alt="Skelly- och Talavera-flaskor från Los Azulejos med tequilaglas på ett träbord"
                     priority
                 >
-                    <PageHeading align="responsive" className="md:text-3xl !mb-4">
+                    <PageHeading align="left" className="md:text-3xl !mb-4">
                         Välkommen
                     </PageHeading>
                     <p className="text-sm md:text-base leading-relaxed">

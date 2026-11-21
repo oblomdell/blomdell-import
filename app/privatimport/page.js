@@ -2,7 +2,7 @@ import Link from "next/link";
 import PageHeading from "@/components/PageHeading";
 import ImageTextSection from "@/components/ImageTextSection";
 import { openGraph } from "@/lib/site";
-import { linkClass, pageClass } from "@/lib/styles";
+import { linkClass } from "@/lib/styles";
 import privatimportImage from "@/assets/privatimport-skelly-hylla.jpg";
 
 const description = "Så beställer du vår tequila via Systembolagets privatimport – steg för steg.";
@@ -26,9 +26,10 @@ function ExternalLink({ href, children }) {
     );
 }
 
+// Privatimport har 24 px sidmarginal (px-6), som på main.
 export default function Privatimport() {
     return (
-        <main className={pageClass}>
+        <main className="max-w-screen-xl mx-auto px-6">
             <ImageTextSection
                 image={privatimportImage}
                 alt="Tre Skelly-flaskor från Los Azulejos på en hylla"
