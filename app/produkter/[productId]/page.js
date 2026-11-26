@@ -158,15 +158,18 @@ export default async function ProductPage({ params }) {
                     />
 
                     {summary && (
-                        <div className="mt-8 md:border-t md:border-gray-200 md:pt-6">
-                            <p className="leading-relaxed text-gray-800">{summary.teaser}</p>
+                        <p className="mt-6">
+                            {/* Bara texten är understruken – pilen står fri så att linjen inte går in i den. */}
                             <a
                                 href={summary.anchor.href}
-                                className="inline-block mt-3 text-blue-700 underline underline-offset-2 hover:text-blue-950"
+                                className="group inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-950"
                             >
-                                {summary.anchor.label} ↓
+                                <span className="underline underline-offset-4">{summary.anchor.label}</span>
+                                <span aria-hidden="true" className="transition group-hover:translate-y-0.5">
+                                    ↓
+                                </span>
                             </a>
-                        </div>
+                        </p>
                     )}
                 </div>
             </div>
