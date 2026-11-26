@@ -1,6 +1,6 @@
 import { SOCIAL_LINKS } from "@/lib/site";
 
-export function InstagramIcon({ className = "h-6 w-6" }) {
+function InstagramIcon({ className = "h-6 w-6" }) {
     return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className={className} aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -10,7 +10,7 @@ export function InstagramIcon({ className = "h-6 w-6" }) {
     );
 }
 
-export function FacebookIcon({ className = "h-6 w-6" }) {
+function FacebookIcon({ className = "h-6 w-6" }) {
     return (
         <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
             <circle cx="12" cy="12" r="10.1" fill="none" stroke="currentColor" strokeWidth="1.8" />

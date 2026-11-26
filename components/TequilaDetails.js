@@ -2,7 +2,7 @@ import Link from "next/link";
 import { TEQUILA_TYPES, TEQUILA_FACTS, BOTTLES, getSameBottleProducts } from "@/lib/tequila";
 
 /** Liten etikett för tequilasort, t.ex. "Añejo". */
-export function TypeBadge({ type, className = "" }) {
+function TypeBadge({ type, className = "" }) {
     return (
         <span
             className={`inline-block rounded-full bg-blue-950 text-white text-sm px-3 py-0.5 ${className}`}

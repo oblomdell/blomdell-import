@@ -1,6 +1,7 @@
 # Blomdell Import
 
 Webbplats för Blomdell Import, byggd med [Next.js](https://nextjs.org) (App Router) och Tailwind CSS.
+Publiceras via Vercel på https://www.blomdellimport.se.
 
 ## Kom igång
 
@@ -13,49 +14,61 @@ npm run dev
 
 ## Struktur
 
-| Sökväg                              | Innehåll                                          |
-| ----------------------------------- | ------------------------------------------------- |
-| `app/layout.js`                     | Gemensam layout (ram, header, footer, typsnitt)   |
-| `app/page.js`                       | Startsidan                                        |
-| `app/produkter/page.js`             | Alla produkter                                    |
-| `app/produkter/[productId]/page.js` | Produktsida (genereras statiskt vid build)        |
-| `app/privatimport/page.js`          | Instruktioner för privatimport                    |
-| `app/restaurangkund/page.js`        | Information och kontakt för restauranger/barer    |
-| `app/kontakt/page.js`               | Kontakt                                           |
-| `components/`                       | `Header` (meny), `Card`, `OrderButton`, `PageHeading`, `ImageTextSection` |
-| `lib/styles.js`                     | Gemensamma stilar: länkar, knappar och sidmarginaler |
-| `app/icon.png`, `app/apple-icon.png` | Flikikon (favicon) och ikon för hemskärm        |
-| `data/products.json`                | Produktdata — lägg till nya produkter här         |
-| `lib/site.js`                       | Officiell adress (www.blomdellimport.se), namn, beskrivning och sociala länkar |
-| `app/robots.js`, `app/sitemap.js`   | robots.txt och sitemap.xml (genereras automatiskt) |
-| `assets/`                           | Bilder som importeras i koden (logga, utvalda)    |
-| `public/`                           | Statiska filer, t.ex. `/products/*.png`           |
+| Sökväg | Innehåll |
+| --- | --- |
+| `app/layout.js` | Gemensam layout: ram, header, sidfot, typsnitt, åldersfråga, metadata |
+| `app/page.js` | Startsidan (välkomsttext och utvalda produkter) |
+| `app/produkter/page.js` | Alla produkter |
+| `app/produkter/[productId]/page.js` | Produktsida (genereras statiskt vid build) |
+| `app/privatimport/page.js` | Instruktioner för privatimport |
+| `app/restaurangkund/page.js` | Information och kontakt för restauranger och barer |
+| `app/kontakt/page.js` | Kontakt |
+| `app/not-found.js` | 404-sida |
+| `app/robots.js`, `app/sitemap.js`, `app/manifest.js` | robots.txt, sitemap.xml och webbappmanifest (genereras automatiskt) |
+| `app/favicon.ico`, `app/icon.png`, `app/apple-icon.png` | Flikikon och ikon för hemskärm |
+| `components/` | Byggstenar: `Header`, `Card`, `OrderButton`, `PageHeading`, `ImageTextSection`, `TequilaDetails`, `WineInfo`, `AgeGate`, `SocialLinks` m.fl. |
+| `data/products.json` | Produktdata – priser, lagerstatus, länkar |
+| `lib/products.js` | Hämta produkter, namn och prisformat |
+| `lib/tequila.js` | Smakbeskrivningar och fakta för Blanco, Reposado, Añejo och flaskorna |
+| `lib/wines.js` | Doft, smak och fakta för vinerna (nyckel = `productId`) |
+| `lib/site.js` | Officiell adress, namn, beskrivning och sociala länkar |
+| `lib/styles.js` | Gemensamma stilar: länkar, knappar och sidmarginaler |
+| `assets/` | Bilder som importeras i koden (logga, startsidans och sidornas bilder) |
+| `public/products/` | Produktbilder (`imageSrc` i `products.json`) |
+| `public/coverphotos/` | Originalbilder, sparade för framtida bruk |
 
-## Ny produkt
+## Produkter
+
+Ändra pris eller lagerstatus i `data/products.json`. Allt uppdateras automatiskt på
+produktkortet, produktsidan och startsidan vid nästa publicering.
+
+Sätt `"outOfStock": true` för att visa "Tillfälligt slut". Beställknappen blir då
+"Fråga om tillgänglighet", som öppnar ett mejl med produktnamnet i ämnesraden.
+
+### Ny produkt
 
 1. Lägg bilden i `public/products/`.
-2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `title`, `price`, `orderLink`, `outOfStock` (och ev. `collection`).
+2. Lägg till ett objekt i `data/products.json` med `productId`, `imageSrc`, `brand`, `category`
+   (`"Vin"` eller `"Tequila"`), `title`, `price`, `orderLink`, `outOfStock` (och ev. `collection`).
 
-Sätt `"outOfStock": true` för att visa "Tillfälligt slut" och inaktivera beställknappen – på produktkortet, produktsidan och startsidan samtidigt.
+Produktsidan `/produkter/<productId>` skapas automatiskt.
 
-Startsidans utvalda produkter väljs i `featured`-listan i `app/page.js` (productId + bild). Namn, pris och lagerstatus hämtas från `products.json`.
+**Tequila** behöver även:
+- `"bottle"` – flaskfamilj, t.ex. `"Skelly"`, `"Glas"`, `"Talavera"`, `"Barebone"`
+- `"variant"` – texten på variantknappen, t.ex. `"Reposado"`, `"Añejo (guldflaska)"` eller `"Lila"`
+- `"tequilaType"` – `"Blanco"`, `"Reposado"` eller `"Añejo"`
 
-Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
+**Vin:** lägg till doft och smak, serveringsförslag och fakta i `lib/wines.js`.
 
-För tequila anges även `"bottle"` (flaskfamilj, t.ex. `"Skelly"`), `"variant"` (knappens text, t.ex. `"Añejo Gold"` eller `"Lila"`)
-och `"tequilaType"` (`"Blanco"`, `"Reposado"` eller `"Añejo"`).
-Produktsidan visar då rätt smakbeskrivning och fakta (från `lib/tequila.js`) och vilka andra
-innehåll samma flaska finns med.
-
-För vin finns doft och smak, serveringsförslag och fakta i `lib/wines.js` (nyckeln är produktens `productId`).
-
-## Driftsättning på Vercel
-
-1. Importera repot på [vercel.com/new](https://vercel.com/new).
-2. Framework Preset blir automatiskt **Next.js** — klicka **Deploy**.
-
+Startsidans utvalda produkter väljs i `featured`-listan i `app/page.js` (productId + bild).
 
 ## Åldersfråga
 
-Första besöket visas en fråga om besökaren har fyllt 25 år (`components/AgeGate.js`).
+Vid första besöket visas en fråga om besökaren har fyllt 25 år (`components/AgeGate.js`).
 Svaret "Ja" sparas i webbläsaren, så frågan visas inte igen på samma enhet.
+
+## Grenar och publicering
+
+- `design` – här testas ändringar (egen förhandsvisningslänk på Vercel)
+- `dev` – godkända ändringar
+- `main` – den publika sajten; varje push publiceras automatiskt av Vercel
