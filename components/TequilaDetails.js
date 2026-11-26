@@ -79,7 +79,7 @@ export function TequilaInfo({ product }) {
                 Om innehållet: {product.tequilaType}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
                     <p className="font-semibold mb-2">{type.summary}</p>
                     <p className="leading-relaxed text-gray-800">{type.notes}</p>
@@ -95,15 +95,15 @@ export function TequilaInfo({ product }) {
                     )}
                 </div>
 
-                <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 h-fit">
-                    <dt className="text-gray-600">Innehåll</dt>
-                    <dd>Tequila {product.tequilaType}</dd>
-                    <dt className="text-gray-600">Lagring</dt>
-                    <dd>{type.aging}</dd>
+                <dl className="grid grid-cols-1 sm:grid-cols-[auto_minmax(0,1fr)] gap-x-6 sm:gap-y-2 h-fit">
+                    <dt className="text-sm sm:text-base text-gray-600">Innehåll</dt>
+                    <dd className="break-words mb-3 sm:mb-0">Tequila {product.tequilaType}</dd>
+                    <dt className="text-sm sm:text-base text-gray-600">Lagring</dt>
+                    <dd className="break-words mb-3 sm:mb-0">{type.aging}</dd>
                     {TEQUILA_FACTS.map(([label, value]) => (
                         <div key={label} className="contents">
-                            <dt className="text-gray-600">{label}</dt>
-                            <dd>{value}</dd>
+                            <dt className="text-sm sm:text-base text-gray-600">{label}</dt>
+                            <dd className="break-words mb-3 sm:mb-0">{value}</dd>
                         </div>
                     ))}
                 </dl>

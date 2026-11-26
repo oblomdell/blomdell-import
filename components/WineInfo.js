@@ -11,7 +11,7 @@ export default function WineInfo({ product }) {
                 Om vinet
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-6">
                     <div>
                         <h3 className="font-semibold mb-2">Doft och smak</h3>
@@ -35,19 +35,19 @@ export default function WineInfo({ product }) {
                     )}
                 </div>
 
-                <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 h-fit">
-                    <dt className="text-gray-600">Producent</dt>
-                    <dd>{product.brand}</dd>
+                <dl className="grid grid-cols-1 sm:grid-cols-[auto_minmax(0,1fr)] gap-x-6 sm:gap-y-2 h-fit">
+                    <dt className="text-sm sm:text-base text-gray-600">Producent</dt>
+                    <dd className="break-words mb-3 sm:mb-0">{product.brand}</dd>
                     {info.facts.map(([label, value]) => (
                         <div key={label} className="contents">
-                            <dt className="text-gray-600">{label}</dt>
-                            <dd>{value}</dd>
+                            <dt className="text-sm sm:text-base text-gray-600">{label}</dt>
+                            <dd className="break-words mb-3 sm:mb-0">{value}</dd>
                         </div>
                     ))}
-                    <dt className="text-gray-600">Volym</dt>
-                    <dd>{WINE_VOLUME}</dd>
-                    <dt className="text-gray-600">Förvaring</dt>
-                    <dd>{WINE_STORAGE}</dd>
+                    <dt className="text-sm sm:text-base text-gray-600">Volym</dt>
+                    <dd className="break-words mb-3 sm:mb-0">{WINE_VOLUME}</dd>
+                    <dt className="text-sm sm:text-base text-gray-600">Förvaring</dt>
+                    <dd className="break-words mb-3 sm:mb-0">{WINE_STORAGE}</dd>
                 </dl>
             </div>
         </section>
