@@ -8,6 +8,7 @@ import PrefetchImages from "@/components/PrefetchImages";
 import WineInfo from "@/components/WineInfo";
 import { BottleAndContent, TequilaInfo } from "@/components/TequilaDetails";
 import { getSameBottleProducts } from "@/lib/tequila";
+import { getProductSummary } from "@/lib/productSummary";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
 import { widePageClass } from "@/lib/styles";
@@ -73,6 +74,7 @@ export default async function ProductPage({ params }) {
 
     const name = productName(product);
     const related = getRelatedProducts(product);
+    const summary = getProductSummary(product);
 
     // Strukturerad data så att Google kan visa pris och tillgänglighet i sökresultat.
     const productJsonLd = {
@@ -103,11 +105,13 @@ export default async function ProductPage({ params }) {
             >
                 ← Alla produkter
             </Link>
-            <div className="flex flex-col md:flex-row items-center gap-10">
+            {/* Texten är toppjusterad så att rubriken står still när man byter variant. */}
+            <div className="flex flex-col md:flex-row md:items-start items-center gap-10">
                 <div className="w-full md:w-1/2">
                     <Image
                         // Fast ruta (2:3) så att bilden alltid är lika hög och texten inte hoppar mellan varianter.
-                        className="w-full md:max-w-sm lg:max-w-md mx-auto aspect-[2/3] h-auto object-contain"
+                        // På större skärmar högst 55 % av skärmhöjden, så att början av beskrivningen syns nedanför.
+                        className="w-full md:max-w-sm lg:max-w-md md:max-h-[55vh] mx-auto aspect-[2/3] h-auto object-contain"
                         src={product.imageSrc}
                         alt={name}
                         {...productImage}
@@ -115,20 +119,34 @@ export default async function ProductPage({ params }) {
                     />
                 </div>
 
-                <div className="w-full md:w-1/2 text-center md:text-left">
+                <div className="w-full md:w-1/2 text-center md:text-left md:pt-6">
+                    <p className="text-sm uppercase tracking-wider text-gray-600 mb-2">
+                        {[product.brand, product.collection].filter(Boolean).join(" · ")}
+                    </p>
                     <h1 className="text-2xl md:text-4xl font-bold mb-4">{product.title}</h1>
-                    <p className="text-gray-600 text-lg  pb-4">{product.brand}</p>
 
-                    {product.collection && (
-                        <p className="text-gray-700 font-semibold">{product.collection}</p>
+                    {summary && (
+                        <ul className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                            {summary.chips.map((chip) => (
+                                <li
+                                    key={chip}
+                                    className="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-700"
+                                >
+                                    {chip}
+                                </li>
+                            ))}
+                        </ul>
                     )}
 
                     {product.tequilaType && <BottleAndContent product={product} />}
 
                     <p className="text-lg font-semibold mt-3">{formatPrice(product.price)}</p>
 
-                    {/* Tar alltid plats (osynlig när produkten finns) så att texten inte hoppar mellan varianter. */}
-                    <OutOfStockLabel outOfStock={product.outOfStock} className="mt-3" />
+                    {/* För flaskor med varianter tar raden alltid plats (osynlig när produkten finns),
+                        så att texten inte hoppar när man byter variant. */}
+                    {(product.bottle || product.outOfStock) && (
+                        <OutOfStockLabel outOfStock={product.outOfStock} className="mt-3" />
+                    )}
 
                     <OrderButton
                         orderLink={product.orderLink}
@@ -139,10 +157,17 @@ export default async function ProductPage({ params }) {
                         productName={name}
                     />
 
-                    {/* <p className="mt-6 text-gray-700 leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus luctus ullamcorper felis.
-                        Integer non augue in lacus bibendum vehikel. Curabitur commodo, justo id ultrices imperdiet, urna est facilisis.
-                    </p> */}
+                    {summary && (
+                        <div className="mt-8 md:border-t md:border-gray-200 md:pt-6">
+                            <p className="leading-relaxed text-gray-800">{summary.teaser}</p>
+                            <a
+                                href={summary.anchor.href}
+                                className="inline-block mt-3 text-blue-700 underline underline-offset-2 hover:text-blue-950"
+                            >
+                                {summary.anchor.label} ↓
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
 

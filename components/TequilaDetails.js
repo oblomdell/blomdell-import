@@ -74,8 +74,8 @@ export function TequilaInfo({ product }) {
     if (!type) return null;
 
     return (
-        <section aria-labelledby="om-innehallet" className="mt-16">
-            <h2 id="om-innehallet" className="text-xl mb-6 pb-2 border-b border-gray-300">
+        <section aria-labelledby="om-innehallet" className="mt-12">
+            <h2 id="om-innehallet" className="text-xl mb-6 pb-2 border-b border-gray-300 scroll-mt-6">
                 Om innehållet: {product.tequilaType}
             </h2>
 
