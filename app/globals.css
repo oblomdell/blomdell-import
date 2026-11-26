@@ -15,10 +15,3 @@ html[data-age-ok] #aldersfraga {
 html:not([data-age-ok]) body {
     overflow: hidden;
 }
-
-/* Mjuk skrollning till "Läs mer om vinet ↓" (inte för den som valt minskad rörelse) */
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
-    }
-}

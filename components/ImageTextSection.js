@@ -2,8 +2,7 @@ import Image from "next/image";
 
 /**
  * Bild och text bredvid varandra (på mobil: bilden överst).
- * Byggd som Privatimport och produktsidan på main: en flex med gap-10 och
- * items-center, där bild och text tar halva bredden var. Mellanrummet mellan
+ * En flex med gap-10 och items-center, där bild och text tar halva bredden var. Mellanrummet mellan
  * bild och text kommer från gap-10 (40 px), både på mobil och dator.
  * Bildfilerna är beskurna till 16:9 och visas med "flex w-full h-auto object-cover".
  *

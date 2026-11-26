@@ -2,7 +2,7 @@ import Link from "next/link";
 import { TEQUILA_TYPES, TEQUILA_FACTS, BOTTLES, getSameBottleProducts } from "@/lib/tequila";
 
 /** Liten etikett för tequilasort, t.ex. "Añejo". */
-export function TypeBadge({ type, className = "" }) {
+function TypeBadge({ type, className = "" }) {
     return (
         <span
             className={`inline-block rounded-full bg-blue-950 text-white text-sm px-3 py-0.5 ${className}`}
@@ -75,7 +75,7 @@ export function TequilaInfo({ product }) {
 
     return (
         <section aria-labelledby="om-innehallet" className="mt-10">
-            <h2 id="om-innehallet" className="text-xl mb-6 pb-2 border-b border-gray-300 scroll-mt-6">
+            <h2 id="om-innehallet" className="text-xl mb-6 pb-2 border-b border-gray-300">
                 Om innehållet: {product.tequilaType}
             </h2>
 
