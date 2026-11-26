@@ -6,7 +6,7 @@ import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
 import { getProduct, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, SOCIAL_LINKS } from "@/lib/site";
-import { pageClass, primaryButtonClass } from "@/lib/styles";
+import { pageClass } from "@/lib/styles";
 
 import heroImage from "@/assets/hero-skelly-talavera.jpg";
 import skellyAnejo from "@/assets/featured/skelly-anejo.jpg";
@@ -80,8 +80,11 @@ export default function Home() {
                 </ImageTextSection>
             </div>
 
-            <section className="flex flex-col items-center">
-                {/* <h1 className="text-4xl font-bold mb-10">Produkter</h1> */}
+            <section className="flex flex-col items-center" aria-labelledby="utvalda-rubrik">
+                {/* Rubriken visar att korten är ett urval, så att "Se alla produkter" blir självklar. */}
+                <h2 id="utvalda-rubrik" className="text-2xl mb-8 text-center">
+                    Utvalda produkter
+                </h2>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
                     {/* Featured products */}
                     {featuredProducts.map((product) => (
@@ -136,8 +139,15 @@ export default function Home() {
                     ))}
                 </div>
 
-                <Link href="/produkter/" className={primaryButtonClass}>
-                    Alla produkter
+                {/* Kantad stil och mer luft så att den inte förväxlas med kortens "Beställ". */}
+                <Link
+                    href="/produkter/"
+                    className="group mt-6 inline-flex items-center gap-2 border-2 border-blue-950 px-8 py-3 text-blue-950 font-semibold rounded-md hover:bg-blue-950 hover:text-white transition"
+                >
+                    Se alla produkter
+                    <span aria-hidden="true" className="transition group-hover:translate-x-1">
+                        →
+                    </span>
                 </Link>
             </section>
         </main>
