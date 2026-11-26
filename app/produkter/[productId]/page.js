@@ -4,6 +4,7 @@ import Card from "@/components/Card";
 import { notFound } from "next/navigation";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
+import { BottleAndContent, TequilaInfo } from "@/components/TequilaDetails";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
 import { widePageClass } from "@/lib/styles";
@@ -23,7 +24,11 @@ export async function generateMetadata({ params }) {
 
     const name = productName(product);
     const url = `/produkter/${product.productId}/`;
-    const kind = product.category ? `${product.category.toLowerCase()} ` : "";
+    const kind = product.tequilaType
+        ? `tequila ${product.tequilaType.toLowerCase()} `
+        : product.category
+          ? `${product.category.toLowerCase()} `
+          : "";
     const description = `${name} – ${kind}från ${product.brand}. ${formatPrice(product.price)}. ${
         product.outOfStock ? "Tillfälligt slut." : "Beställ via Systembolaget."
     }`;
@@ -93,6 +98,8 @@ export default async function ProductPage({ params }) {
                         <p className="text-gray-700 font-semibold">{product.collection}</p>
                     )}
 
+                    {product.tequilaType && <BottleAndContent product={product} />}
+
                     <p className="text-lg font-semibold mt-3">{formatPrice(product.price)}</p>
 
                     {product.outOfStock && (
@@ -113,6 +120,8 @@ export default async function ProductPage({ params }) {
                     </p> */}
                 </div>
             </div>
+
+            {product.tequilaType && <TequilaInfo product={product} />}
 
             {related.length > 0 && (
                 <section className="mt-20" aria-labelledby="fler-rubrik">

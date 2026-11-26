@@ -42,6 +42,10 @@ Startsidans utvalda produkter väljs i `featured`-listan i `app/page.js` (produc
 
 Produktsidan `/produkter/<productId>` skapas automatiskt vid nästa build.
 
+För tequila anges även `"bottle"` (t.ex. `"Skelly"`) och `"tequilaType"` (`"Blanco"`, `"Reposado"` eller `"Añejo"`).
+Produktsidan visar då rätt smakbeskrivning och fakta (från `lib/tequila.js`) och vilka andra
+innehåll samma flaska finns med.
+
 ## Driftsättning på Vercel
 
 1. Importera repot på [vercel.com/new](https://vercel.com/new).
