@@ -14,8 +14,8 @@ import { widePageClass } from "@/lib/styles";
 // Produktbildens storlek – samma värden används för förladdningen av varianter nedan,
 // så att webbläsaren hämtar exakt samma bildfiler.
 const productImage = {
-    width: 896,
-    height: 896,
+    width: 1000,
+    height: 1500,
     sizes: "(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw",
 };
 
@@ -105,7 +105,8 @@ export default async function ProductPage({ params }) {
             <div className="flex flex-col md:flex-row items-center gap-10">
                 <div className="w-full md:w-1/2">
                     <Image
-                        className="max-w-full w-full h-auto md:max-w-sm lg:max-w-md object-cover mx-auto"
+                        // Fast ruta (2:3) så att bilden alltid är lika hög och texten inte hoppar mellan varianter.
+                        className="w-full md:max-w-sm lg:max-w-md mx-auto aspect-[2/3] h-auto object-contain"
                         src={product.imageSrc}
                         alt={name}
                         {...productImage}
@@ -125,9 +126,8 @@ export default async function ProductPage({ params }) {
 
                     <p className="text-lg font-semibold mt-3">{formatPrice(product.price)}</p>
 
-                    {product.outOfStock && (
-                        <OutOfStockLabel outOfStock className="mt-3" />
-                    )}
+                    {/* Tar alltid plats (osynlig när produkten finns) så att texten inte hoppar mellan varianter. */}
+                    <OutOfStockLabel outOfStock={product.outOfStock} className="mt-3" />
 
                     <OrderButton
                         orderLink={product.orderLink}

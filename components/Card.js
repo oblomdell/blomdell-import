@@ -3,6 +3,13 @@ import Link from "next/link";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import { formatPrice, productName } from "@/lib/products";
 
+// Kortbildens storlek – används också när bilderna förladdas (se app/layout.js).
+export const cardImage = {
+    width: 640,
+    height: 640,
+    sizes: "(min-width: 640px) 384px, 100vw",
+};
+
 export default function Card({ product, headingLevel = "h2", eager = false }) {
     const Heading = headingLevel;
     const { imageSrc, brand, collection, title, price, productId, orderLink, outOfStock } =
@@ -17,9 +24,7 @@ export default function Card({ product, headingLevel = "h2", eager = false }) {
                     className="w-full h-80 object-contain"
                     src={imageSrc}
                     alt={productName(product)}
-                    width={640}
-                    height={640}
-                    sizes="(min-width: 640px) 384px, 100vw"
+                    {...cardImage}
                     loading={eager ? "eager" : "lazy"}
                 />
             </Link>
