@@ -157,20 +157,6 @@ export default async function ProductPage({ params }) {
                         productName={name}
                     />
 
-                    {summary && (
-                        <p className="mt-6">
-                            {/* Bara texten är understruken – pilen står fri så att linjen inte går in i den. */}
-                            <a
-                                href={summary.anchor.href}
-                                className="group inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-950"
-                            >
-                                <span className="underline underline-offset-4">{summary.anchor.label}</span>
-                                <span aria-hidden="true" className="transition group-hover:translate-y-0.5">
-                                    ↓
-                                </span>
-                            </a>
-                        </p>
-                    )}
                 </div>
             </div>
 
