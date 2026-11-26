@@ -85,7 +85,8 @@
     {
         "productId": "skelly-anejo-gold",
         "bottle": "Skelly",
-        "variant": "Añejo Gold",
+        "variant": "Añejo (guldflaska)",
+        "note": "Gold syftar på den guldfärgade flaskan – innehållet är samma Añejo, lagrad 18 månader på ekfat.",
         "tequilaType": "Añejo",
         "imageSrc": "/products/skelly-anejo-gold.avif",
         "brand": "Azulejos",
@@ -168,7 +169,7 @@
         "imageSrc": "/products/barebone-lila-low-res.png",
         "brand": "Azulejos",
         "category": "Tequila",
-        "title": "Barebone (Añejo)",
+        "title": "Barebone Lila (Añejo)",
         "price": 1799,
         "orderLink": "/privatimport",
         "outOfStock": false
@@ -181,7 +182,7 @@
         "imageSrc": "/products/barebone-gron-low-res.png",
         "brand": "Azulejos",
         "category": "Tequila",
-        "title": "Barebone (Añejo)",
+        "title": "Barebone Grön (Añejo)",
         "price": 1799,
         "orderLink": "/privatimport",
         "outOfStock": false

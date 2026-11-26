@@ -33,6 +33,8 @@ export function BottleAndContent({ product }) {
                 <TypeBadge type={product.tequilaType} />
             </p>
 
+            {product.note && <p className="text-sm text-gray-700">{product.note}</p>}
+
             {variants.length > 1 && (
                 <div>
                     <p className="text-sm text-gray-700 mb-2">

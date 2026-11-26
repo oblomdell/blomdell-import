@@ -1,13 +1,37 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import Card from "@/components/Card";
 import { notFound } from "next/navigation";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
+import PrefetchImages from "@/components/PrefetchImages";
 import { BottleAndContent, TequilaInfo } from "@/components/TequilaDetails";
+import { getSameBottleProducts } from "@/lib/tequila";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
 import { SITE_URL, SITE_NAME, openGraph } from "@/lib/site";
 import { widePageClass } from "@/lib/styles";
+
+// Produktbildens storlek – samma värden används för förladdningen av varianter nedan,
+// så att webbläsaren hämtar exakt samma bildfiler.
+const productImage = {
+    width: 896,
+    height: 896,
+    sizes: "(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw",
+};
+
+/**
+ * Bilderna för de andra varianterna av samma flaska (t.ex. Glas Reposado på sidan
+ * för Glas Blanco). De hämtas i bakgrunden efter att sidan laddat klart, så att
+ * bilden syns direkt när man byter variant.
+ */
+function variantImages(product) {
+    return getSameBottleProducts(product)
+        .filter((variant) => variant.productId !== product.productId)
+        .map((variant) => {
+            const { props } = getImageProps({ ...productImage, src: variant.imageSrc, alt: "" });
+            return { src: props.src, srcSet: props.srcSet, sizes: props.sizes };
+        });
+}
 
 // Bygg alla produktsidor statiskt vid build.
 export function generateStaticParams() {
@@ -71,6 +95,7 @@ export default async function ProductPage({ params }) {
     return (
         <main className={widePageClass}>
             <JsonLd data={productJsonLd} />
+            <PrefetchImages images={variantImages(product)} />
             <Link
                 href="/produkter/"
                 className="inline-block py-2 mb-6 text-sm hover:underline underline-offset-4"
@@ -83,9 +108,7 @@ export default async function ProductPage({ params }) {
                         className="max-w-full w-full h-auto md:max-w-sm lg:max-w-md object-cover mx-auto"
                         src={product.imageSrc}
                         alt={name}
-                        width={896}
-                        height={896}
-                        sizes="(min-width: 1024px) 448px, (min-width: 768px) 384px, 100vw"
+                        {...productImage}
                         preload
                     />
                 </div>
