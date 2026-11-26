@@ -1,4 +1,4 @@
-import { WINE_INFO, WINE_STORAGE } from "@/lib/wines";
+import { WINE_INFO, WINE_STORAGE, WINE_VOLUME } from "@/lib/wines";
 
 /** Sektion under vinet: doft och smak, serveras till, framställning och fakta. */
 export default function WineInfo({ product }) {
@@ -44,6 +44,8 @@ export default function WineInfo({ product }) {
                             <dd>{value}</dd>
                         </div>
                     ))}
+                    <dt className="text-gray-600">Volym</dt>
+                    <dd>{WINE_VOLUME}</dd>
                     <dt className="text-gray-600">Förvaring</dt>
                     <dd>{WINE_STORAGE}</dd>
                 </dl>

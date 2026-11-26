@@ -136,6 +136,7 @@ export default async function ProductPage({ params }) {
                         size="lg"
                         label="Beställ här"
                         className="mt-5"
+                        productName={name}
                     />
 
                     {/* <p className="mt-6 text-gray-700 leading-relaxed">

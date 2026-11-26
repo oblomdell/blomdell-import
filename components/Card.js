@@ -48,7 +48,11 @@ export default function Card({ product, headingLevel = "h2", eager = false }) {
                     <Link href={href} className="underline">
                         Läs mer
                     </Link>
-                    <OrderButton orderLink={orderLink} outOfStock={outOfStock} />
+                    <OrderButton
+                        orderLink={orderLink}
+                        outOfStock={outOfStock}
+                        productName={productName(product)}
+                    />
                 </div>
             </div>
         </div>

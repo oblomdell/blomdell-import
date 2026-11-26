@@ -128,6 +128,7 @@ export default function Home() {
                                     <OrderButton
                                         orderLink={product.orderLink}
                                         outOfStock={product.outOfStock}
+                                        productName={product.title}
                                     />
                                 </div>
                             </div>
