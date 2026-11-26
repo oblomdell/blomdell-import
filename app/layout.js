@@ -1,11 +1,14 @@
 import { Roboto_Slab } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import AgeGate from "@/components/AgeGate";
+import PrefetchImages from "@/components/PrefetchImages";
+import { cardImage } from "@/components/Card";
+import { getProducts } from "@/lib/products";
 import { ageGateScript } from "@/lib/ageGate";
 import logo from "@/assets/logo.jpeg";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, IS_PRODUCTION, openGraph } from "@/lib/site";
@@ -35,6 +38,18 @@ export const metadata = {
 export const viewport = {
     themeColor: "#172554",
 };
+
+/**
+ * Bilderna i produktlistans första rad hämtas i bakgrunden på alla sidor (efter
+ * att sidan laddat klart), så att de syns direkt när man går till "Produkter" –
+ * även om man kom in på sajten via en annan sida.
+ */
+const productListImages = getProducts()
+    .slice(0, 4)
+    .map((product) => {
+        const { props } = getImageProps({ ...cardImage, src: product.imageSrc, alt: "" });
+        return { src: props.src, srcSet: props.srcSet, sizes: props.sizes };
+    });
 
 export default function RootLayout({ children }) {
     return (
@@ -83,6 +98,7 @@ export default function RootLayout({ children }) {
                     aria-hidden="true"
                     className="fixed inset-x-0 bottom-0 z-40 h-2 bg-blue-950 pointer-events-none"
                 />
+                <PrefetchImages images={productListImages} />
                 <AgeGate />
                 <Analytics />
                 <SpeedInsights />

@@ -10,9 +10,21 @@ const sizes = {
 const baseClass =
     "inline-block border border-black text-white bg-blue-950 hover:bg-blue-800 transition";
 
+// Storlekar för "Fråga om tillgänglighet": längre text, så i korten används mindre
+// text och sidoluft men samma höjd (42 px) som "Beställ" – då står korten i linje.
+const askSizes = {
+    md: "px-4 py-2.5 text-sm rounded-sm whitespace-nowrap",
+    lg: "px-8 py-3 rounded-md",
+};
+
+// Vit knapp med ram – används när produkten är slut, så att den skiljer sig från "Beställ".
+const askClass =
+    "inline-block border border-blue-950 text-blue-950 bg-white hover:bg-blue-950 hover:text-white transition";
+
 /**
  * "Beställ"-knapp. Styrs helt av produktens data i data/products.json:
- * med "outOfStock": true blir den "Ej tillgänglig" och går inte att klicka.
+ * med "outOfStock": true blir den "Fråga om tillgänglighet", som öppnar ett mejl
+ * med produktens namn i ämnesraden.
  *
  * Interna länkar (t.ex. "/privatimport") öppnas i samma flik,
  * externa (Systembolaget) i en ny flik.
@@ -22,18 +34,20 @@ export default function OrderButton({
     outOfStock = false,
     size = "md",
     label = "Beställ",
+    productName = "",
     className = "",
 }) {
     const classes = `${baseClass} ${sizes[size]} ${className}`;
 
     if (outOfStock) {
+        const subject = `Fråga om tillgänglighet${productName ? ` – ${productName}` : ""}`;
         return (
-            <span
-                className={`${classes} cursor-not-allowed opacity-50 pointer-events-none`}
-                aria-disabled="true"
+            <a
+                href={`mailto:info@blomdell.com?subject=${encodeURIComponent(subject)}`}
+                className={`${askClass} ${askSizes[size]} ${className}`}
             >
-                Ej tillgänglig
-            </span>
+                Fråga om tillgänglighet
+            </a>
         );
     }
 

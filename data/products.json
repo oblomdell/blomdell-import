@@ -6,7 +6,7 @@
         "category": "Vin",
         "collection": "Casteller",
         "title": "Brut Nature",
-        "price": 178,
+        "price": 179,
         "orderLink": "https://www.systembolaget.se/produkt/vin/casteller-7844601/",
         "outOfStock": false
     },
@@ -17,7 +17,7 @@
         "category": "Vin",
         "collection": "Duc de Foix",
         "title": "Brut Nature Reserva",
-        "price": 218,
+        "price": 225,
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-7326501/",
         "outOfStock": false
     },
@@ -28,7 +28,7 @@
         "category": "Vin",
         "collection": "Duc de Foix",
         "title": "Merlot Barrica",
-        "price": 190,
+        "price": 200,
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5069301/",
         "outOfStock": false
     },
@@ -39,12 +39,15 @@
         "category": "Vin",
         "collection": "Duc de Foix",
         "title": "Cabernet Sauvignon Rosé",
-        "price": 192,
+        "price": 200,
         "orderLink": "https://www.systembolaget.se/produkt/vin/duc-de-foix-5958601/",
         "outOfStock": false
     },
     {
         "productId": "skelly-blanco",
+        "bottle": "Skelly",
+        "variant": "Blanco",
+        "tequilaType": "Blanco",
         "imageSrc": "/products/skelly-blanco.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -55,6 +58,9 @@
     },
     {
         "productId": "skelly-reposado",
+        "bottle": "Skelly",
+        "variant": "Reposado",
+        "tequilaType": "Reposado",
         "imageSrc": "/products/skelly-reposado.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -65,6 +71,9 @@
     },
     {
         "productId": "skelly-anejo",
+        "bottle": "Skelly",
+        "variant": "Añejo",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/skelly-anejo.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -75,6 +84,9 @@
     },
     {
         "productId": "skelly-anejo-gold",
+        "bottle": "Skelly",
+        "variant": "Añejo (guldflaska)",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/skelly-anejo-gold.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -85,6 +97,9 @@
     },
     {
         "productId": "talavera-rod",
+        "bottle": "Talavera",
+        "variant": "Röd",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-rod.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -95,6 +110,9 @@
     },
     {
         "productId": "talavera-blomma",
+        "bottle": "Talavera",
+        "variant": "Blomma",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-blomma.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -105,6 +123,9 @@
     },
     {
         "productId": "talavera-bla",
+        "bottle": "Talavera",
+        "variant": "Blå",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-bla.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -115,6 +136,9 @@
     },
     {
         "productId": "glas-blanco",
+        "bottle": "Glas",
+        "variant": "Blanco",
+        "tequilaType": "Blanco",
         "imageSrc": "/products/glas-blanco.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -125,6 +149,9 @@
     },
     {
         "productId": "glas-reposado",
+        "bottle": "Glas",
+        "variant": "Reposado",
+        "tequilaType": "Reposado",
         "imageSrc": "/products/glas-reposado.avif",
         "brand": "Azulejos",
         "category": "Tequila",
@@ -135,20 +162,26 @@
     },
     {
         "productId": "barebone-lila",
+        "bottle": "Barebone",
+        "variant": "Lila",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/barebone-lila-low-res.png",
         "brand": "Azulejos",
         "category": "Tequila",
-        "title": "Barebone (Añejo)",
+        "title": "Barebone Lila (Añejo)",
         "price": 1799,
         "orderLink": "/privatimport",
         "outOfStock": false
     },
     {
         "productId": "barebone-gron",
+        "bottle": "Barebone",
+        "variant": "Grön",
+        "tequilaType": "Añejo",
         "imageSrc": "/products/barebone-gron-low-res.png",
         "brand": "Azulejos",
         "category": "Tequila",
-        "title": "Barebone (Añejo)",
+        "title": "Barebone Grön (Añejo)",
         "price": 1799,
         "orderLink": "/privatimport",
         "outOfStock": false

@@ -57,19 +57,26 @@ export default function Home() {
                     <PageHeading align="left" className="md:text-3xl !mb-4">
                         Välkommen
                     </PageHeading>
-                    <p className="text-sm md:text-base leading-relaxed">
-                        Los Azulejos är en av fem ledande tillverkare i Jalisco och som
-                        enda återförsäljare i EU har vi nöjet att presentera denna
-                        exklusiva dryck. Pedro Quintanilla är grundaren av denna unika
-                        dubbeldestillerade Tequila som tillverkas i delstaten Jalisco,
-                        Mexico. Tequilan framställs av 100% blå Weber agave som efter
-                        7-10 år noga väljs ut och skördas för att bli denna
-                        förstklassiga dryck med sin unika identitet. Alla flaskorna
-                        tillverkas i Puebla. Glasflaskorna är handblåsta och
-                        keramikflaskorna (Talavera) är handgjorda, handmålade och
-                        signerade av konstnären vilket innebär att det inte finns två
-                        flaskor som ser exakt likadana ut.
-                    </p>
+                    <div className="text-sm md:text-base leading-relaxed space-y-3">
+                        <p>
+                            Los Azulejos är en av fem ledande tillverkare i Jalisco och som
+                            enda återförsäljare i EU har vi nöjet att presentera denna
+                            exklusiva dryck.
+                        </p>
+                        <p>
+                            Pedro Quintanilla är grundaren av denna unika dubbeldestillerade
+                            tequila som tillverkas i delstaten Jalisco, Mexiko. Tequilan
+                            framställs av 100 % blå Weber-agave som efter 7–10 år noga väljs ut
+                            och skördas för att bli denna förstklassiga dryck med sin unika
+                            identitet.
+                        </p>
+                        <p>
+                            Alla flaskorna tillverkas i Puebla. Glasflaskorna är handblåsta och
+                            keramikflaskorna (Talavera) är handgjorda, handmålade och signerade
+                            av konstnären vilket innebär att det inte finns två flaskor som ser
+                            exakt likadana ut.
+                        </p>
+                    </div>
                 </ImageTextSection>
             </div>
 
@@ -121,6 +128,7 @@ export default function Home() {
                                     <OrderButton
                                         orderLink={product.orderLink}
                                         outOfStock={product.outOfStock}
+                                        productName={product.title}
                                     />
                                 </div>
                             </div>
