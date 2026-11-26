@@ -65,8 +65,8 @@ export default function Home() {
                         </p>
                         <p>
                             Pedro Quintanilla är grundaren av denna unika dubbeldestillerade
-                            Tequila som tillverkas i delstaten Jalisco, Mexico. Tequilan
-                            framställs av 100% blå Weber-agave som efter 7-10 år noga väljs ut
+                            tequila som tillverkas i delstaten Jalisco, Mexiko. Tequilan
+                            framställs av 100 % blå Weber-agave som efter 7–10 år noga väljs ut
                             och skördas för att bli denna förstklassiga dryck med sin unika
                             identitet.
                         </p>
