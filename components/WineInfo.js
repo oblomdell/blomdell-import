@@ -6,7 +6,7 @@ export default function WineInfo({ product }) {
     if (!info) return null;
 
     return (
-        <section aria-labelledby="om-vinet" className="mt-12">
+        <section aria-labelledby="om-vinet" className="mt-10">
             <h2 id="om-vinet" className="text-xl mb-6 pb-2 border-b border-gray-300 scroll-mt-6">
                 Om vinet
             </h2>

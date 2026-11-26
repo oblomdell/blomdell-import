@@ -110,8 +110,9 @@ export default async function ProductPage({ params }) {
                 <div className="w-full md:w-1/2">
                     <Image
                         // Fast ruta (2:3) så att bilden alltid är lika hög och texten inte hoppar mellan varianter.
-                        // På större skärmar högst 55 % av skärmhöjden, så att början av beskrivningen syns nedanför.
-                        className="w-full md:max-w-sm lg:max-w-md md:max-h-[55vh] mx-auto aspect-[2/3] h-auto object-contain"
+                        // Höjden begränsas (45 % av skärmhöjden på mobil, 50 % från surfplatta) så att namn och pris
+                        // syns direkt på telefon och början av beskrivningen tittar fram på dator.
+                        className="w-full md:max-w-sm lg:max-w-md max-h-[45vh] md:max-h-[50vh] mx-auto aspect-[2/3] h-auto object-contain"
                         src={product.imageSrc}
                         alt={name}
                         {...productImage}
