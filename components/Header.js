@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-blue.jpeg";
 
 const navItems = [
     { href: "/produkter/", label: "PRODUKTER" },
@@ -123,7 +123,6 @@ export default function Header() {
             )}
 
             {/* Desktop logo */}
-            {/* testa blå logga */}
             <Link href="/" className="hidden md:block" aria-label="Gå till startsidan">
                 <Logo className="max-w-full h-24 w-auto" eager />
             </Link>

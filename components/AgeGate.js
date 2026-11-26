@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-blue.jpeg";
 import { AGE_STORAGE_KEY } from "@/lib/ageGate";
 
 /** Åldersfråga (25 år) som visas första gången man besöker sajten. */
