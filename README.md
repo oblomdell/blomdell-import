@@ -47,6 +47,8 @@ och `"tequilaType"` (`"Blanco"`, `"Reposado"` eller `"Añejo"`).
 Produktsidan visar då rätt smakbeskrivning och fakta (från `lib/tequila.js`) och vilka andra
 innehåll samma flaska finns med.
 
+För vin finns doft och smak, serveringsförslag och fakta i `lib/wines.js` (nyckeln är produktens `productId`).
+
 ## Driftsättning på Vercel
 
 1. Importera repot på [vercel.com/new](https://vercel.com/new).

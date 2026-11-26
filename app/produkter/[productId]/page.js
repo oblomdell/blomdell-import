@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import OrderButton, { OutOfStockLabel } from "@/components/OrderButton";
 import JsonLd from "@/components/JsonLd";
 import PrefetchImages from "@/components/PrefetchImages";
+import WineInfo from "@/components/WineInfo";
 import { BottleAndContent, TequilaInfo } from "@/components/TequilaDetails";
 import { getSameBottleProducts } from "@/lib/tequila";
 import { getProducts, getProduct, getRelatedProducts, productName, formatPrice } from "@/lib/products";
@@ -145,6 +146,7 @@ export default async function ProductPage({ params }) {
             </div>
 
             {product.tequilaType && <TequilaInfo product={product} />}
+            {product.category === "Vin" && <WineInfo product={product} />}
 
             {related.length > 0 && (
                 <section className="mt-20" aria-labelledby="fler-rubrik">
