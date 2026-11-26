@@ -46,6 +46,7 @@
     {
         "productId": "skelly-blanco",
         "bottle": "Skelly",
+        "variant": "Blanco",
         "tequilaType": "Blanco",
         "imageSrc": "/products/skelly-blanco.avif",
         "brand": "Azulejos",
@@ -58,6 +59,7 @@
     {
         "productId": "skelly-reposado",
         "bottle": "Skelly",
+        "variant": "Reposado",
         "tequilaType": "Reposado",
         "imageSrc": "/products/skelly-reposado.avif",
         "brand": "Azulejos",
@@ -70,6 +72,7 @@
     {
         "productId": "skelly-anejo",
         "bottle": "Skelly",
+        "variant": "Añejo",
         "tequilaType": "Añejo",
         "imageSrc": "/products/skelly-anejo.avif",
         "brand": "Azulejos",
@@ -81,7 +84,8 @@
     },
     {
         "productId": "skelly-anejo-gold",
-        "bottle": "Skelly Gold",
+        "bottle": "Skelly",
+        "variant": "Añejo Gold",
         "tequilaType": "Añejo",
         "imageSrc": "/products/skelly-anejo-gold.avif",
         "brand": "Azulejos",
@@ -94,6 +98,7 @@
     {
         "productId": "talavera-rod",
         "bottle": "Talavera",
+        "variant": "Röd",
         "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-rod.avif",
         "brand": "Azulejos",
@@ -106,6 +111,7 @@
     {
         "productId": "talavera-blomma",
         "bottle": "Talavera",
+        "variant": "Blomma",
         "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-blomma.avif",
         "brand": "Azulejos",
@@ -118,6 +124,7 @@
     {
         "productId": "talavera-bla",
         "bottle": "Talavera",
+        "variant": "Blå",
         "tequilaType": "Añejo",
         "imageSrc": "/products/talavera-bla.avif",
         "brand": "Azulejos",
@@ -130,6 +137,7 @@
     {
         "productId": "glas-blanco",
         "bottle": "Glas",
+        "variant": "Blanco",
         "tequilaType": "Blanco",
         "imageSrc": "/products/glas-blanco.avif",
         "brand": "Azulejos",
@@ -142,6 +150,7 @@
     {
         "productId": "glas-reposado",
         "bottle": "Glas",
+        "variant": "Reposado",
         "tequilaType": "Reposado",
         "imageSrc": "/products/glas-reposado.avif",
         "brand": "Azulejos",
@@ -154,6 +163,7 @@
     {
         "productId": "barebone-lila",
         "bottle": "Barebone",
+        "variant": "Lila",
         "tequilaType": "Añejo",
         "imageSrc": "/products/barebone-lila-low-res.png",
         "brand": "Azulejos",
@@ -166,6 +176,7 @@
     {
         "productId": "barebone-gron",
         "bottle": "Barebone",
+        "variant": "Grön",
         "tequilaType": "Añejo",
         "imageSrc": "/products/barebone-gron-low-res.png",
         "brand": "Azulejos",

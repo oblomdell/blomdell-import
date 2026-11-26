@@ -1,7 +1,6 @@
 import Card from "@/components/Card";
 import { getProducts } from "@/lib/products";
 import PageHeading from "@/components/PageHeading";
-import { TequilaExplainer } from "@/components/TequilaDetails";
 import { openGraph } from "@/lib/site";
 
 const description =
@@ -23,7 +22,6 @@ export default function Produkter() {
         <main className="max-w-screen-xl mx-auto px-4 pb-6">
             <div className="flex flex-col items-center">
                 <PageHeading className="!mb-10">Alla produkter</PageHeading>
-                <TequilaExplainer />
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-10 mb-10">
                     {/* De fyra första (första raden på dator) laddas direkt, resten när man skrollar. */}
                     {getProducts().map((product, index) => (
