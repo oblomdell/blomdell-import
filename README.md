@@ -33,7 +33,7 @@ npm run dev
 | `lib/wines.js` | Doft, smak och fakta för vinerna (nyckel = `productId`) |
 | `lib/site.js` | Officiell adress, namn, beskrivning och sociala länkar |
 | `lib/styles.js` | Gemensamma stilar: länkar, knappar och sidmarginaler |
-| `assets/` | Bilder som importeras i koden (logga, startsidans och sidornas bilder) |
+| `assets/` | Bilder som importeras i koden: loggan (`logo-blue.jpeg` används, svarta `logo.jpeg` sparad), startsidans och sidornas bilder |
 | `public/products/` | Produktbilder (`imageSrc` i `products.json`) |
 | `public/coverphotos/` | Originalbilder, sparade för framtida bruk |
 

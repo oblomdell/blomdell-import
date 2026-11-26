@@ -10,7 +10,7 @@ import PrefetchImages from "@/components/PrefetchImages";
 import { cardImage } from "@/components/Card";
 import { getProducts } from "@/lib/products";
 import { ageGateScript } from "@/lib/ageGate";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo-blue.jpeg";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, IS_PRODUCTION, openGraph } from "@/lib/site";
 import "./globals.css";
 
