@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // Samma URL:er som den gamla SvelteKit-sajten (trailingSlash: 'always'),
+    // Adresser slutar med snedstreck, så att tidigare länkar och sökresultat fortsätter fungera,
     // t.ex. /produkter/ och /produkter/skelly-anejo/.
     trailingSlash: true,
 
